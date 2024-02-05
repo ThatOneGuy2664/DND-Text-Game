@@ -24,8 +24,6 @@
 -- LUA allows for quicker updates, it will likely be done first.
 -- must be played in console.
 
-lume = require "lume"
-
 local PlayerClass = nil
 local PlayerRace = nil
 local PlayerLevel = 1
