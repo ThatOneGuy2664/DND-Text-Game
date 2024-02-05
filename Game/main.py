@@ -26,3 +26,9 @@ player_ability_scores = generate_ability_scores()
 for stat, score in player_ability_scores.items():
     print(f"{stat}: {score}")
 print(f"{stat}: {score}")
+
+PlayerClass = None 
+PlayerRace = None 
+PlayerLevel = 1 
+Races = [ "Human", "Dragonborn", "Dwarf", "Elf", "Gnome", "Half-Elf", "Halfing", "Half-Orc", "Tiefling" ] 
+Classes = [ "Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard", "Artificer", "Bloodhunter" ]
