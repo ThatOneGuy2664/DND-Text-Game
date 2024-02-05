@@ -1,4 +1,5 @@
 import random
+import time
 
 def roll_ability_score():
     # Roll 4d6 and drop the lowest value
@@ -14,8 +15,14 @@ def generate_ability_scores():
         ability_scores[stat] = roll_ability_score()
     return ability_scores
 
-# Example usage:
+def wait(seconds):
+    # Wait for (seconds) and resume
+    time.sleep(seconds)
+
+# Generate ability scores
 player_ability_scores = generate_ability_scores()
-print("Player Ability Scores:")
+
+# Print each ability score with its corresponding label
 for stat, score in player_ability_scores.items():
     print(f"{stat}: {score}")
+print(f"{stat}: {score}")
