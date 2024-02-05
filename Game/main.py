@@ -66,7 +66,7 @@ Spells = {
     ],
     "LevelOne": [
         "Absorb Elements", "Acid Stream", "Alarm", "Animal Friendship",
-        "Arcane Weapon"
+        "Arcane Weapon", "Armor of Agathys", "Arms of Hadar"
     ],
     "LevelTwo": [],
     "LevelThree": [],
