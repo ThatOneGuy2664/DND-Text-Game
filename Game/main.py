@@ -49,7 +49,6 @@ player_ability_scores = generate_ability_scores()
 # Print each ability score with its corresponding label
 for stat, score in player_ability_scores.items():
     print(f"{stat}: {score}")
-print(f"{stat}: {score}")
 
 PlayerClass = None 
 PlayerRace = None 
