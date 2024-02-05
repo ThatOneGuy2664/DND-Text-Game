@@ -21,6 +21,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 # END LICENSE DESCRIPTION
+# Python will have less updates but more eventual functionality.
 
 import random
 import time
