@@ -104,6 +104,6 @@ local Spells = {
   }
 }
 
-if PlayerClass == Rogue then
-  SneakAttack == true
+if PlayerClass == "Rogue" then
+  SneakAttack = true
 end
