@@ -89,6 +89,12 @@ local Spells = {
     "Arcane Weapon", "Armor of Agathys", "Arms of Hadar"
   },
   LevelTwo = {
+    "Aid", "Alter Self", "Animal Messenger", "Arcane Lock", "Augury",
+    "Barkskin", "Beast Sense", "Blindness/Deafness", "Blur", "Branding Smite",
+    "Borrowed Knowledge", "Calm Emotions", "Cloud of Daggers", "Continual Flame", "Cordon of Arrows", "Crown of Madness",
+    "Darkness", "Darkvision", "Detect Thoughts", "Enhance Ability", "Enlarge/Reduce", "Enthrall", "Find Traps", "Find Steed", "Flame Blade", 
+    "Flaming Sphere", "Flock Of Familiars", "Fortune's Favor", "Gentle Repose", "Gust of Wind", "Heat Metal", "Hold Person", "Gift Of Gab",
+    "Healing Spirit", "Icingdeath's Frost"
   },
   LevelThree = {
   },
