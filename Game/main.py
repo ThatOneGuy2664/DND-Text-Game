@@ -53,6 +53,7 @@ for stat, score in player_ability_scores.items():
 PlayerClass = None 
 PlayerRace = None 
 PlayerLevel = 1 
+SneakAttack = False
 Races = [ "Human", "Dragonborn", "Dwarf", "Elf", "Gnome", "Half-Elf", "Halfing", "Half-Orc", "Tiefling" ] 
 Classes = [ "Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard", "Artificer", "Bloodhunter" ]
 Spells = {
@@ -73,3 +74,6 @@ Spells = {
     "LevelEight": [],
     "LevelNine": []
 }
+
+if PlayerClass == "Rogue": 
+    SneakAttack = True
