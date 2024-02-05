@@ -76,3 +76,29 @@ for stat, score in pairs(player_ability_scores) do
     print(stat .. ": " .. score)
 end
 
+local Spells = {
+  Cantrips = {
+    "Acid Splash", "Blade Ward", "Booming Blade",
+    "Chill Touch", "Control Flames"
+    -- Too many more
+  },
+  LevelOne = {
+    "Absorb Elements", "Acid Stream"
+  },
+  LevelTwo = {
+  },
+  LevelThree = {
+  },
+  LevelFour = {
+  },
+  LevelFive = {
+  },
+  LevelSix = {
+  },
+  LevelSeven = {
+  },
+  LevelEight = {
+  },
+  LevelNine = {
+  }
+}
