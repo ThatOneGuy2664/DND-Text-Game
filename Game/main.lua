@@ -37,3 +37,42 @@ local Classes = {
   "Fighter", "Monk", "Paladin", "Ranger", "Rogue",
   "Sorcerer", "Warlock", "Wizard", "Artificer", "Bloodhunter"
 }
+
+-- Roll 4d6 and drop the lowest value
+function roll_ability_score()
+    local rolls = {}
+    for i = 1, 4 do
+        table.insert(rolls, math.random(1, 6))
+    end
+    table.sort(rolls)
+    table.remove(rolls, 1)
+    local total = 0
+    for _, roll in ipairs(rolls) do
+        total = total + roll
+    end
+    return total
+end
+
+-- Generate ability scores for all stats
+function generate_ability_scores()
+    local ability_scores = {}
+    local stats = {'Strength', 'Dexterity', 'Constitution', 'Intelligence', 'Wisdom', 'Charisma'}
+    for _, stat in ipairs(stats) do
+        ability_scores[stat] = roll_ability_score()
+    end
+    return ability_scores
+end
+
+-- Wait for (seconds) and resume
+function wait(seconds)
+    os.execute("sleep " .. seconds)
+end
+
+-- Generate ability scores
+player_ability_scores = generate_ability_scores()
+
+-- Print each ability score with its corresponding label
+for stat, score in pairs(player_ability_scores) do
+    print(stat .. ": " .. score)
+end
+
