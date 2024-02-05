@@ -55,3 +55,21 @@ PlayerRace = None
 PlayerLevel = 1 
 Races = [ "Human", "Dragonborn", "Dwarf", "Elf", "Gnome", "Half-Elf", "Halfing", "Half-Orc", "Tiefling" ] 
 Classes = [ "Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard", "Artificer", "Bloodhunter" ]
+Spells = {
+    "Cantrips": [
+        "Acid Splash", "Blade Ward", "Booming Blade",
+        "Chill Touch", "Control Flames"
+        # Too many more
+    ],
+    "LevelOne": [
+        "Absorb Elements", "Acid Stream"
+    ],
+    "LevelTwo": [],
+    "LevelThree": [],
+    "LevelFour": [],
+    "LevelFive": [],
+    "LevelSix": [],
+    "LevelSeven": [],
+    "LevelEight": [],
+    "LevelNine": []
+}
