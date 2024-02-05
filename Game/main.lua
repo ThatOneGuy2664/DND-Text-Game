@@ -80,7 +80,8 @@ end
 local Spells = {
   Cantrips = {
     "Acid Splash", "Blade Ward", "Booming Blade",
-    "Chill Touch", "Control Flames"
+    "Chill Touch", "Control Flames", "Create Bonfire",
+    "Dancing Lights"
     -- Too many more
   },
   LevelOne = {
