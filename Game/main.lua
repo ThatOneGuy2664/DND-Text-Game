@@ -37,6 +37,7 @@ local Classes = {
   "Fighter", "Monk", "Paladin", "Ranger", "Rogue",
   "Sorcerer", "Warlock", "Wizard", "Artificer", "Bloodhunter"
 }
+local SneakAttack = false
 
 -- Roll 4d6 and drop the lowest value
 function roll_ability_score()
@@ -102,3 +103,7 @@ local Spells = {
   LevelNine = {
   }
 }
+
+if PlayerClass == Rogue then
+  SneakAttack == true
+end
