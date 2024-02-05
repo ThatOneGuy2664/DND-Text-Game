@@ -87,7 +87,8 @@ local Spells = {
     -- Too many more
   },
   LevelOne = {
-    "Absorb Elements", "Acid Stream"
+    "Absorb Elements", "Acid Stream", "Alarm", "Animal Friendship",
+    "Arcane Weapon"
   },
   LevelTwo = {
   },
