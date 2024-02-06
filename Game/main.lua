@@ -88,6 +88,7 @@ for stat, score in pairs(player_ability_scores) do
     print(stat .. ": " .. score)
 end
 
+-- http://dnd5e.wikidot.com/spells for spell list
 local Spells = {
   Cantrips = {
     "Acid Splash", "Blade Ward", "Booming Blade",
