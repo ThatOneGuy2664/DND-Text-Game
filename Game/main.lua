@@ -38,6 +38,7 @@ local Classes = {
   "Sorcerer", "Warlock", "Wizard", "Artificer", "Bloodhunter"
 }
 local SneakAttack = false
+local CunningAction = false
 
 -- Roll 4d6 and drop the lowest value
 function roll_ability_score()
