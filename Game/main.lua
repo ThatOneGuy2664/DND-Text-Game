@@ -236,8 +236,22 @@ function rollDice(num_dice, num_sides)
 end -- Example: (variable) = rollDice(2, 10) rolls 2 10 sided dice.
 
 function AcidSplash()
-if PlayerCanCastSpells == true then
-        -- Function
+ if PlayerCanCastSpells == true then
+        local acidDamage = rollDice(1, 6)
+        if PlayerLevel >= 5 then
+            acidDamage = acidDamage + rollDice(1, 6)
+        end
+        if PlayerLevel >= 11 then
+            acidDamage = acidDamage + rollDice(1, 6)
+        end
+        if PlayerLevel >= 17 then
+            acidDamage = acidDamage + rollDice(1, 6)
+        end
+        if EnemyResistance == "acid" then
+            acidDamage = acidDamage / 2
+        end
+        return acidDamage
+ end
 end
 
 if PlayerClass == "Rogue" then
