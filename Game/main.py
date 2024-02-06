@@ -26,6 +26,10 @@
 import random
 import time
 
+def round_number(number):
+    return round(number) 
+
+
 def roll_ability_score():
     # Roll 4d6 and drop the lowest value
     rolls = [random.randint(1, 6) for _ in range(4)]
