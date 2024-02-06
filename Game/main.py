@@ -39,7 +39,7 @@ def get_choice(options):
         try:
             choice = int(input("Enter your choice: "))  # Read input from the console
             if 1 <= choice <= len(options):  # Check if choice is within the range of valid indices
-                return choice
+                return choice # returns numerical value of chosen option, starting with 1
             else:
                 print("\nInvalid choice. Please enter a number within the range of options.\n")
         except ValueError:
