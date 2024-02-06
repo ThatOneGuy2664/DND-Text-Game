@@ -55,6 +55,7 @@ PlayerClass = None
 PlayerRace = None 
 PlayerLevel = 1 
 SneakAttack = False
+CunningAction = False
 Races = [ "Human", "Dragonborn", "Dwarf", "Elf", "Gnome", "Half-Elf", "Halfing", "Half-Orc", "Tiefling" ] 
 Classes = [ "Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard", "Artificer", "Bloodhunter" ]
 Spells = {
