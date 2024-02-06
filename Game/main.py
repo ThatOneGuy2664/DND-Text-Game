@@ -50,7 +50,7 @@ def wait(seconds):
 
 # Generate ability scores
 player_ability_scores = generate_ability_scores()
-
+print("Your Stats:")
 # Print each ability score with its corresponding label
 for stat, score in player_ability_scores.items():
     print(f"{stat}: {score}")
