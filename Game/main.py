@@ -86,6 +86,7 @@ for stat, score in player_ability_scores.items():
 
 PlayerClass = None 
 PlayerRace = None 
+PlayerRessistances = None
 PlayerLevel = 1
 PlayerHasAction = True
 PlayerHasBonusAction = True
