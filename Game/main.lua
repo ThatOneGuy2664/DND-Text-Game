@@ -208,17 +208,17 @@ WizardSpells = {
   Spells["Cantrips"][46]
 }
 
--- Select Race
+-- Select Race (numerical value, see Races)
+wait(1)
+print("Select Your Race:")
 wait(1)
 PlayerRace = getChoice(Races)
-wait(1)
-print("You Selected: " .. PlayerRace)
 
--- Select Class
+-- Select Class (numerical value, see Classes)
+wait(1)
+print("Select Your Class:")
 wait(1)
 PlayerClass = getChoice(Classes)
-wait(1)
-print("You Selected: " .. PlayerClass)
 
 function rollDice(num_dice, num_sides)
   local rolls = {}
