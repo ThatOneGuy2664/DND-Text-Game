@@ -174,38 +174,40 @@ local Spells = {
 -- Define the WizardSpells table
 WizardSpells = {
   -- Cantrips
-  Spells["Cantrips"][1], -- First Cantrip
-  Spells["Cantrips"][2],
-  Spells["Cantrips"][3],
-  Spells["Cantrips"][4],
-  Spells["Cantrips"][5],
-  Spells["Cantrips"][6],
-  Spells["Cantrips"][7],
-  Spells["Cantrips"][11], -- jump to Encode Thoughts
-  Spells["Cantrips"][12],
-  Spells["Cantrips"][13],
-  Spells["Cantrips"][14],
-  Spells["Cantrips"][15],
-  Spells["Cantrips"][17], -- jump to Gust
-  Spells["Cantrips"][19], -- jump to Infestation
-  Spells["Cantrips"][20],
-  Spells["Cantrips"][21],
-  Spells["Cantrips"][22],
-  Spells["Cantrips"][24], -- jump to Mending
-  Spells["Cantrips"][25],
-  Spells["Cantrips"][26],
-  Spells["Cantrips"][27],
-  Spells["Cantrips"][28],
-  Spells["Cantrips"][29],
-  Spells["Cantrips"][30],
-  Spells["Cantrips"][33],
-  Spells["Cantrips"][36],
-  Spells["Cantrips"][37],
-  Spells["Cantrips"][40], -- jump to Shocking Grasp
-  Spells["Cantrips"][41],
-  Spells["Cantrips"][44], -- jump to Thunderclap
-  Spells["Cantrips"][45],
-  Spells["Cantrips"][46]
+ Cantrips = {
+        Spells["Cantrips"][1], -- First Cantrip
+        Spells["Cantrips"][2],
+        Spells["Cantrips"][3],
+        Spells["Cantrips"][4],
+        Spells["Cantrips"][5],
+        Spells["Cantrips"][6],
+        Spells["Cantrips"][7],
+        Spells["Cantrips"][11], -- jump to Encode Thoughts
+        Spells["Cantrips"][12],
+        Spells["Cantrips"][13],
+        Spells["Cantrips"][14],
+        Spells["Cantrips"][15],
+        Spells["Cantrips"][17], -- jump to Gust
+        Spells["Cantrips"][19], -- jump to Infestation
+        Spells["Cantrips"][20],
+        Spells["Cantrips"][21],
+        Spells["Cantrips"][22],
+        Spells["Cantrips"][24], -- jump to Mending
+        Spells["Cantrips"][25],
+        Spells["Cantrips"][26],
+        Spells["Cantrips"][27],
+        Spells["Cantrips"][28],
+        Spells["Cantrips"][29],
+        Spells["Cantrips"][30],
+        Spells["Cantrips"][33],
+        Spells["Cantrips"][36],
+        Spells["Cantrips"][37],
+        Spells["Cantrips"][40], -- jump to Shocking Grasp
+        Spells["Cantrips"][41],
+        Spells["Cantrips"][44], -- jump to Thunderclap
+        Spells["Cantrips"][45],
+        Spells["Cantrips"][46]
+    }
 }
 
 -- Select Race (numerical value, see Races)
