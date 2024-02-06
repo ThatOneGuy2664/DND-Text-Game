@@ -64,6 +64,7 @@ function roll_ability_score()
     return total
 end
 
+print("Your Stats:")
 -- Generate ability scores for all stats
 function generate_ability_scores()
     local ability_scores = {}
