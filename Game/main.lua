@@ -50,6 +50,7 @@ end
 
 local PlayerClass = nil
 local PlayerRace = nil
+local EnemyResistance = {""}
 local PlayerLevel = 1
 local Races = {
   "Human", "Dragonborn", "Dwarf",
@@ -206,6 +207,18 @@ WizardSpells = {
   Spells["Cantrips"][45],
   Spells["Cantrips"][46]
 }
+
+-- Select Race
+wait(1)
+PlayerRace = getChoice(Races)
+wait(1)
+print("You Selected: " .. PlayerRace)
+
+-- Select Class
+wait(1)
+PlayerClass = getChoice(Classes)
+wait(1)
+print("You Selected: " .. PlayerClass)
 
 function rollDice(num_dice, num_sides)
   local rolls = {}
