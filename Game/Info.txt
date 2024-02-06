@@ -2,3 +2,4 @@ There are 2 files here. main.py/lua
 respectively. These 2 files simply use
 diffrent languages, the code is the same
 in terms of use, licensing, and goal.
+the .lua is meant to be played in console while .py is meant for actual apk development.
