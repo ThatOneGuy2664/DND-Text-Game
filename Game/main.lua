@@ -171,6 +171,14 @@ WizardSpells = {
   Spells["Cantrips"][45],
   Spells["Cantrips"][46]
 }
+function rollDice(num_dice, num_sides)
+  local rolls = {}
+  for i = 1, num_dice do
+    table.insert(rolls, math.random(num_sides))
+  end
+  return rolls
+end -- (variable) = rollDice(2, 10) rolls 2 10 sided dice.
+
 
 if PlayerClass == "Rogue" then
   SneakAttack = true
