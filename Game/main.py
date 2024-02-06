@@ -114,7 +114,9 @@ Spells = {
        "Stinking Cloud", "Summon Fey", "Summon Lesser Demons", "Summon Shadowspawn", "Summon Undead", "Summon Warrior Spirit", "Thunder Step", "Tidal Wave", "Tiny Servant", "Tongues",
        "Vampiric Touch", "Wall Of Sand", "Wall Of Water", "Water Breathing", "Water Walk", "Wind Wall"
     ],
-    "LevelFour": [],
+    "LevelFour": [
+       "Arcane Eye", "Aura Of Life", "Aura Of Purity", "Banishment"
+    ],
     "LevelFive": [],
     "LevelSix": [],
     "LevelSeven": [],
