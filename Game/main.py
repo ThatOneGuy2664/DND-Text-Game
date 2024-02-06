@@ -26,7 +26,6 @@
 # Imports
 import random
 import time
-import os
 
 # Functions
 
