@@ -26,16 +26,24 @@
 # Imports
 import random
 import time
+import os
 
 # Functions
 
 # Function to get player choice
 def get_choice(options):
-    print("Choose an option:")
-    for i, option in enumerate(options, start=1):
-        print(f"{i}. {option}")
-    choice = int(input("Enter your choice: "))  # Read input from the console
-    return choice
+    while True:
+        print("Choose an option:")
+        for i, option in enumerate(options, start=1):
+            print(f"{i}. {option}")
+        try:
+            choice = int(input("Enter your choice: "))  # Read input from the console
+            if 1 <= choice <= len(options):  # Check if choice is within the range of valid indices
+                return choice
+            else:
+                print("\nInvalid choice. Please enter a number within the range of options.\n")
+        except ValueError:
+            print("\nInvalid input. Please enter a valid number.\n")
 # Example usage:
 # options = ["Option 1", "Option 2", "Option 3"]
 # player_choice = get_choice(options)
@@ -43,7 +51,6 @@ def get_choice(options):
 
 def round_number(number):
     return round(number) 
-
 
 def roll_ability_score():
     # Roll 4d6 and drop the lowest value
@@ -79,7 +86,11 @@ for stat, score in player_ability_scores.items():
 
 PlayerClass = None 
 PlayerRace = None 
-PlayerLevel = 1 
+PlayerLevel = 1
+PlayerHasAction = True
+PlayerHasBonusAction = True
+PlayerHasReaction = True
+EnemyResistance = [ "" ]
 SneakAttack = False
 CunningAction = False
 Races = [ "Human", "Dragonborn", "Dwarf", "Elf", "Gnome", "Half-Elf", "Halfing", "Half-Orc", "Tiefling" ] 
@@ -181,6 +192,32 @@ WizardSpells = [
     Spells["Cantrips"][44],
     Spells["Cantrips"][45]
 ]
+
+# sepect race
+get_choice(Races)
+
+def acidSplash():
+	if (range <= 60):
+		description = "You hurl a bubble of acid. Choose one creature you can see within range, or choose two creatures you can see within range that are within 5 feet of each other. A target must succeed on a Dexterity saving throw or take 1d6 acid damage."
+		duration = 0 # instant
+		
+		# action
+		damage = rollDice(1, 6)
+		if (PlayerLevel >= 5):
+			damage += rollDice(1, 6)
+		if (PlayerLevel >= 11):
+			damage += rollDice(1, 6)
+		if (PlayerLevel >=17):
+			damage += rollDice(1, 6)
+		# determine resistance
+		if (EnemyResistance == "acid"):
+			damage = damage / 2
+	
+		# end turn
+		PlayerHasAction = False
+		return damage
+	# out of range
+	print("Enemy out of range")
 
 if PlayerClass == "Rogue": 
     SneakAttack = True
