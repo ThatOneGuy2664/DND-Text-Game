@@ -24,6 +24,15 @@
 -- LUA allows for quicker updates, it will likely be done first.
 -- must be played in console.
 
+function round(number) 
+  local decimal = number - math.floor(number) 
+  if decimal < 0.5 then 
+    return math.floor(number) 
+  else 
+    return math.ceil(number) 
+  end 
+end
+
 local PlayerClass = nil
 local PlayerRace = nil
 local PlayerLevel = 1
