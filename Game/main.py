@@ -160,7 +160,7 @@ Spells = {
 }
 WizardSpells = [
     # Cantrips
-        WizardCantrips = [
+	"WizardCantrips": [
 	Spells["Cantrips"][0], # First Cantrip  
 	Spells["Cantrips"][1],
         Spells["Cantrips"][2],
