@@ -158,7 +158,7 @@ Spells = {
     "LevelEight": [],
     "LevelNine": []
 }
-WizardSpells = [
+WizardSpells = {
     # Cantrips
 	"WizardCantrips": [
 	Spells["Cantrips"][0], # First Cantrip  
@@ -194,7 +194,7 @@ WizardSpells = [
         Spells["Cantrips"][44],
         Spells["Cantrips"][45]
 ]
-]
+}
 
 # select race
 get_choice(Races)
