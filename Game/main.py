@@ -28,6 +28,19 @@ import random
 import time
 
 # Functions
+
+# Function to get player choice
+def get_choice(options):
+    print("Choose an option:")
+    for i, option in enumerate(options, start=1):
+        print(f"{i}. {option}")
+    choice = int(input("Enter your choice: "))  # Read input from the console
+    return choice
+# Example usage:
+# options = ["Option 1", "Option 2", "Option 3"]
+# player_choice = get_choice(options)
+# print(f"Player chose option {player_choice}")
+
 def round_number(number):
     return round(number) 
 
