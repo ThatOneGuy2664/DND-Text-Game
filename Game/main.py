@@ -23,9 +23,11 @@
 # END LICENSE DESCRIPTION
 # Python will have less updates but more eventual functionality. 
 
+# Imports
 import random
 import time
 
+# Functions
 def round_number(number):
     return round(number) 
 
@@ -48,6 +50,13 @@ def wait(seconds):
     # Wait for (seconds) and resume
     time.sleep(seconds)
 
+def rollDice(num_dice, num_sides):
+    rolls = []
+    for i in range(num_dice):
+        rolls.append(random.randint(1, num_sides))
+    return rolls # Example: (variable) = rollDice(2, 10) rolls 2 10 sided dice.
+
+# Variables
 # Generate ability scores
 player_ability_scores = generate_ability_scores()
 print("Your Stats:")
@@ -158,12 +167,6 @@ WizardSpells = [
     Spells["Cantrips"][44],
     Spells["Cantrips"][45]
 ]
-
-def rollDice(num_dice, num_sides):
-    rolls = []
-    for i in range(num_dice):
-        rolls.append(random.randint(1, num_sides))
-    return rolls # Example: (variable) = rollDice(2, 10) rolls 2 10 sided dice.
 
 if PlayerClass == "Rogue": 
     SneakAttack = True
