@@ -60,10 +60,16 @@ Races = [ "Human", "Dragonborn", "Dwarf", "Elf", "Gnome", "Half-Elf", "Halfing",
 Classes = [ "Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard", "Artificer", "Bloodhunter" ]
 Spells = {
     "Cantrips": [
-        "Acid Splash", "Blade Ward", "Booming Blade",
-        "Chill Touch", "Control Flames", "Create Bonfire", 
-        "Dancing Lights"
-        # Too many more
+       "Acid Splash", "Blade Ward", "Booming Blade",
+       "Chill Touch", "Control Flames", "Create Bonfire",
+       "Dancing Lights", "Decompose", "Druidcraft", "Eldritch Blast",
+       "Encode Thoughts", "Fire Bolt", "Friends", "Frostbite", "Green-Flame Blade",
+       "Guidance", "Gust", "Hand Of Radiance", "Infestation", "Light", "Lightning Lure",
+       "Mage Hand", "Magic Stone", "Mending", "Message", "Mind Sliver", "Minor Illusion",
+       "Mold Earth", "Poision Spray", "Prestidigitation", "Primal Savagery", "Produce Flame",
+       "Ray Of Frost", "Resistance", "Sacred Flame", "Sapping Sting", "Shape Water", "Shillelagh",
+       "Spare The Dying", "Shocking Grasp", "Sword Burst", "Thaumaturgy", "Thorn Whip", "Thunderclap",
+       "Toll Of The Dead", "True Strike", "Vicious Mockery", "Virtue", "Word Of Radiance"
     ],
     "LevelOne": [
         "Absorb Elements", "Acid Stream", "Alarm", "Animal Friendship",
