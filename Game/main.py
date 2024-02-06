@@ -193,7 +193,7 @@ WizardSpells = [
     Spells["Cantrips"][45]
 ]
 
-# sepect race
+# select race
 get_choice(Races)
 
 def acidSplash():
