@@ -48,7 +48,7 @@ function round(number)
   end 
 end
 
-local PlayerCanCastSpells = true
+local PlayerCanCastSpells = false
 local SpellcastingAbility = nil
 local PlayerClass = nil
 local PlayerRace = nil
