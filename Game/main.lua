@@ -48,6 +48,8 @@ function round(number)
   end 
 end
 
+local PlayerCanCastSpells = true
+local SpellcastingAbility = nil
 local PlayerClass = nil
 local PlayerRace = nil
 local PlayerHasAction = true
@@ -232,6 +234,11 @@ function rollDice(num_dice, num_sides)
   end
   return rolls
 end -- Example: (variable) = rollDice(2, 10) rolls 2 10 sided dice.
+
+function AcidSplash()
+if PlayerCanCastSpells == true then
+        -- Function
+end
 
 if PlayerClass == "Rogue" then
   SneakAttack = true
