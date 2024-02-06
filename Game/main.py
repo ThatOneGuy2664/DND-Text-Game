@@ -108,6 +108,41 @@ Spells = {
     "LevelEight": [],
     "LevelNine": []
 }
+WizardSpells = [
+    # Cantrips
+    Spells["Cantrips"][0] # First Cantrip
+    Spells["Cantrips"][1]
+    Spells["Cantrips"][2]
+    Spells["Cantrips"][3]
+    Spells["Cantrips"][4]
+    Spells["Cantrips"][5]
+    Spells["Cantrips"][6]
+    Spells["Cantrips"][10] # jump to Encode Thoughts
+    Spells["Cantrips"][11]
+    Spells["Cantrips"][12]
+    Spells["Cantrips"][13]
+    Spells["Cantrips"][14]
+    Spells["Cantrips"][16] # jump to Gust
+    Spells["Cantrips"][18] # jump to Infestation
+    Spells["Cantrips"][19]
+    Spells["Cantrips"][20]
+    Spells["Cantrips"][21]
+    Spells["Cantrips"][23] # jump to Mending
+    Spells["Cantrips"][24]
+    Spells["Cantrips"][25]
+    Spells["Cantrips"][26]
+    Spells["Cantrips"][27]
+    Spells["Cantrips"][28]
+    Spells["Cantrips"][29]
+    Spells["Cantrips"][32]
+    Spells["Cantrips"][35]
+    Spells["Cantrips"][36]
+    Spells["Cantrips"][39] # jump to Shocking Grasp
+    Spells["Cantrips"][40]
+    Spells["Cantrips"][43] # jump to Thunderclap
+    Spells["Cantrips"][44]
+    Spells["Cantrips"][45]
+]
 
 if PlayerClass == "Rogue": 
     SneakAttack = True
