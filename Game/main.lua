@@ -24,6 +24,21 @@
 -- LUA allows for quicker updates, it will likely be done first.
 -- must be played in console.
 
+-- Function to get player choice
+function getChoice(options)
+    print("Choose an option:")
+    for i, option in ipairs(options) do
+        print(i .. ". " .. option)
+    end
+    local choice = io.read("*n")  -- Read a number from the console
+    return choice
+end
+-- Example usage:
+-- local options = {"Option 1", "Option 2", "Option 3"}
+-- local playerChoice = nil (until) getChoice(options)
+-- print("Player chose option " .. playerChoice)
+
+
 function round(number) 
   local decimal = number - math.floor(number) 
   if decimal < 0.5 then 
