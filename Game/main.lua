@@ -50,6 +50,9 @@ end
 
 local PlayerClass = nil
 local PlayerRace = nil
+local PlayerHasAction = true
+local PlayerHasBonusAction = true
+local PlayerHasReaction = true
 local EnemyResistance = {""}
 local PlayerLevel = 1
 local Races = {
