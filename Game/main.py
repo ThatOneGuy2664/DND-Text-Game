@@ -99,16 +99,16 @@ PlayerHasBonusAction = True # bonus action
 PlayerHasReaction = True # per round reaction
 PlayerHasBreathWeapon = False # if PlayerRace is Dragonborn then player has a breath weapon attack
 # end player variables
-bonuslang = None
+bonuslang = None # only relevant for Human race's extra language of choice
 EnemyResistance = [ "" ] # resistance of current enemy(s)
 rangeToEnemy = None # in feet
 allLangs = ["Common", "Dwarvish", "Elvish", "Giant", "Gnomish", "Goblin", "Halfling", "Orc", "Abyssal", "Celestial", "Draconic", "Deep Speech", "Infernal", "Primordial", "Sylvan", "Undercommon", "Thieves Cant", "Drudic"]
 SneakAttack = False # start Rogue only
-CunningAction = False
-UncannyDodge = False
-Evasion = False
-ReliableTalent = False
-Elusive = False
+CunningAction = False # Rogue only
+UncannyDodge = False # Rogue only
+Evasion = False # Rogue only
+ReliableTalent = False # Rogue only
+Elusive = False # Rogue only
 StrokeOfLuck = 0 # end Rogue only. StrokeOfLuck is numerical value for uses per rest
 Blindsight = 0 # in feet
 Darkvision = 0 # in feet
@@ -428,11 +428,11 @@ def read_or_write():
         case 2:
             load_character()
 
-# main code
+# actual game code
 print("**** Welcome to DND-Text-Game! ****")
 
 # start function calls
 # create new character or load existing
 read_or_write()
 
-# start adventure
+# randomized adventure code
