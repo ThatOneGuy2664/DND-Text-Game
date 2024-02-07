@@ -224,7 +224,7 @@ print("You chose " + PlayerRace + " as your race.")
 
 wait(1)
 
-class_choice = getChoice(Classes)
+class_choice = get_choice(Classes)
 # Classes = [ "Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard", "Artificer", "Bloodhunter" ]
 match class_choice:
     case 1:
@@ -248,7 +248,7 @@ match class_choice:
     case 10:
 	PlayerClass = "Sorcerer"
     case 11:
-	PlayerClass = "Warlock"
+        PlayerClass = "Warlock"
     case 12:
 	PlayerClass = "Wizard"
     case 13:
