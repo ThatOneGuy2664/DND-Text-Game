@@ -219,7 +219,44 @@ match race_choice:
         PlayerRace = "Half-Orc"
     case 9:
         PlayerRace = "Tiefling"
+wait(1)
 print("You chose " + PlayerRace + " as your race.")
+
+wait(1)
+
+class_choice = getChoice(Classes)
+# Classes = [ "Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard", "Artificer", "Bloodhunter" ]
+match class_choice:
+    case 1:
+        PlayerClass = "Barbarian"
+    case 2:
+        PlayerClass = "Bard"
+    case 3:
+        PlayerClass = "Cleric"
+    case 4:
+        PlayerClass = "Druid"
+    case 5:
+        PlayerClass = "Fighter"
+    case 6:
+        PlayerClass = "Monk"
+    case 7:
+        PlayerClass = "Paladin"
+    case 8:
+        PlayerClass = "Ranger"
+    case 9:
+        PlayerClass = "Rogue"
+    case 10:
+	PlayerClass = "Sorcerer"
+    case 11:
+	PlayerClass = "Warlock"
+    case 12:
+	PlayerClass = "Wizard"
+    case 13:
+	PlayerClass = "Artificer"
+    case 14:
+	PlayerClass = "Bloodhunter"
+wait(1)
+print("You chose " + PlayerClass + " as your race.")
 
 def acidSplash():
 	if (rangeToEnemy <= 60):
