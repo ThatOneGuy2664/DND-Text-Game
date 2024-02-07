@@ -327,23 +327,27 @@ def create_character():
 	    print("\nCharacter creation complete!\n")
 	    # next function
 	else:
-	    wait(1)
-	    print("Starting over...\n")
-	    wait(1)
-	    # Generate ability scores
+            wait(1)
+            print("Starting over...\n")
+            wait(1)
+
+            # Generate ability scores
             player_ability_scores = generate_ability_scores()
             print("Your Stats:")
             # Print each ability score with its corresponding label
             for stat, score in player_ability_scores.items():
                 print(f"{stat}: {score}")
-	    PlayerStrength = player_ability_scores['Strength'] # STR stat number
-            PlayerDexterity = player_ability_scores['Dexterity'] # DEX stat number
-            PlayerConstitution = player_ability_scores["Constitution"] # CON stat number
-            PlayerIntelligence = player_ability_scores['Intelligence'] # INT stat number
-            PlayerWisdom = player_ability_scores['Wisdom'] # WIS stat number
-            PlayerCharisma = player_ability_scores['Charisma'] # CHA stat number
-            wait(1)
-	    create_character()
+
+            # Assign ability scores to variables
+            PlayerStrength = player_ability_scores['Strength']
+            PlayerDexterity = player_ability_scores['Dexterity']
+            PlayerConstitution = player_ability_scores['Constitution']
+            PlayerIntelligence = player_ability_scores['Intelligence']
+            PlayerWisdom = player_ability_scores['Wisdom']
+            PlayerCharisma = player_ability_scores['Charisma']
+
+            # Call create_character() again
+            create_character()
 
 # create character
 create_character()
