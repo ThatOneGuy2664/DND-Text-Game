@@ -51,14 +51,14 @@ def get_choice(options):
 # round function
 def round_number(number):
     return round(number)
-
+ 
 # roll stats function
 def roll_ability_score():
     # Roll 4d6 and drop the lowest value
     rolls = [random.randint(1, 6) for _ in range(4)]
     rolls.remove(min(rolls))
     return sum(rolls)
-
+ 
 # Generate stats function using roll_ability_score()
 def generate_ability_scores():
     # Generate ability scores for all stats
@@ -67,19 +67,19 @@ def generate_ability_scores():
     for stat in stats:
         ability_scores[stat] = roll_ability_score()
     return ability_scores
-
+ 
 # pause for (seconds)
 def wait(seconds):
     # Wait for (seconds) and resume
     time.sleep(seconds)
-
+ 
 # rolls (number of dice, number of sides of dice)
 def rollDice(num_dice, num_sides):
     rolls = []
     for i in range(num_dice):
         rolls.append(random.randint(1, num_sides))
     return rolls # Example: (variable) = rollDice(2, 10) rolls 2 10 sided dice.
-
+ 
 # Variables
 # Generate ability scores
 player_ability_scores = generate_ability_scores()
