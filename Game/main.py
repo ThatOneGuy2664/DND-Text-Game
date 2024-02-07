@@ -246,7 +246,7 @@ def load_racial_feats():
 	    PlayerCharisma += 1 
 	    bonuslang = get_choice(allLangs) 
 	    # Implement get_choice() function 
-	    if bonuslang is not None and bonuslang not in PlayerLangs and PlayerRace == "Human": 
+	    if bonuslang is not None and bonuslang not in PlayerLangs: 
 		    # Avoid duplicate languages 
 		    PlayerLangs.append(bonuslang)
 
