@@ -244,22 +244,6 @@ def acid_splash(): # Acid Splash cantrip
     print("Enemy out of range...")
 
 # create character functions
-def load_racial_feats():
-    global PlayerStrength, PlayerDexterity, PlayerConstitution, PlayerIntelligence, PlayerWisdom, PlayerCharisma, PlayerLangs, PlayerHasBreathWeapon, PlayerRace
-    print(PlayerRace)
-    match PlayerRace:
-        case "Human":
-            PlayerStrength += 1 
-            PlayerDexterity += 1 
-            PlayerConstitution += 1 
-            PlayerIntelligence += 1 
-            PlayerWisdom += 1 
-            PlayerCharisma += 1 
-            bonuslang = get_choice(allLangs) 
-            if bonuslang is not None and bonuslang not in PlayerLangs: 
-                PlayerLangs.append(bonuslang)
-        case "Dragonborn":
-	        PlayerHasBreathWeapon = True
 
 def create_character():
     # Generate ability scores
