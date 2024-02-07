@@ -94,7 +94,7 @@ EnemyResistance = [ "" ]
 rangeToEnemy = None
 SneakAttack = False
 CunningAction = False
-Races = [ "Human", "Dragonborn", "Dwarf", "Elf", "Gnome", "Half-Elf", "Halfing", "Half-Orc", "Tiefling" ] 
+Races = [ "Human", "Dragonborn", "Dwarf", "Elf", "Gnome", "Half-Elf", "Halfling", "Half-Orc", "Tiefling" ] 
 Classes = [ "Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard", "Artificer", "Bloodhunter" ]
 # http://dnd5e.wikidot.com/spells for spell list
 Spells = {
@@ -197,7 +197,29 @@ WizardSpells = {
 }
 
 # select race
-get_choice(Races)
+race_choice = get_choice(Races)
+
+# print race option
+match race_choice:
+    case 1:
+        PlayerRace = "Human"
+    case 2:
+        PlayerRace = "Dragonborn"
+    case 3:
+        PlayerRace = "Dwarf"
+    case 4:
+        PlayerRace = "Elf"
+    case 5:
+        PlayerRace = "Gnome"
+    case 6:
+        PlayerRace = "Half-Elf"
+    case 7:
+        PlayerRace = "Halfling"
+    case 8:
+        PlayerRace = "Half-Orc"
+    case 9:
+        PlayerRace = "Tiefling"
+print("You chose " + PlayerRace + " as your race.")
 
 def acidSplash():
 	if (rangeToEnemy <= 60):
