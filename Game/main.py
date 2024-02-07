@@ -203,86 +203,102 @@ WizardSpells = {
 ]
 }
 
-# select race
-print("Pick A Race:")
-wait(1)
-race_choice = get_choice(Races) # show options
+# create character function
+def create_character():
 
-# race option picked to playerrace variable
-match race_choice:
-    case 1:
-        PlayerRace = "Human" # these assign the playerrace variable
-    case 2:
-        PlayerRace = "Dragonborn"
-    case 3:
-        PlayerRace = "Dwarf"
-    case 4:
-        PlayerRace = "Elf"
-    case 5:
-        PlayerRace = "Gnome"
-    case 6:
-        PlayerRace = "Half-Elf"
-    case 7:
-        PlayerRace = "Halfling"
-    case 8:
-        PlayerRace = "Half-Orc"
-    case 9:
-        PlayerRace = "Tiefling"
-wait(1)
-print("You chose " + PlayerRace + " as your race.")
+	# select race
+	print("Pick A Race:")
+	wait(1)
+	race_choice = get_choice(Races) # show options
+	
+	# race option picked to playerrace variable
+	match race_choice:
+	    case 1:
+	        PlayerRace = "Human" # these assign the playerrace variable
+	    case 2:
+	        PlayerRace = "Dragonborn"
+	    case 3:
+	        PlayerRace = "Dwarf"
+	    case 4:
+	        PlayerRace = "Elf"
+	    case 5:
+	        PlayerRace = "Gnome"
+	    case 6:
+	        PlayerRace = "Half-Elf"
+	    case 7:
+	        PlayerRace = "Halfling"
+	    case 8:
+	        PlayerRace = "Half-Orc"
+	    case 9:
+	        PlayerRace = "Tiefling"
+	wait(1)
+	print("You chose " + PlayerRace + " as your race.")
+	
+	# select class
+	wait(1)
+	print("Pick A Class:")
+	wait(1)
+	
+	class_choice = get_choice(Classes) # show options
+	# Classes are: [ "Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard", "Artificer", "Bloodhunter" ]
+	match class_choice:
+	    case 1:
+	        PlayerClass = "Barbarian" # these assign the playerclass variable
+	    case 2:
+	        PlayerClass = "Bard"
+	    case 3:
+	        PlayerClass = "Cleric"
+	    case 4:
+	        PlayerClass = "Druid"
+	    case 5:
+	        PlayerClass = "Fighter"
+	    case 6:
+	        PlayerClass = "Monk"
+	    case 7:
+	        PlayerClass = "Paladin"
+	    case 8:
+	        PlayerClass = "Ranger"
+	    case 9:
+	        PlayerClass = "Rogue"
+	    case 10:
+	        PlayerClass = "Sorcerer"
+	    case 11:
+	        PlayerClass = "Warlock"
+	    case 12:
+	        PlayerClass = "Wizard"
+	    case 13:
+	        PlayerClass = "Artificer"
+	    case 14:
+	        PlayerClass = "Bloodhunter"
+	wait(1)
+	print("You chose " + PlayerClass + " as your class.")
+	
+	wait(1)
+	
+	PlayerName = input("What would you like to name your character? ")
+	
+	wait(1)
+	print("Your character name is " + PlayerName + ".")
+	
+	wait(1)
+	print("\n**** CONFIRM YOUR CHARACTER\n")
+	print("Race: " + PlayerRace)
+	print("Class: " + PlayerClass)
+	print("Character Name: " + PlayerName)
+	ConfirmCharacter = input("Confirm this character? (y/n): ")
+	if (ConfirmCharacter.upper() == "Y"):
+	    # next function
+	    print("You chose YES")
+	else:
+	    print("You chose NO")
+	    create_character()
 
-# select class
-wait(1)
-print("Pick A Class:")
-wait(1)
+# begin main code
+# create character
+create_character()
 
-class_choice = get_choice(Classes) # show options
-# Classes are: [ "Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard", "Artificer", "Bloodhunter" ]
-match class_choice:
-    case 1:
-        PlayerClass = "Barbarian" # these assign the playerclass variable
-    case 2:
-        PlayerClass = "Bard"
-    case 3:
-        PlayerClass = "Cleric"
-    case 4:
-        PlayerClass = "Druid"
-    case 5:
-        PlayerClass = "Fighter"
-    case 6:
-        PlayerClass = "Monk"
-    case 7:
-        PlayerClass = "Paladin"
-    case 8:
-        PlayerClass = "Ranger"
-    case 9:
-        PlayerClass = "Rogue"
-    case 10:
-        PlayerClass = "Sorcerer"
-    case 11:
-        PlayerClass = "Warlock"
-    case 12:
-        PlayerClass = "Wizard"
-    case 13:
-        PlayerClass = "Artificer"
-    case 14:
-        PlayerClass = "Bloodhunter"
-wait(1)
-print("You chose " + PlayerClass + " as your class.")
+# start adventure
 
-wait(1)
-
-PlayerName = input("What would you like to name your character? ")
-
-wait(1)
-print("Your character name is " + PlayerName + ".")
-
-wait(1)
-print("\n**** CONFIRM YOUR CHARACTER\n")
-print("Race: " + PlayerRace)
-print("Class: " + PlayerClass)
-print("Character Name: " + PlayerName)
-ConfirmCharacter = input("Confirm this character? (y/n): ")
 
 def acidSplash(): # Acid Splash cantrip
 	if (rangeToEnemy <= 60): # in feet
