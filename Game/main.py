@@ -335,8 +335,21 @@ def create_character():
             PlayerIntelligence = player_ability_scores['Intelligence']
             PlayerWisdom = player_ability_scores['Wisdom']
             PlayerCharisma = player_ability_scores['Charisma']
-        
-            # next function to start game
+	    # racial features
+	    wait(1)
+            if PlayerRace == "Human": 
+		 # Corrected syntax 
+		 PlayerStrength += 1 
+		 PlayerDexterity += 1 
+		 PlayerConstitution += 1 
+		 PlayerIntelligence += 1 
+		 PlayerWisdom += 1 
+		 PlayerCharisma += 1 
+		 bonuslang = get_choice(allLangs) 
+		 # Implement get_choice() function 
+                 if bonuslang is not None and bonuslang not in PlayerLangs and PlayerRace == "Human": 
+			 # Avoid duplicate languages 
+			 PlayerLangs.append(bonuslang)
     else:
         wait(1)
         print("Starting over...\n")
@@ -414,20 +427,6 @@ print("**** Welcome to DND-Text-Game! ****")
 # start function calls
 # create new character or load existing
 read_or_write()
-
-# racial features
-if PlayerRace == "Human": 
-	# Corrected syntax 
-	PlayerStrength += 1 
-	PlayerDexterity += 1 
-	PlayerConstitution += 1 
-	PlayerIntelligence += 1 
-	PlayerWisdom += 1 
-	PlayerCharisma += 1 
-	bonuslang = get_choice(allLangs) 
-	# Implement get_choice() function 
-        if bonuslang not in PlayerLangs: # Avoid duplicate languages 
-		PlayerLangs.append(bonuslang)
 
 # class features
 # Rogue class features
