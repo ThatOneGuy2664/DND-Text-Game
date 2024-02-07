@@ -89,6 +89,12 @@ PlayerConstitution = None # soon-to-be CON stat number
 PlayerIntelligence = None # soon-to-be INT stat number
 PlayerWisdom = None # soon-to-be WIS stat number
 PlayerCharisma = None # soon-to-be CHA stat number
+PlayerStrengthModifier = None
+PlayerDexterityModifier = None
+PlayerConstitutionModifier = None
+PlayerIntelligenceModifier = None
+PlayerWisdomModifier = None
+PlayerCharismaModifier = None
 PlayerClass = None # soon-to-be player class
 PlayerRace = None # soon-to-be player race
 PlayerRessistances = None # any resistances the player has
@@ -375,6 +381,13 @@ def create_character():
         PlayerIntelligence = player_ability_scores['Intelligence']
         PlayerWisdom = player_ability_scores['Wisdom']
         PlayerCharisma = player_ability_scores['Charisma']
+	# Calculate ability score modifiers 
+        PlayerStrengthModifier = (PlayerStrength - 10) // 2
+        PlayerDexterityModifier = (PlayerDexterity - 10) // 2 
+        PlayerConstitutionModifier = (PlayerConstitution - 10) // 2 
+        PlayerIntelligenceModifier = (PlayerIntelligence - 10) // 2
+        PlayerWisdomModifier = (PlayerWisdom - 10) // 2 
+        PlayerCharismaModifier = (PlayerCharisma - 10) // 2
 
         # Call create_character() again to reset Player(variables)
         create_character()
