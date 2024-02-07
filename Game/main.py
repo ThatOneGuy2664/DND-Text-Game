@@ -83,12 +83,12 @@ print("Your Stats:")
 for stat, score in player_ability_scores.items():
     print(f"{stat}: {score}")
 	
-PlayerStrength = player_ability_scores['Strength'] # STR stat number
-PlayerDexterity = player_ability_scores['Dexterity'] # DEX stat number
-PlayerConstitution = player_ability_scores["Constitution"] # CON stat number
-PlayerIntelligence = player_ability_scores['Intelligence'] # INT stat number
-PlayerWisdom = player_ability_scores['Wisdom'] # WIS stat number
-PlayerCharisma = player_ability_scores['Charisma'] # CHA stat number
+PlayerStrength = None # STR stat number
+PlayerDexterity = None # DEX stat number
+PlayerConstitution = None # CON stat number
+PlayerIntelligence = None # INT stat number
+PlayerWisdom = None # WIS stat number
+PlayerCharisma = None # CHA stat number
 PlayerClass = None # Player class
 PlayerRace = None # Player race
 PlayerRessistances = None # any resistances the player has
@@ -312,12 +312,8 @@ def create_character():
 	
 	wait(1)
 	print("\n**** CHARACTER INFORMATION ****\n")
-	print("Strength: " + str(PlayerStrength))
-	print("Dexterity: " + str(PlayerDexterity))
-	print("Constitution: " + str(PlayerConstitution))
-	print("Intelligence: " + str(PlayerIntelligence))
-	print("Wisdom: " + str(PlayerWisdom))
-	print("Charisma: " + str(PlayerCharisma))
+	for stat, score in player_ability_scores.items():
+                print(f"{stat}: {score}")
 	print("\nRace: " + PlayerRace)
 	print("Class: " + PlayerClass)
 	print("Character Name: " + PlayerName)
@@ -325,6 +321,14 @@ def create_character():
 	if (ConfirmCharacter.upper() == "Y"):
 	    wait(1)
 	    print("\nCharacter creation complete!\n")
+	    # Assign ability scores to variables
+            PlayerStrength = player_ability_scores['Strength']
+            PlayerDexterity = player_ability_scores['Dexterity']
+            PlayerConstitution = player_ability_scores['Constitution']
+            PlayerIntelligence = player_ability_scores['Intelligence']
+            PlayerWisdom = player_ability_scores['Wisdom']
+            PlayerCharisma = player_ability_scores['Charisma']
+		
 	    # next function
 	else:
             wait(1)
@@ -337,7 +341,6 @@ def create_character():
             # Print each ability score with its corresponding label
             for stat, score in player_ability_scores.items():
                 print(f"{stat}: {score}")
-
             # Assign ability scores to variables
             PlayerStrength = player_ability_scores['Strength']
             PlayerDexterity = player_ability_scores['Dexterity']
