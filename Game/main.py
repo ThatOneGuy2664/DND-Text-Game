@@ -211,136 +211,117 @@ WizardSpells = {
 
 # spell functions
 def acidSplash(): # Acid Splash cantrip
-	if (rangeToEnemy <= 60): # in feet
-		description = "You hurl a bubble of acid. Choose one creature you can see within range, or choose two creatures you can see within range that are within 5 feet of each other. A target must succeed on a Dexterity saving throw or take 1d6 acid damage."
-		duration = 0 # instant
-		
-		# action
-		damage = rollDice(1, 6)
-		if (PlayerLevel >= 5):
-			damage += rollDice(1, 6)
-		if (PlayerLevel >= 11):
-			damage += rollDice(1, 6)
-		if (PlayerLevel >=17):
-			damage += rollDice(1, 6)
-		# determine resistance
-		if (EnemyResistance == "acid"):
-			damage = damage / 2
-	
-		# end turn
-		PlayerHasAction = False
-		return damage
-	# if out of range
-	print("Enemy out of range")
+    if (rangeToEnemy <= 60): # in feet
+        description = "You hurl a bubble of acid. Choose one creature you can see within range, or choose two creatures you can see within range that are within 5 feet of each other. A target must succeed on a Dexterity saving throw or take 1d6 acid damage."
+        duration = 0 # instant
+        
+        # action
+        damage = rollDice(1, 6)
+        if (PlayerLevel >= 5):
+            damage += rollDice(1, 6)
+        if (PlayerLevel >= 11):
+            damage += rollDice(1, 6)
+        if (PlayerLevel >=17):
+            damage += rollDice(1, 6)
+        # determine resistance
+        if (EnemyResistance == "acid"):
+            damage = damage / 2
+    
+        # end turn
+        PlayerHasAction = False
+        return damage
+    # if out of range
+    print("Enemy out of range")
 
 # create character function
 def create_character():
-
-	# select race
-	print("Pick A Race:")
-	wait(1)
-	race_choice = get_choice(Races) # show options
-	
-	# race option picked to playerrace variable
-	match race_choice:
-	    case 1:
-	        PlayerRace = "Human" # these assign the playerrace variable
-	    case 2:
-	        PlayerRace = "Dragonborn"
-	    case 3:
-	        PlayerRace = "Dwarf"
-	    case 4:
-	        PlayerRace = "Elf"
-	    case 5:
-	        PlayerRace = "Gnome"
-	    case 6:
-	        PlayerRace = "Half-Elf"
-	    case 7:
-	        PlayerRace = "Halfling"
-	    case 8:
-	        PlayerRace = "Half-Orc"
-	    case 9:
-	        PlayerRace = "Tiefling"
-	wait(1)
-	print("You chose " + PlayerRace + " as your race.")
-	
-	# select class
-	wait(1)
-	print("Pick A Class:")
-	wait(1)
-	
-	class_choice = get_choice(Classes) # show options
-	# Classes are: [ "Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard", "Artificer", "Bloodhunter" ]
-	match class_choice:
-	    case 1:
-	        PlayerClass = "Barbarian" # these assign the playerclass variable
-	    case 2:
-	        PlayerClass = "Bard"
-	    case 3:
-	        PlayerClass = "Cleric"
-	    case 4:
-	        PlayerClass = "Druid"
-	    case 5:
-	        PlayerClass = "Fighter"
-	    case 6:
-	        PlayerClass = "Monk"
-	    case 7:
-	        PlayerClass = "Paladin"
-	    case 8:
-	        PlayerClass = "Ranger"
-	    case 9:
-	        PlayerClass = "Rogue"
-	    case 10:
-	        PlayerClass = "Sorcerer"
-	    case 11:
-	        PlayerClass = "Warlock"
-	    case 12:
-	        PlayerClass = "Wizard"
-	    case 13:
-	        PlayerClass = "Artificer"
-	    case 14:
-	        PlayerClass = "Bloodhunter"
-	wait(1)
-	print("You chose " + PlayerClass + " as your class.")
-	
-	wait(1)
-	
-	PlayerName = input("What would you like to name your character? ")
-	
-	wait(1)
-	print("Your character name is " + PlayerName + ".")
-	
-	wait(1)
-	print("\n**** CHARACTER INFORMATION ****\n")
-	for stat, score in player_ability_scores.items():
-                print(f"{stat}: {score}")
-	print("\nRace: " + PlayerRace)
-	print("Class: " + PlayerClass)
-	print("Character Name: " + PlayerName)
-	ConfirmCharacter = input("Confirm this character? (y/n): ")
-	if (ConfirmCharacter.upper() == "Y"):
-	    wait(1)
-	    print("\nCharacter creation complete!\n")
-	    # Assign ability scores to variables
-            PlayerStrength = player_ability_scores['Strength']
-            PlayerDexterity = player_ability_scores['Dexterity']
-            PlayerConstitution = player_ability_scores['Constitution']
-            PlayerIntelligence = player_ability_scores['Intelligence']
-            PlayerWisdom = player_ability_scores['Wisdom']
-            PlayerCharisma = player_ability_scores['Charisma']
-		
-	    # next function
-	else:
+    global player_ability_scores  # Declare player_ability_scores as a global variable
+    
+    # select race
+    print("Pick A Race:")
+    wait(1)
+    race_choice = get_choice(Races) # show options
+    
+    # race option picked to playerrace variable
+    match race_choice:
+        case 1:
+            PlayerRace = "Human" # these assign the playerrace variable
+        case 2:
+            PlayerRace = "Dragonborn"
+        case 3:
+            PlayerRace = "Dwarf"
+        case 4:
+            PlayerRace = "Elf"
+        case 5:
+            PlayerRace = "Gnome"
+        case 6:
+            PlayerRace = "Half-Elf"
+        case 7:
+            PlayerRace = "Halfling"
+        case 8:
+            PlayerRace = "Half-Orc"
+        case 9:
+            PlayerRace = "Tiefling"
+    wait(1)
+    print("You chose " + PlayerRace + " as your race.")
+    
+    # select class
+    wait(1)
+    print("Pick A Class:")
+    wait(1)
+    
+    class_choice = get_choice(Classes) # show options
+    # Classes are: [ "Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard", "Artificer", "Bloodhunter" ]
+    match class_choice:
+        case 1:
+            PlayerClass = "Barbarian" # these assign the playerclass variable
+        case 2:
+            PlayerClass = "Bard"
+        case 3:
+            PlayerClass = "Cleric"
+        case 4:
+            PlayerClass = "Druid"
+        case 5:
+            PlayerClass = "Fighter"
+        case 6:
+            PlayerClass = "Monk"
+        case 7:
+            PlayerClass = "Paladin"
+        case 8:
+            PlayerClass = "Ranger"
+        case 9:
+            PlayerClass = "Rogue"
+        case 10:
+            PlayerClass = "Sorcerer"
+        case 11:
+            PlayerClass = "Warlock"
+        case 12:
+            PlayerClass = "Wizard"
+        case 13:
+            PlayerClass = "Artificer"
+        case 14:
+            PlayerClass = "Bloodhunter"
+    wait(1)
+    print("You chose " + PlayerClass + " as your class.")
+    
+    wait(1)
+    
+    PlayerName = input("What would you like to name your character? ")
+    
+    wait(1)
+    print("Your character name is " + PlayerName + ".")
+    
+    wait(1)
+    print("\n**** CHARACTER INFORMATION ****\n")
+    for stat, score in player_ability_scores.items():
+        print(f"{stat}: {score}")
+    print("\nRace: " + PlayerRace)
+    print("Class: " + PlayerClass)
+    print("Character Name: " + PlayerName)
+    ConfirmCharacter = input("Confirm this character? (y/n): ")
+    if (ConfirmCharacter.upper() == "Y"):
             wait(1)
-            print("Starting over...\n")
-            wait(1)
-
-            # Generate ability scores
-            player_ability_scores = generate_ability_scores()
-            print("Your Stats:")
-            # Print each ability score with its corresponding label
-            for stat, score in player_ability_scores.items():
-                print(f"{stat}: {score}")
+            print("\nCharacter creation complete!\n")
             # Assign ability scores to variables
             PlayerStrength = player_ability_scores['Strength']
             PlayerDexterity = player_ability_scores['Dexterity']
@@ -348,12 +329,69 @@ def create_character():
             PlayerIntelligence = player_ability_scores['Intelligence']
             PlayerWisdom = player_ability_scores['Wisdom']
             PlayerCharisma = player_ability_scores['Charisma']
+        
+        # next function
+    else:
+        wait(1)
+        print("Starting over...\n")
+        wait(1)
 
-            # Call create_character() again
-            create_character()
+        # Generate ability scores
+        player_ability_scores = generate_ability_scores()
+        print("Your Stats:")
+        # Print each ability score with its corresponding label
+        for stat, score in player_ability_scores.items():
+            print(f"{stat}: {score}")
+        # Assign ability scores to variables
+        PlayerStrength = player_ability_scores['Strength']
+        PlayerDexterity = player_ability_scores['Dexterity']
+        PlayerConstitution = player_ability_scores['Constitution']
+        PlayerIntelligence = player_ability_scores['Intelligence']
+        PlayerWisdom = player_ability_scores['Wisdom']
+        PlayerCharisma = player_ability_scores['Charisma']
+
+        # Call create_character() again
+        create_character()
 
 # create character
 create_character()
+
+# Rogue class features
+if PlayerClass == "Rogue": 
+    SneakAttack = True
+    SneakAttackDamage = roll_Dice(1, 6)
+if PlayerClass == "Rogue" and PlayerLevel >= 2:
+    CunningAction = True
+if PlayerClass == "Rogue" and PlayerLevel >= 3:
+    SneakAttackDamage += roll_Dice(1, 6)
+if PlayerClass == "Rogue" and PlayerLevel >= 5:
+    SneakAttackDamage += roll_Dice(1, 6)
+    UncannyDodge = True
+if PlayerClass == "Rogue" and PlayerLevel >= 7:
+    SneakAttackDamage += roll_Dice(1, 6)
+    Evasion = True
+if PlayerClass == "Rogue" and PlayerLevel >= 9:
+    SneakAttackDamage += roll_Dice(1, 6)
+if PlayerClass == "Rogue" and PlayerLevel >= 11:
+    SneakAttackDamage += roll_Dice(1, 6)
+    ReliableTalent = True
+if PlayerClass == "Rogue" and PlayerLevel >= 13:
+    SneakAttackDamage += roll_Dice(1, 6)
+if PlayerClass == "Rogue" and PlayerLevel >= 14:
+    Blindsight = 10 # feet
+if PlayerClass == "Rogue" and PlayerLevel >= 15:
+    SneakAttackDamage += roll_Dice(1, 6)
+if PlayerClass == "Rogue" and PlayerLevel >= 17:
+    SneakAttackDamage += roll_Dice(1, 6)
+if PlayerClass == "Rogue" and PlayerLevel >= 18:
+    Elusive = True
+if PlayerClass == "Rogue" and PlayerLevel >= 19:
+    SneakAttackDamage += roll_Dice(1, 6)
+if PlayerClass == "Rogue" and PlayerLevel >= 20:
+    StrokeOfLuck = 1 # Uses per rest
+# End Rogue class features
+
+# start adventure
 
 # Rogue class features
 if PlayerClass == "Rogue": 
