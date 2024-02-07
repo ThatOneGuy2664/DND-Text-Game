@@ -48,15 +48,18 @@ def get_choice(options):
 # player_choice = get_choice(options)
 # print(f"Player chose option {player_choice}")
 
+# round function
 def round_number(number):
     return round(number) 
 
+# roll stats function
 def roll_ability_score():
     # Roll 4d6 and drop the lowest value
     rolls = [random.randint(1, 6) for _ in range(4)]
     rolls.remove(min(rolls))
     return sum(rolls)
 
+# Generate stats function using roll_ability_score()
 def generate_ability_scores():
     # Generate ability scores for all stats
     ability_scores = {}
@@ -65,10 +68,12 @@ def generate_ability_scores():
         ability_scores[stat] = roll_ability_score()
     return ability_scores
 
+# pause for (seconds)
 def wait(seconds):
     # Wait for (seconds) and resume
     time.sleep(seconds)
 
+# rolls (number of dice, number of sides of dice)
 def rollDice(num_dice, num_sides):
     rolls = []
     for i in range(num_dice):
@@ -82,7 +87,8 @@ print("Your Stats:")
 # Print each ability score with its corresponding label
 for stat, score in player_ability_scores.items():
     print(f"{stat}: {score}")
-	
+
+# most variables
 PlayerStrength = None # STR stat number
 PlayerDexterity = None # DEX stat number
 PlayerConstitution = None # CON stat number
@@ -305,7 +311,6 @@ def create_character():
     print("You chose " + PlayerClass + " as your class.")
     
     wait(1)
-    
     PlayerName = input("What would you like to name your character? ")
     
     wait(1)
@@ -330,7 +335,7 @@ def create_character():
             PlayerWisdom = player_ability_scores['Wisdom']
             PlayerCharisma = player_ability_scores['Charisma']
         
-        # next function
+            # next function to start game
     else:
         wait(1)
         print("Starting over...\n")
@@ -350,48 +355,11 @@ def create_character():
         PlayerWisdom = player_ability_scores['Wisdom']
         PlayerCharisma = player_ability_scores['Charisma']
 
-        # Call create_character() again
+        # Call create_character() again to reset Player(variables)
         create_character()
 
 # create character
 create_character()
-
-# Rogue class features
-if PlayerClass == "Rogue": 
-    SneakAttack = True
-    SneakAttackDamage = roll_Dice(1, 6)
-if PlayerClass == "Rogue" and PlayerLevel >= 2:
-    CunningAction = True
-if PlayerClass == "Rogue" and PlayerLevel >= 3:
-    SneakAttackDamage += roll_Dice(1, 6)
-if PlayerClass == "Rogue" and PlayerLevel >= 5:
-    SneakAttackDamage += roll_Dice(1, 6)
-    UncannyDodge = True
-if PlayerClass == "Rogue" and PlayerLevel >= 7:
-    SneakAttackDamage += roll_Dice(1, 6)
-    Evasion = True
-if PlayerClass == "Rogue" and PlayerLevel >= 9:
-    SneakAttackDamage += roll_Dice(1, 6)
-if PlayerClass == "Rogue" and PlayerLevel >= 11:
-    SneakAttackDamage += roll_Dice(1, 6)
-    ReliableTalent = True
-if PlayerClass == "Rogue" and PlayerLevel >= 13:
-    SneakAttackDamage += roll_Dice(1, 6)
-if PlayerClass == "Rogue" and PlayerLevel >= 14:
-    Blindsight = 10 # feet
-if PlayerClass == "Rogue" and PlayerLevel >= 15:
-    SneakAttackDamage += roll_Dice(1, 6)
-if PlayerClass == "Rogue" and PlayerLevel >= 17:
-    SneakAttackDamage += roll_Dice(1, 6)
-if PlayerClass == "Rogue" and PlayerLevel >= 18:
-    Elusive = True
-if PlayerClass == "Rogue" and PlayerLevel >= 19:
-    SneakAttackDamage += roll_Dice(1, 6)
-if PlayerClass == "Rogue" and PlayerLevel >= 20:
-    StrokeOfLuck = 1 # Uses per rest
-# End Rogue class features
-
-# start adventure
 
 # Rogue class features
 if PlayerClass == "Rogue": 
