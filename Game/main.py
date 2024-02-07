@@ -360,20 +360,41 @@ def create_character():
         create_character()
 
 def load_character(): # load an existing character from character_info.txt
-        char_data = {}
+    char_data = {}
             
-        with open("character_info.txt", "r") as file:
-            for line in file.readlines():
-                if not line.startswith('#'):
-                    key, value = map(str.strip, line.split(':', 1))
-                    char_data[key] = value
+    with open("character_info.txt", "r") as file:
+        for line in file.readlines():
+            if not line.startswith('#'):
+                key, value = map(str.strip, line.split(':', 1))
+                char_data[key] = value
             
-        print(char_data)
-        # Assign each key to a separate variable
-        for key, value in char_data.items():
-            globals()[key] = value
-        print(inGameTime)
-        print(PlayerGold)
+    print(char_data) # test
+    # Assign each key to a separate variable
+    for key, value in char_data.items():
+        globals()[key] = value
+    print("\n**** CHARACTER INFORMATION ****\n")
+    print("Strength: " + PlayerStrength)
+    print("Dexterity: " + PlayerDexterity)
+    print("Constitution: " + PlayerConstitution)
+    print("Intelligence: " + PlayerIntelligence)
+    print("Wisdom: " + PlayerWisdom)
+    print("Charisma: " + PlayerCharisma)
+    print("Race: " + PlayerRace)
+    print("Class: " + PlayerClass)
+    print("Character Name: " + PlayerName)
+        
+    ConfirmCharacter = input("\nLoad this character data? (y/n): ")
+    if (ConfirmCharacter.upper() == "Y"):
+        wait(1)
+        print("\nCharacter data loaded!\n")
+        # next function to start game
+    else:
+        wait(1)
+        print("Starting over...\n")
+        wait(1)
+
+        # Call create_character() again to reset Player(variables)
+        create_character()
 
 # create character or load existing
 def read_or_write():
