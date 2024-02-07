@@ -288,7 +288,7 @@ def create_character():
 	ConfirmCharacter = input("Confirm this character? (y/n): ")
 	if (ConfirmCharacter.upper() == "Y"):
 	    # next function
-	    print("You chose YES")
+	    print("\nCharacter creation complete!")
 	else:
 	    print("You chose NO")
 	    create_character()
