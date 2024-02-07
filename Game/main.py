@@ -357,7 +357,7 @@ def create_character():
         # Call create_character() again to reset Player(variables)
         create_character()
 
-def load_character():
+def load_character(): # load an existing character from character_info.txt
         char_data = {}
             
         with open("character_info.txt", "r") as file:
