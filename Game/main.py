@@ -245,7 +245,8 @@ def acid_splash(): # Acid Splash cantrip
 
 # create character functions
 def load_racial_feats():
-    global PlayerStrength, PlayerDexterity, PlayerConstitution, PlayerIntelligence, PlayerWisdom, PlayerCharisma, PlayerLangs, PlayerHasBreathWeapon
+    global PlayerStrength, PlayerDexterity, PlayerConstitution, PlayerIntelligence, PlayerWisdom, PlayerCharisma, PlayerLangs, PlayerHasBreathWeapon, PlayerRace
+    print(PlayerRace)
     match PlayerRace:
         case "Human":
             PlayerStrength += 1 
