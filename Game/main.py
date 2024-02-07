@@ -83,22 +83,22 @@ print("Your Stats:")
 for stat, score in player_ability_scores.items():
     print(f"{stat}: {score}")
 
-PlayerClass = None 
-PlayerRace = None 
-PlayerRessistances = None
-PlayerLevel = 1
-PlayerHasAction = True
-PlayerHasBonusAction = True
-PlayerHasReaction = True
-EnemyResistance = [ "" ]
-rangeToEnemy = None
-SneakAttack = False
+PlayerClass = None # Player class
+PlayerRace = None # Player race
+PlayerRessistances = None # any resistances the player has
+PlayerLevel = 1 # Player level
+PlayerHasAction = True # action
+PlayerHasBonusAction = True # bonus action
+PlayerHasReaction = True # per round reaction
+EnemyResistance = [ "" ] # resistance of current enemy(s)
+rangeToEnemy = None # in feet
+SneakAttack = False # Rogue only
 CunningAction = False
 UncannyDodge = False
 Evasion = False
 ReliableTalent = False
 Elusive = False
-StrokeOfLuck = 0 # numerical value for uses
+StrokeOfLuck = 0 # end Rogue only. Numerical value for uses per rest
 Blindsight = 0 # in feet
 Darkvision = 0 # in feet
 Races = [ "Human", "Dragonborn", "Dwarf", "Elf", "Gnome", "Half-Elf", "Halfling", "Half-Orc", "Tiefling" ] 
@@ -206,12 +206,12 @@ WizardSpells = {
 # select race
 print("Pick A Race:")
 wait(1)
-race_choice = get_choice(Races)
+race_choice = get_choice(Races) # show options
 
-# print race option
+# race option picked to playerrace variable
 match race_choice:
     case 1:
-        PlayerRace = "Human"
+        PlayerRace = "Human" # these assign the playerrace variable
     case 2:
         PlayerRace = "Dragonborn"
     case 3:
@@ -236,11 +236,11 @@ wait(1)
 print("Pick A Class:")
 wait(1)
 
-class_choice = get_choice(Classes)
-# Classes = [ "Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard", "Artificer", "Bloodhunter" ]
+class_choice = get_choice(Classes) # show options
+# Classes are: [ "Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard", "Artificer", "Bloodhunter" ]
 match class_choice:
     case 1:
-        PlayerClass = "Barbarian"
+        PlayerClass = "Barbarian" # these assign the playerclass variable
     case 2:
         PlayerClass = "Bard"
     case 3:
@@ -270,7 +270,7 @@ match class_choice:
 wait(1)
 print("You chose " + PlayerClass + " as your class.")
 
-def acidSplash():
+def acidSplash(): # Acid Splash cantrip
 	if (rangeToEnemy <= 60): # in feet
 		description = "You hurl a bubble of acid. Choose one creature you can see within range, or choose two creatures you can see within range that are within 5 feet of each other. A target must succeed on a Dexterity saving throw or take 1d6 acid damage."
 		duration = 0 # instant
@@ -290,7 +290,7 @@ def acidSplash():
 		# end turn
 		PlayerHasAction = False
 		return damage
-	# out of range
+	# if out of range
 	print("Enemy out of range")
 
 # Rogue class features
