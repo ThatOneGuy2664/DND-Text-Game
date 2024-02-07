@@ -236,7 +236,7 @@ def acid_splash(): # Acid Splash cantrip
     print("Enemy out of range...")
 
 # create character functions
-def load_racial_feats
+def load_racial_feats()
     if PlayerRace == "Human": 
 	    PlayerStrength += 1 
 	    PlayerDexterity += 1 
