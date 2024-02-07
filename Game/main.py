@@ -236,7 +236,7 @@ def acid_splash(): # Acid Splash cantrip
     print("Enemy out of range...")
 
 # create character functions
-def load_racial_feats()
+def load_racial_feats():
     if PlayerRace == "Human": 
 	    PlayerStrength += 1 
 	    PlayerDexterity += 1 
@@ -352,7 +352,7 @@ def create_character():
             PlayerCharisma = player_ability_scores['Charisma']
 	    # racial features
 	    wait(1)
-            load_racial_feats()
+	    load_racial_feats()
     else:
         wait(1)
         print("Starting over...\n")
