@@ -350,7 +350,6 @@ def create_character():
             PlayerIntelligence = player_ability_scores['Intelligence']
             PlayerWisdom = player_ability_scores['Wisdom']
             PlayerCharisma = player_ability_scores['Charisma']
-	    # racial features
 	    wait(1)
 	    load_racial_feats()
     else:
