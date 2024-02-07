@@ -94,6 +94,13 @@ EnemyResistance = [ "" ]
 rangeToEnemy = None
 SneakAttack = False
 CunningAction = False
+UncannyDodge = False
+Evasion = False
+ReliableTalent = False
+Elusive = False
+StrokeOfLuck = 0 # numerical value for uses
+Blindsight = 0 # in feet
+Darkvision = 0 # in feet
 Races = [ "Human", "Dragonborn", "Dwarf", "Elf", "Gnome", "Half-Elf", "Halfling", "Half-Orc", "Tiefling" ] 
 Classes = [ "Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard", "Artificer", "Bloodhunter" ]
 # http://dnd5e.wikidot.com/spells for spell list
@@ -259,7 +266,7 @@ wait(1)
 print("You chose " + PlayerClass + " as your class.")
 
 def acidSplash():
-	if (rangeToEnemy <= 60):
+	if (rangeToEnemy <= 60): # in feet
 		description = "You hurl a bubble of acid. Choose one creature you can see within range, or choose two creatures you can see within range that are within 5 feet of each other. A target must succeed on a Dexterity saving throw or take 1d6 acid damage."
 		duration = 0 # instant
 		
@@ -281,5 +288,37 @@ def acidSplash():
 	# out of range
 	print("Enemy out of range")
 
+# Rogue class features
 if PlayerClass == "Rogue": 
     SneakAttack = True
+    SneakAttackDamage = roll_Dice(1, 6)
+if PlayerClass == "Rogue" and PlayerLevel >= 2
+    CunningAction = True
+if PlayerClass == "Rogue" and PlayerLevel >= 3
+    SneakAttackDamage += roll_Dice(1, 6)
+if PlayerClass == "Rogue" and PlayerLevel >= 5
+    SneakAttackDamage += roll_Dice(1, 6)
+    UncannyDodge = True
+if PlayerClass == "Rogue" and PlayerLevel >= 7
+    SneakAttackDamage += roll_Dice(1, 6)
+    Evasion = True
+if PlayerClass == "Rogue" and PlayerLevel >= 9
+    SneakAttackDamage += roll_Dice(1, 6)
+if PlayerClass == "Rogue" and PlayerLevel >= 11
+    SneakAttackDamage += roll_Dice(1, 6)
+    ReliableTalent = True
+if PlayerClass == "Rogue" and PlayerLevel >= 13
+    SneakAttackDamage += roll_Dice(1, 6)
+if PlayerClass == "Rogue" and PlayerLevel >= 14
+    Blindsight = 10 # feet
+if PlayerClass == "Rogue" and PlayerLevel >= 15
+    SneakAttackDamage += roll_Dice(1, 6)
+if PlayerClass == "Rogue" and PlayerLevel >= 17
+    SneakAttackDamage += roll_Dice(1, 6)
+if PlayerClass == "Rogue" and PlayerLevel >= 18
+    Elusive = True
+if PlayerClass == "Rogue" and PlayerLevel >= 19
+    SneakAttackDamage += roll_Dice(1, 6)
+if PlayerClass == "Rogue" and PlayerLevel >= 20
+    StrokeOfLuck = 1 # Uses per rest
+# End Rogue class features
