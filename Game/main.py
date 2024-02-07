@@ -360,6 +360,13 @@ def create_character():
         PlayerIntelligence = player_ability_scores['Intelligence']
         PlayerWisdom = player_ability_scores['Wisdom']
         PlayerCharisma = player_ability_scores['Charisma']
+	# Calculate ability score modifiers
+        PlayerStrengthModifier = (PlayerStrength - 10) // 2
+        PlayerDexterityModifier = (PlayerDexterity - 10) // 2 
+        PlayerConstitutionModifier = (PlayerConstitution - 10) // 2 
+        PlayerIntelligenceModifier = (PlayerIntelligence - 10) // 2
+        PlayerWisdomModifier = (PlayerWisdom - 10) // 2 
+        PlayerCharismaModifier = (PlayerCharisma - 10) // 2
         wait(1)
         load_racial_feats()
 
