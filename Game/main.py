@@ -81,14 +81,6 @@ def rollDice(num_dice, num_sides):
     return rolls # Example: (variable) = rollDice(2, 10) rolls 2 10 sided dice.
  
 # Variables
-# Generate ability scores
-player_ability_scores = generate_ability_scores()
-print("Your Stats:")
-# Print each ability score with its corresponding label
-for stat, score in player_ability_scores.items():
-    print(f"{stat}: {score}")
-
-# most variables
 inGameTime = 0 # seconds numerical value that increases by 6 as turns go by, one turn is 6 seconds.
 PlayerGold = 0.0 # player's gold pieces, > 100 is the decimal of silver/copper, < 100 is platinum as per 5e rules.
 PlayerStrength = None # STR stat number
@@ -238,14 +230,19 @@ def acid_splash(): # Acid Splash cantrip
         # end turn
         return damage
     # if out of range
-    print("Enemy out of range")
+    print("Enemy out of range...")
 
 # create character function
 def create_character():
-    global player_ability_scores  # Declare player_ability_scores as a global variable
-    
+    # Generate ability scores
+    player_ability_scores = generate_ability_scores()
+    print("\n**** Rolled stats...\n")
+    # Print each ability score with its corresponding label
+    for stat, score in player_ability_scores.items():
+        print(f"{stat}: {score}")
+        
     # select race
-    print("Pick A Race:")
+    print("\n**** Choose your race...\n")
     wait(1)
     race_choice = get_choice(Races) # show options
     
@@ -270,11 +267,11 @@ def create_character():
         case 9:
             PlayerRace = "Tiefling"
     wait(1)
-    print("You chose " + PlayerRace + " as your race.")
+    print("\n**** You chose " + PlayerRace + " as your race.")
     
     # select class
     wait(1)
-    print("Pick A Class:")
+    print("\n**** Choose your class...\n")
     wait(1)
     
     class_choice = get_choice(Classes) # show options
@@ -309,22 +306,22 @@ def create_character():
         case 14:
             PlayerClass = "Bloodhunter"
     wait(1)
-    print("You chose " + PlayerClass + " as your class.")
+    print("\n**** You chose " + PlayerClass + " as your class.")
     
     wait(1)
-    PlayerName = input("What would you like to name your character? ")
+    PlayerName = input("\n**** What would you like to name your character? ")
     
     wait(1)
-    print("Your character name is " + PlayerName + ".")
+    print("\nYour character name is " + PlayerName + ".")
     
     wait(1)
     print("\n**** CHARACTER INFORMATION ****\n")
     for stat, score in player_ability_scores.items():
         print(f"{stat}: {score}")
-    print("\nRace: " + PlayerRace)
+    print("Race: " + PlayerRace)
     print("Class: " + PlayerClass)
     print("Character Name: " + PlayerName)
-    ConfirmCharacter = input("Confirm this character? (y/n): ")
+    ConfirmCharacter = input("\nConfirm this character? (y/n): ")
     if (ConfirmCharacter.upper() == "Y"):
             wait(1)
             print("\nCharacter creation complete!\n")
@@ -360,7 +357,23 @@ def create_character():
         create_character()
 
 # create character
-create_character()
+# ********
+def read_or_write():
+    print("\n**** Would you like to create a new character or load an existing character?\n")
+    wait(1)
+    neworload_char = [ "Create new character", "Load existing character" ]
+    char_choices = get_choice(neworload_char)
+    match char_choices:
+        case 1:
+            create_character()
+        case 2:
+            file = open("character_info.txt", "r")
+            for line in file.readlines():
+                print(line)
+            file.close()
+# create new character or load existing
+read_or_write()
+# ********
 
 # Rogue class features
 if PlayerClass == "Rogue": 
