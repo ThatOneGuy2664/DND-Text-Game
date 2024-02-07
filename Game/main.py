@@ -89,7 +89,7 @@ for stat, score in player_ability_scores.items():
     print(f"{stat}: {score}")
 
 # most variables
-time = 0 # seconds numerical value that increases by 6 as turns go by, one turn is 6 seconds.
+inGameTime = 0 # seconds numerical value that increases by 6 as turns go by, one turn is 6 seconds.
 PlayerStrength = None # STR stat number
 PlayerDexterity = None # DEX stat number
 PlayerConstitution = None # CON stat number
