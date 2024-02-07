@@ -52,6 +52,12 @@ def get_choice(options):
 def round_number(number):
     return round(number) 
 
+# end turn function
+def end_player_turn():
+    PlayerHasAction = True
+    PlayerHasBonusAction = True
+    PlayerHasReaction = True
+
 # roll stats function
 def roll_ability_score():
     # Roll 4d6 and drop the lowest value
@@ -89,6 +95,7 @@ for stat, score in player_ability_scores.items():
     print(f"{stat}: {score}")
 
 # most variables
+time = 0 # seconds numerical value that increases by 6 as turns go by, one turn is 6 seconds.
 PlayerStrength = None # STR stat number
 PlayerDexterity = None # DEX stat number
 PlayerConstitution = None # CON stat number
@@ -216,12 +223,14 @@ WizardSpells = {
 }
 
 # spell functions
-def acidSplash(): # Acid Splash cantrip
+def acid_splash(): # Acid Splash cantrip
     if (rangeToEnemy <= 60): # in feet
         description = "You hurl a bubble of acid. Choose one creature you can see within range, or choose two creatures you can see within range that are within 5 feet of each other. A target must succeed on a Dexterity saving throw or take 1d6 acid damage."
         duration = 0 # instant
         
         # action
+	PlayerHasAction = False
+	time += 6
         damage = rollDice(1, 6)
         if (PlayerLevel >= 5):
             damage += rollDice(1, 6)
