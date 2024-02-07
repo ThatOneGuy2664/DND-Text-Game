@@ -50,13 +50,7 @@ def get_choice(options):
 
 # round function
 def round_number(number):
-    return round(number) 
-
-# end turn function
-def end_player_turn():
-    PlayerHasAction = True
-    PlayerHasBonusAction = True
-    PlayerHasReaction = True
+    return round(number)
 
 # roll stats function
 def roll_ability_score():
