@@ -204,6 +204,8 @@ WizardSpells = {
 }
 
 # select race
+print("Pick A Race:")
+wait(1)
 race_choice = get_choice(Races)
 
 # print race option
@@ -229,6 +231,9 @@ match race_choice:
 wait(1)
 print("You chose " + PlayerRace + " as your race.")
 
+# select class
+wait(1)
+print("Pick A Class:")
 wait(1)
 
 class_choice = get_choice(Classes)
