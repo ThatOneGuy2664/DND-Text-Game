@@ -246,15 +246,15 @@ match class_choice:
     case 9:
         PlayerClass = "Rogue"
     case 10:
-	PlayerClass = "Sorcerer"
+        PlayerClass = "Sorcerer"
     case 11:
         PlayerClass = "Warlock"
     case 12:
-	PlayerClass = "Wizard"
+        PlayerClass = "Wizard"
     case 13:
-	PlayerClass = "Artificer"
+        PlayerClass = "Artificer"
     case 14:
-	PlayerClass = "Bloodhunter"
+        PlayerClass = "Bloodhunter"
 wait(1)
 print("You chose " + PlayerClass + " as your class.")
 
