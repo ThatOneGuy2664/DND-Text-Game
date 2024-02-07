@@ -271,16 +271,18 @@ wait(1)
 print("You chose " + PlayerClass + " as your class.")
 
 wait(1)
-print("You are a " + PlayerRace + " " + PlayerClass + ".")
 
 PlayerName = input("What would you like to name your character? ")
 
 wait(1)
-print("CONFIRM YOUR CHARACTER\n\n")
+print("Your character name is " + PlayerName + ".")
+
+wait(1)
+print("\n**** CONFIRM YOUR CHARACTER\n")
 print("Race: " + PlayerRace)
 print("Class: " + PlayerClass)
 print("Character Name: " + PlayerName)
-ConfirmCharacter = input("Confirm this character? (y/n): "
+ConfirmCharacter = input("Confirm this character? (y/n): ")
 
 def acidSplash(): # Acid Splash cantrip
 	if (rangeToEnemy <= 60): # in feet
