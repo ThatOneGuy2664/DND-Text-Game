@@ -97,6 +97,7 @@ PlayerLangs = ["Common"] # languages the player character knows
 PlayerHasAction = True # action
 PlayerHasBonusAction = True # bonus action
 PlayerHasReaction = True # per round reaction
+PlayerHasBreathWeapon = False # if PlayerRace is Dragonborn then player has a breath weapon attack
 # end player variables
 bonuslang = None
 EnemyResistance = [ "" ] # resistance of current enemy(s)
@@ -238,19 +239,20 @@ def acid_splash(): # Acid Splash cantrip
 
 # create character functions
 def load_racial_feats():
-    if PlayerRace == "Human": 
-	    global PlayerStrength, PlayerDexterity, PlayerConstitution, PlayerIntelligence, PlayerWisdom, PlayerCharisma, PlayerLangs
-	    PlayerStrength += 1 
-	    PlayerDexterity += 1 
-	    PlayerConstitution += 1 
-	    PlayerIntelligence += 1 
-	    PlayerWisdom += 1 
-	    PlayerCharisma += 1 
-	    bonuslang = get_choice(allLangs) 
-	    # Implement get_choice() function 
-	    if bonuslang is not None and bonuslang not in PlayerLangs: 
-		    # Avoid duplicate languages 
-		    PlayerLangs.append(bonuslang)
+    global PlayerStrength, PlayerDexterity, PlayerConstitution, PlayerIntelligence, PlayerWisdom, PlayerCharisma, PlayerLangs
+    match PlayerRace:
+        case "Human":
+            PlayerStrength += 1 
+            PlayerDexterity += 1 
+            PlayerConstitution += 1 
+            PlayerIntelligence += 1 
+            PlayerWisdom += 1 
+            PlayerCharisma += 1 
+            bonuslang = get_choice(allLangs) 
+            if bonuslang is not None and bonuslang not in PlayerLangs: 
+                PlayerLangs.append(bonuslang)
+	case "Dragonborn":
+	    PlayerHasBreathWeapon = True
 
 def create_character():
     # Generate ability scores
