@@ -223,8 +223,6 @@ def acid_splash(): # Acid Splash cantrip
         duration = 0 # instant
         
         # action
-	PlayerHasAction = False
-	time += 6
         damage = rollDice(1, 6)
         if (PlayerLevel >= 5):
             damage += rollDice(1, 6)
