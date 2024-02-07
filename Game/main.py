@@ -98,6 +98,7 @@ PlayerHasAction = True # action
 PlayerHasBonusAction = True # bonus action
 PlayerHasReaction = True # per round reaction
 # end player variables
+bonuslang = None
 EnemyResistance = [ "" ] # resistance of current enemy(s)
 rangeToEnemy = None # in feet
 allLangs = ["Common", "Dwarvish", "Elvish", "Giant", "Gnomish", "Goblin", "Halfling", "Orc", "Abyssal", "Celestial", "Draconic", "Deep Speech", "Infernal", "Primordial", "Sylvan", "Undercommon", "Thieves Cant", "Drudic"]
