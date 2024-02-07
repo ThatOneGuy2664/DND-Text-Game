@@ -315,6 +315,7 @@ def create_character():
     print("\nYour character name is " + PlayerName + ".")
     
     wait(1)
+    
     print("\n**** CHARACTER INFORMATION ****\n")
     for stat, score in player_ability_scores.items():
         print(f"{stat}: {score}")
@@ -356,8 +357,23 @@ def create_character():
         # Call create_character() again to reset Player(variables)
         create_character()
 
-# create character
-# ********
+def load_character():
+        char_data = {}
+            
+        with open("character_info.txt", "r") as file:
+            for line in file.readlines():
+                if not line.startswith('#'):
+                    key, value = map(str.strip, line.split(':', 1))
+                    char_data[key] = value
+            
+        print(char_data)
+        # Assign each key to a separate variable
+        for key, value in char_data.items():
+            globals()[key] = value
+        print(inGameTime)
+        print(PlayerGold)
+
+# create character or load existing
 def read_or_write():
     print("\n**** Would you like to create a new character or load an existing character?\n")
     wait(1)
@@ -367,14 +383,16 @@ def read_or_write():
         case 1:
             create_character()
         case 2:
-            file = open("character_info.txt", "r")
-            for line in file.readlines():
-                print(line)
-            file.close()
+            load_character()
+
+# main code
+print("**** Welcome to DND-Text-Game! ****")
+
+# start function calls
 # create new character or load existing
 read_or_write()
-# ********
 
+# class definitions
 # Rogue class features
 if PlayerClass == "Rogue": 
     SneakAttack = True
