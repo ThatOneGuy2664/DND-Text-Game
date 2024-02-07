@@ -83,14 +83,14 @@ def rollDice(num_dice, num_sides):
 # Variables
 inGameTime = 0 # seconds numerical value that increases by 6 as turns go by, one turn is 6 seconds.
 PlayerGold = 0.0 # player's gold pieces, > 100 is the decimal of silver/copper, < 100 is platinum as per 5e rules.
-PlayerStrength = None # STR stat number
-PlayerDexterity = None # DEX stat number
-PlayerConstitution = None # CON stat number
-PlayerIntelligence = None # INT stat number
-PlayerWisdom = None # WIS stat number
-PlayerCharisma = None # CHA stat number
-PlayerClass = None # Player class
-PlayerRace = None # Player race
+PlayerStrength = None # soon-to-be STR stat number
+PlayerDexterity = None # soon-to-be DEX stat number
+PlayerConstitution = None # soon-to-be CON stat number
+PlayerIntelligence = None # soon-to-be INT stat number
+PlayerWisdom = None # soon-to-be WIS stat number
+PlayerCharisma = None # soon-to-be CHA stat number
+PlayerClass = None # soon-to-be player class
+PlayerRace = None # soon-to-be player race
 PlayerRessistances = None # any resistances the player has
 PlayerLevel = 1 # Player level
 PlayerHasAction = True # action
