@@ -93,7 +93,7 @@ PlayerClass = None # soon-to-be player class
 PlayerRace = None # soon-to-be player race
 PlayerRessistances = None # any resistances the player has
 PlayerLevel = 1 # Player level
-PlayerLangs = [""]
+PlayerLangs = ["Common"]
 PlayerHasAction = True # action
 PlayerHasBonusAction = True # bonus action
 PlayerHasReaction = True # per round reaction
@@ -395,15 +395,18 @@ print("**** Welcome to DND-Text-Game! ****")
 read_or_write()
 
 # racial features
-if PlayerRace == "Human" # Human race
-    PlayerStrength += 1
-    PlayerDexterity += 1
-    PlayerConstitution += 1
-    PlayerIntelligence += 1
-    PlayerWisdom += 1
-    PlayerCharisma += 1
-    bonuslang = get_choice(allLangs)
-    PlayerLangs = ["Common", bonuslang]
+if PlayerRace == "Human": 
+	# Corrected syntax 
+	PlayerStrength += 1 
+	PlayerDexterity += 1 
+	PlayerConstitution += 1 
+	PlayerIntelligence += 1 
+	PlayerWisdom += 1 
+	PlayerCharisma += 1 
+	bonuslang = get_choice(allLangs) 
+	# Implement get_choice() function 
+        if bonuslang not in PlayerLangs: # Avoid duplicate languages 
+		PlayerLangs.append(bonuslang)
 
 # class features
 # Rogue class features
