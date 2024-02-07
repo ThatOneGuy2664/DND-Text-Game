@@ -311,16 +311,24 @@ def create_character():
 	print("Your character name is " + PlayerName + ".")
 	
 	wait(1)
-	print("\n**** CONFIRM YOUR CHARACTER\n")
-	print("Race: " + PlayerRace)
+	print("\n**** CHARACTER INFORMATION ****\n")
+	print("Strength: " + PlayerStrength)
+	print("Dexterity: " + PlayerDexterity)
+	print("Consitution: " + PlayerConsitution)
+	print("Intelligence: " + PlayerIntelligence)
+	print("Wisdom: " + PlayerWisdom)
+	print("Charisma: " + PlayerCharisma)
+	print("\nRace: " + PlayerRace)
 	print("Class: " + PlayerClass)
 	print("Character Name: " + PlayerName)
 	ConfirmCharacter = input("Confirm this character? (y/n): ")
 	if (ConfirmCharacter.upper() == "Y"):
+	    wait(1)
+	    print("\nCharacter creation complete!\n")
 	    # next function
-	    print("\nCharacter creation complete!")
 	else:
-	    print("You chose NO")
+	    wait(1)
+	    print("Starting over...\n")
 	    create_character()
 
 # begin main code
