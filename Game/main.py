@@ -90,10 +90,7 @@ for stat, score in player_ability_scores.items():
 
 # most variables
 inGameTime = 0 # seconds numerical value that increases by 6 as turns go by, one turn is 6 seconds.
-PlayerCopper = 0 # player's copper pieces
-PlayerSilver = 0 # player's silver pieces
-PlayerGold = 0 # player's gold pieces
-PlayerPlatinum = 0 # player's platinum pieces
+PlayerGold = 0.0 # player's gold pieces, > 100 is the decimal of silver/copper, < 100 is platinum as per 5e rules.
 PlayerStrength = None # STR stat number
 PlayerDexterity = None # DEX stat number
 PlayerConstitution = None # CON stat number
