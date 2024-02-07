@@ -256,7 +256,7 @@ match class_choice:
     case 14:
 	PlayerClass = "Bloodhunter"
 wait(1)
-print("You chose " + PlayerClass + " as your race.")
+print("You chose " + PlayerClass + " as your class.")
 
 def acidSplash():
 	if (rangeToEnemy <= 60):
