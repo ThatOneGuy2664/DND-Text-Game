@@ -238,17 +238,17 @@ def acid_splash(): # Acid Splash cantrip
 # create character functions
 def load_racial_feats
     if PlayerRace == "Human": 
-       PlayerStrength += 1 
-       PlayerDexterity += 1 
-       PlayerConstitution += 1 
-       PlayerIntelligence += 1 
-       PlayerWisdom += 1 
-       PlayerCharisma += 1 
-       bonuslang = get_choice(allLangs) 
-       # Implement get_choice() function 
-       if bonuslang is not None and bonuslang not in PlayerLangs and PlayerRace == "Human": 
-	   # Avoid duplicate languages 
-	   PlayerLangs.append(bonuslang)
+	    PlayerStrength += 1 
+	    PlayerDexterity += 1 
+	    PlayerConstitution += 1 
+	    PlayerIntelligence += 1 
+	    PlayerWisdom += 1 
+	    PlayerCharisma += 1 
+	    bonuslang = get_choice(allLangs) 
+	    # Implement get_choice() function 
+	    if bonuslang is not None and bonuslang not in PlayerLangs and PlayerRace == "Human": 
+		    # Avoid duplicate languages 
+		    PlayerLangs.append(bonuslang)
 
 def create_character():
     # Generate ability scores
