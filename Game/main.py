@@ -392,7 +392,17 @@ print("**** Welcome to DND-Text-Game! ****")
 # create new character or load existing
 read_or_write()
 
-# class definitions
+# racial features
+if PlayerRace == "Human" # Human race
+    PlayerStrength += 1
+    PlayerDexterity += 1
+    PlayerConstitution += 1
+    PlayerIntelligence += 1
+    PlayerWisdom += 1
+    PlayerCharisma += 1
+    # Extra Language
+
+# class features
 # Rogue class features
 if PlayerClass == "Rogue": 
     SneakAttack = True
