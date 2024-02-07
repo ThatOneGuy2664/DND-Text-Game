@@ -83,12 +83,12 @@ print("Your Stats:")
 for stat, score in player_ability_scores.items():
     print(f"{stat}: {score}")
 	
-PlayerStrength = player_ability_scores['Strength']
-PlayerDexterity = player_ability_scores['Dexterity']
-PlayerConstitution = player_ability_scores["Constitution"]
-PlayerIntelligence = player_ability_scores['Intelligence']
-PlayerWisdom = player_ability_scores['Wisdom']
-PlayerCharisma = player_ability_scores['Charisma']
+PlayerStrength = player_ability_scores['Strength'] # STR stat number
+PlayerDexterity = player_ability_scores['Dexterity'] # DEX stat number
+PlayerConstitution = player_ability_scores["Constitution"] # CON stat number
+PlayerIntelligence = player_ability_scores['Intelligence'] # INT stat number
+PlayerWisdom = player_ability_scores['Wisdom'] # WIS stat number
+PlayerCharisma = player_ability_scores['Charisma'] # CHA stat number
 PlayerClass = None # Player class
 PlayerRace = None # Player race
 PlayerRessistances = None # any resistances the player has
