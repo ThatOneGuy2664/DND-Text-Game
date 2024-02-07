@@ -80,7 +80,7 @@ def rollDice(num_dice, num_sides):
         rolls.append(random.randint(1, num_sides))
     return rolls # Example: (variable) = rollDice(2, 10) rolls 2 10 sided dice.
  
-# Variables
+# player Variables
 inGameTime = 0 # seconds numerical value that increases by 6 as turns go by, one turn is 6 seconds.
 PlayerGold = 0.0 # player's gold pieces, > 100 is the decimal of silver/copper, < 100 is platinum as per 5e rules.
 PlayerStrength = None # soon-to-be STR stat number
@@ -97,6 +97,7 @@ PlayerLangs = ["Common"]
 PlayerHasAction = True # action
 PlayerHasBonusAction = True # bonus action
 PlayerHasReaction = True # per round reaction
+# end player variables
 EnemyResistance = [ "" ] # resistance of current enemy(s)
 rangeToEnemy = None # in feet
 allLangs = ["Common", "Dwarvish", "Elvish", "Giant", "Gnomish", "Goblin", "Halfling", "Orc", "Abyssal", "Celestial", "Draconic", "Deep Speech", "Infernal", "Primordial", "Sylvan", "Undercommon", "Thieves Cant", "Drudic"]
@@ -234,7 +235,21 @@ def acid_splash(): # Acid Splash cantrip
     # if out of range
     print("Enemy out of range...")
 
-# create character function
+# create character functions
+def load_racial_feats
+    if PlayerRace == "Human": 
+       PlayerStrength += 1 
+       PlayerDexterity += 1 
+       PlayerConstitution += 1 
+       PlayerIntelligence += 1 
+       PlayerWisdom += 1 
+       PlayerCharisma += 1 
+       bonuslang = get_choice(allLangs) 
+       # Implement get_choice() function 
+       if bonuslang is not None and bonuslang not in PlayerLangs and PlayerRace == "Human": 
+	   # Avoid duplicate languages 
+	   PlayerLangs.append(bonuslang)
+
 def create_character():
     # Generate ability scores
     player_ability_scores = generate_ability_scores()
@@ -337,19 +352,7 @@ def create_character():
             PlayerCharisma = player_ability_scores['Charisma']
 	    # racial features
 	    wait(1)
-            if PlayerRace == "Human": 
-		 # Corrected syntax 
-		 PlayerStrength += 1 
-		 PlayerDexterity += 1 
-		 PlayerConstitution += 1 
-		 PlayerIntelligence += 1 
-		 PlayerWisdom += 1 
-		 PlayerCharisma += 1 
-		 bonuslang = get_choice(allLangs) 
-		 # Implement get_choice() function 
-                 if bonuslang is not None and bonuslang not in PlayerLangs and PlayerRace == "Human": 
-			 # Avoid duplicate languages 
-			 PlayerLangs.append(bonuslang)
+            load_racial_feats()
     else:
         wait(1)
         print("Starting over...\n")
