@@ -368,7 +368,6 @@ def create_character():
         PlayerWisdomModifier = (PlayerWisdom - 10) // 2 
         PlayerCharismaModifier = (PlayerCharisma - 10) // 2
         wait(1)
-        load_racial_feats()
 
     else:
         wait(1)
