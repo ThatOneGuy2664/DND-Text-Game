@@ -270,6 +270,18 @@ match class_choice:
 wait(1)
 print("You chose " + PlayerClass + " as your class.")
 
+wait(1)
+print("You are a " + PlayerRace + " " + PlayerClass + ".")
+
+PlayerName = input("What would you like to name your character? ")
+
+wait(1)
+print("CONFIRM YOUR CHARACTER\n\n")
+print("Race: " + PlayerRace)
+print("Class: " + PlayerClass)
+print("Character Name: " + PlayerName)
+ConfirmCharacter = input("Confirm this character? (y/n): "
+
 def acidSplash(): # Acid Splash cantrip
 	if (rangeToEnemy <= 60): # in feet
 		description = "You hurl a bubble of acid. Choose one creature you can see within range, or choose two creatures you can see within range that are within 5 feet of each other. A target must succeed on a Dexterity saving throw or take 1d6 acid damage."
