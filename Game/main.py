@@ -203,6 +203,30 @@ WizardSpells = {
 ]
 }
 
+# spell functions
+def acidSplash(): # Acid Splash cantrip
+	if (rangeToEnemy <= 60): # in feet
+		description = "You hurl a bubble of acid. Choose one creature you can see within range, or choose two creatures you can see within range that are within 5 feet of each other. A target must succeed on a Dexterity saving throw or take 1d6 acid damage."
+		duration = 0 # instant
+		
+		# action
+		damage = rollDice(1, 6)
+		if (PlayerLevel >= 5):
+			damage += rollDice(1, 6)
+		if (PlayerLevel >= 11):
+			damage += rollDice(1, 6)
+		if (PlayerLevel >=17):
+			damage += rollDice(1, 6)
+		# determine resistance
+		if (EnemyResistance == "acid"):
+			damage = damage / 2
+	
+		# end turn
+		PlayerHasAction = False
+		return damage
+	# if out of range
+	print("Enemy out of range")
+
 # create character function
 def create_character():
 
@@ -298,30 +322,6 @@ def create_character():
 create_character()
 
 # start adventure
-
-
-def acidSplash(): # Acid Splash cantrip
-	if (rangeToEnemy <= 60): # in feet
-		description = "You hurl a bubble of acid. Choose one creature you can see within range, or choose two creatures you can see within range that are within 5 feet of each other. A target must succeed on a Dexterity saving throw or take 1d6 acid damage."
-		duration = 0 # instant
-		
-		# action
-		damage = rollDice(1, 6)
-		if (PlayerLevel >= 5):
-			damage += rollDice(1, 6)
-		if (PlayerLevel >= 11):
-			damage += rollDice(1, 6)
-		if (PlayerLevel >=17):
-			damage += rollDice(1, 6)
-		# determine resistance
-		if (EnemyResistance == "acid"):
-			damage = damage / 2
-	
-		# end turn
-		PlayerHasAction = False
-		return damage
-	# if out of range
-	print("Enemy out of range")
 
 # Rogue class features
 if PlayerClass == "Rogue": 
