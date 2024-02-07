@@ -341,17 +341,18 @@ def create_character():
     print("Character Name: " + PlayerName)
     ConfirmCharacter = input("\nConfirm this character? (y/n): ")
     if (ConfirmCharacter.upper() == "Y"):
-            wait(1)
-            print("\nCharacter creation complete!\n")
-            # Assign ability scores to variables
-            PlayerStrength = player_ability_scores['Strength']
-            PlayerDexterity = player_ability_scores['Dexterity']
-            PlayerConstitution = player_ability_scores['Constitution']
-            PlayerIntelligence = player_ability_scores['Intelligence']
-            PlayerWisdom = player_ability_scores['Wisdom']
-            PlayerCharisma = player_ability_scores['Charisma']
-	    wait(1)
-	    load_racial_feats()
+    wait(1)
+    print("\nCharacter creation complete!\n")
+    # Assign ability scores to variables
+    PlayerStrength = player_ability_scores['Strength']
+    PlayerDexterity = player_ability_scores['Dexterity']
+    PlayerConstitution = player_ability_scores['Constitution']
+    PlayerIntelligence = player_ability_scores['Intelligence']
+    PlayerWisdom = player_ability_scores['Wisdom']
+    PlayerCharisma = player_ability_scores['Charisma']
+    wait(1)
+    load_racial_feats()
+
     else:
         wait(1)
         print("Starting over...\n")
