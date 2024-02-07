@@ -292,33 +292,33 @@ def acidSplash():
 if PlayerClass == "Rogue": 
     SneakAttack = True
     SneakAttackDamage = roll_Dice(1, 6)
-if PlayerClass == "Rogue" and PlayerLevel >= 2
+if PlayerClass == "Rogue" and PlayerLevel >= 2:
     CunningAction = True
-if PlayerClass == "Rogue" and PlayerLevel >= 3
+if PlayerClass == "Rogue" and PlayerLevel >= 3:
     SneakAttackDamage += roll_Dice(1, 6)
-if PlayerClass == "Rogue" and PlayerLevel >= 5
+if PlayerClass == "Rogue" and PlayerLevel >= 5:
     SneakAttackDamage += roll_Dice(1, 6)
     UncannyDodge = True
-if PlayerClass == "Rogue" and PlayerLevel >= 7
+if PlayerClass == "Rogue" and PlayerLevel >= 7:
     SneakAttackDamage += roll_Dice(1, 6)
     Evasion = True
-if PlayerClass == "Rogue" and PlayerLevel >= 9
+if PlayerClass == "Rogue" and PlayerLevel >= 9:
     SneakAttackDamage += roll_Dice(1, 6)
-if PlayerClass == "Rogue" and PlayerLevel >= 11
+if PlayerClass == "Rogue" and PlayerLevel >= 11:
     SneakAttackDamage += roll_Dice(1, 6)
     ReliableTalent = True
-if PlayerClass == "Rogue" and PlayerLevel >= 13
+if PlayerClass == "Rogue" and PlayerLevel >= 13:
     SneakAttackDamage += roll_Dice(1, 6)
-if PlayerClass == "Rogue" and PlayerLevel >= 14
+if PlayerClass == "Rogue" and PlayerLevel >= 14:
     Blindsight = 10 # feet
-if PlayerClass == "Rogue" and PlayerLevel >= 15
+if PlayerClass == "Rogue" and PlayerLevel >= 15:
     SneakAttackDamage += roll_Dice(1, 6)
-if PlayerClass == "Rogue" and PlayerLevel >= 17
+if PlayerClass == "Rogue" and PlayerLevel >= 17:
     SneakAttackDamage += roll_Dice(1, 6)
-if PlayerClass == "Rogue" and PlayerLevel >= 18
+if PlayerClass == "Rogue" and PlayerLevel >= 18:
     Elusive = True
-if PlayerClass == "Rogue" and PlayerLevel >= 19
+if PlayerClass == "Rogue" and PlayerLevel >= 19:
     SneakAttackDamage += roll_Dice(1, 6)
-if PlayerClass == "Rogue" and PlayerLevel >= 20
+if PlayerClass == "Rogue" and PlayerLevel >= 20:
     StrokeOfLuck = 1 # Uses per rest
 # End Rogue class features
