@@ -235,7 +235,6 @@ def acid_splash(): # Acid Splash cantrip
             damage = damage / 2
     
         # end turn
-        PlayerHasAction = False
         return damage
     # if out of range
     print("Enemy out of range")
