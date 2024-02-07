@@ -90,6 +90,10 @@ for stat, score in player_ability_scores.items():
 
 # most variables
 inGameTime = 0 # seconds numerical value that increases by 6 as turns go by, one turn is 6 seconds.
+PlayerCopper = 0
+PlayerSilver = 0
+PlayerGold = 0
+PlayerPlatinum = 0
 PlayerStrength = None # STR stat number
 PlayerDexterity = None # DEX stat number
 PlayerConstitution = None # CON stat number
