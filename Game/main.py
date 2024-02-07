@@ -251,8 +251,8 @@ def load_racial_feats():
             bonuslang = get_choice(allLangs) 
             if bonuslang is not None and bonuslang not in PlayerLangs: 
                 PlayerLangs.append(bonuslang)
-	case "Dragonborn":
-	    PlayerHasBreathWeapon = True
+        case "Dragonborn":
+	        PlayerHasBreathWeapon = True
 
 def create_character():
     # Generate ability scores
