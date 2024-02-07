@@ -93,11 +93,13 @@ PlayerClass = None # soon-to-be player class
 PlayerRace = None # soon-to-be player race
 PlayerRessistances = None # any resistances the player has
 PlayerLevel = 1 # Player level
+PlayerLangs = [""]
 PlayerHasAction = True # action
 PlayerHasBonusAction = True # bonus action
 PlayerHasReaction = True # per round reaction
 EnemyResistance = [ "" ] # resistance of current enemy(s)
 rangeToEnemy = None # in feet
+allLangs = ["Common", "Dwarvish", "Elvish", "Giant", "Gnomish", "Goblin", "Halfling", "Orc", "Abyssal", "Celestial", "Draconic", "Deep Speech", "Infernal", "Primordial", "Sylvan", "Undercommon", "Thieves Cant", "Drudic"]
 SneakAttack = False # Rogue only
 CunningAction = False
 UncannyDodge = False
@@ -400,7 +402,8 @@ if PlayerRace == "Human" # Human race
     PlayerIntelligence += 1
     PlayerWisdom += 1
     PlayerCharisma += 1
-    # Extra Language
+    bonuslang = get_choice(allLangs)
+    PlayerLangs = ["Common", bonuslang]
 
 # class features
 # Rogue class features
