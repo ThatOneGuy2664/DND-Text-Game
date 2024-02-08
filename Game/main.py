@@ -242,7 +242,7 @@ def acid_splash(): # Acid Splash cantrip
 
 # create character functions
 def create_character():
-    global PlayerRace, PlayerClass, PlayerName, PlayerStrength, PlayerDexterity, PlayerConstitution, PlayerIntelligence, PlayerWisdom, PlayerCharisma
+    global PlayerRace, PlayerClass, PlayerBackground, PlayerName, PlayerStrength, PlayerDexterity, PlayerConstitution, PlayerIntelligence, PlayerWisdom, PlayerCharisma
   
     # Generate ability scores
     player_ability_scores = generate_ability_scores()
