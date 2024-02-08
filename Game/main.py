@@ -470,9 +470,9 @@ BarbarianBetterRage = False
 BarbarianMight = False
 BarbarianPrimalChamp = False
 # Bard
-BardicInspirationAbility = 0
+BardicInspirationAbility = 0 # uses
 JackOfAllTrades = False
-CounterCharmAbility = False # passively grants new active action, a toggle
+CounterCharmAbility = False # passively grants new active action, basically a toggle
 BetterInspiration = False
 # Cleric
 ChannelDivinity = 0 # non-boolean for more than once per rest at higher levels
