@@ -38,7 +38,7 @@ def get_choice(options):
         try:
             choice = int(input("Enter your choice: "))  # Read input from the console
             if 1 <= choice <= len(options):  # Check if choice is within the range of valid indices
-                return choice # returns numerical value of chosen option, starting with 1
+                return choice # returns numerical value of chosen option, starting at 1 for first option
             else:
                 print("\nInvalid choice. Please enter a number within the range of options.\n")
         except ValueError:
@@ -51,6 +51,8 @@ def get_choice(options):
 # round function
 def round_number(number):
     return round(number)
+# Example usage:
+# round_number(2.3) (will return 2)
  
 # roll stats function
 def roll_ability_score():
@@ -91,6 +93,12 @@ PlayerConstitution = None # CON stat number
 PlayerIntelligence = None # INT stat number
 PlayerWisdom = None # WIS stat number
 PlayerCharisma = None # CHA stat number
+PlayerSTRMod = None # STR mod to be assigned 
+PlayerDEXMod = None # DEX mod to be assigned 
+PlayerCONMod = None # CON mod to be assigned 
+PlayerINTMod = None # INT mod to be assigned 
+PlayerWISMod = None # WIS mod to be assigned
+PlayerCHAMod = None # CHA mod to be assigned
 PlayerClass = None # Player class
 PlayerRace = None # Player race
 PlayerRessistances = None # any resistances the player has
