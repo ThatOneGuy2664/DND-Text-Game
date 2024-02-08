@@ -61,7 +61,7 @@ def roll_ability_score():
     rolls.remove(min(rolls))
     return sum(rolls)
  
-# pause program for (seconds)
+# pause for (seconds)
 def wait(seconds):
     # Wait for (seconds) and resume
     time.sleep(seconds)
@@ -391,22 +391,27 @@ def load_character(): # load an existing character from character_info.txt
             if not line.startswith('#'):
                 key, value = map(str.strip, line.split(':', 1))
                 char_data[key] = value
-            
+
     print(char_data) # test
     # Assign each key to a separate variable
     for key, value in char_data.items():
         globals()[key] = value
-    print("\n**** CHARACTER INFORMATION ****\n")
-    print("Strength: " + PlayerStrength)
-    print("Dexterity: " + PlayerDexterity)
-    print("Constitution: " + PlayerConstitution)
-    print("Intelligence: " + PlayerIntelligence)
-    print("Wisdom: " + PlayerWisdom)
-    print("Charisma: " + PlayerCharisma)
-    print("Race: " + PlayerRace)
-    print("Class: " + PlayerClass)
-    print("Background: " + PlayerBackground)
-    print("Character Name: " + PlayerName)
+
+    try:
+        print("\n**** CHARACTER INFORMATION ****\n")
+        print("Strength:", PlayerStrength)
+        print("Dexterity:", PlayerDexterity)
+        print("Constitution:", PlayerConstitution)
+        print("Intelligence: ", PlayerIntelligence)
+        print("Wisdom: ", PlayerWisdom)
+        print("Charisma: ", PlayerCharisma)
+        print("Race:", PlayerRace)
+        print("Class:", PlayerClass)
+        print("Background:", PlayerBackground)
+        print("Character Name:", PlayerName)
+    except ValueError:
+        print("\nERROR: Unable to load character information...")
+        read_or_write()
 
     print("\n**** Load this character data? ")
     Yesno = ["Yes", "No"]
@@ -456,6 +461,7 @@ def save_character():
 
     # write data to a new file
     with open("new_info.txt", "w") as new_file:
+        new_file.write("# character sheet\n")
         for key, value in char_data.items():
             new_file.write(f"{key}: {value}\n")
 
