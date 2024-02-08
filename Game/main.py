@@ -320,7 +320,7 @@ def create_character():
     wait(1)
     Backgroundchoice = get_choice(Backgrounds)
     # Backgrounds = ["Acolyte", "Criminal / Spy", "Folk Hero", "Noble", "Sage", "Soldier"]
-    match Backgroundchoice
+    match Backgroundchoice:
 	case 1:
 		PlayerBackground = "Acolyte"
 	case 2:
