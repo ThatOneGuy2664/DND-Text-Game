@@ -436,7 +436,7 @@ def save_character():
 read_or_write()
 
 # define ASI function
-def ASI():
+def ability_score_increase():
 	print("Pick an ability score to increase.")
 	global PlayerStrength, PlayerDexterity, PlayerConstitution, PlayerIntelligence, PlayerWisdom, PlayerCharisma
 	AbilIncOpts = ["Strength", "Dexterity", "Constitution", "Intelligence", "Wisdom", "Charisma"]
