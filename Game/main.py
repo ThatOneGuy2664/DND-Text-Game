@@ -61,15 +61,6 @@ def roll_ability_score():
     rolls.remove(min(rolls))
     return sum(rolls)
  
-# Generate stats function using roll_ability_score()
-def generate_ability_scores():
-    # Generate ability scores for all stats
-    ability_scores = {}
-    stats = ['Strength', 'Dexterity', 'Constitution', 'Intelligence', 'Wisdom', 'Charisma']
-    for stat in stats:
-        ability_scores[stat] = roll_ability_score()
-    return ability_scores
- 
 # pause for (seconds)
 def wait(seconds):
     # Wait for (seconds) and resume
@@ -217,6 +208,24 @@ WizardSpells = {
 ]
 }
 
+# Generate and print stats using roll_ability_score()
+def generate_ability_scores():
+    global PlayerStrength, PlayerDexterity, PlayerConstitution, PlayerIntelligence, PlayerWisdom, PlayerCharisma
+    
+    player_stats = ['Strength', 'Dexterity', 'Constitution', 'Intelligence', 'Wisdom', 'Charisma']
+    player_vars = [PlayerStrength, PlayerDexterity, PlayerConstitution, PlayerIntelligence, PlayerWisdom, PlayerCharisma]
+    for i in range(len(player_stats)):
+        player_vars[i] = roll_ability_score()
+        print(player_stats[i], ":" ,player_vars[i])
+
+    # assign stats to global variables
+    PlayerStrength = player_vars[0]
+    PlayerDexterity = player_vars[1]
+    PlayerConstitution = player_vars[2]
+    PlayerIntelligence = player_vars[3]
+    PlayerWisdom = player_vars[4]
+    PlayerCharisma = player_vars[5]
+
 # spell functions
 def acid_splash(): # Acid Splash cantrip
     if (rangeToEnemy <= 60): # in feet
@@ -244,12 +253,9 @@ def acid_splash(): # Acid Splash cantrip
 def create_character():
     global PlayerRace, PlayerClass, PlayerBackground, PlayerName, PlayerStrength, PlayerDexterity, PlayerConstitution, PlayerIntelligence, PlayerWisdom, PlayerCharisma
   
-    # Generate ability scores
-    player_ability_scores = generate_ability_scores()
     print("\n**** Rolled stats...\n")
-    # Print each ability score with its corresponding label
-    for stat, score in player_ability_scores.items():
-        print(f"{stat}: {score}")
+    # Generate and print player ability scores
+    generate_ability_scores()
         
     # select race
     print("\n**** Choose your race...\n")
@@ -340,7 +346,7 @@ def create_character():
      case 8:
         PlayerBackground = "Haunted One"
     wait(1)
-    print("\n**** You chose " + PlayerBackground + " as your background. ")
+    print("\n**** You chose " + PlayerBackground + " as your background.")
 	
     wait(1)
     PlayerName = input("\n**** What would you like to name your character? ")
@@ -351,21 +357,20 @@ def create_character():
     wait(1)
     
     print("\n**** CHARACTER INFORMATION ****\n")
-    for stat, score in player_ability_scores.items():
-        print(f"{stat}: {score}")
-    # Assign ability scores to variables
-    PlayerStrength = player_ability_scores['Strength']
-    PlayerDexterity = player_ability_scores['Dexterity']
-    PlayerConstitution = player_ability_scores['Constitution']
-    PlayerIntelligence = player_ability_scores['Intelligence']
-    PlayerWisdom = player_ability_scores['Wisdom']
-    PlayerCharisma = player_ability_scores['Charisma']
-    print("Race: " + PlayerRace)
-    print("Class: " + PlayerClass)
-    print("Background: " + PlayerBackground)
-    print("Character Name: " + PlayerName)
-    Yesno = ["Yes", "No"]
-    PickedCharCreateOption = get_choice(Yesno)
+    print("Strength:", PlayerStrength)
+    print("Dexterity:", PlayerDexterity)
+    print("Constitution:", PlayerConstitution)
+    print("Intelligence: ", PlayerIntelligence)
+    print("Wisdom: ", PlayerWisdom)
+    print("Charisma: ", PlayerCharisma)
+    print("Race:", PlayerRace)
+    print("Class:", PlayerClass)
+    print("Background:", PlayerBackground)
+    print("Character Name:", PlayerName)
+
+    print("\n**** Choose this character or start over? ")
+    choice = ["Choose this character.", "Start over."]
+    PickedCharCreateOption = get_choice(choice)
     if PickedCharCreateOption == 1:
             wait(1)
             print("\nCharacter creation complete!\n")
@@ -375,25 +380,10 @@ def create_character():
         print("Starting over...\n")
         wait(1)
 
-        # Generate ability scores
-        player_ability_scores = generate_ability_scores()
-        print("Your Stats:")
-        # Print each ability score with its corresponding label
-        for stat, score in player_ability_scores.items():
-            print(f"{stat}: {score}")
-        # Assign ability scores to variables
-        PlayerStrength = player_ability_scores['Strength']
-        PlayerDexterity = player_ability_scores['Dexterity']
-        PlayerConstitution = player_ability_scores['Constitution']
-        PlayerIntelligence = player_ability_scores['Intelligence']
-        PlayerWisdom = player_ability_scores['Wisdom']
-        PlayerCharisma = player_ability_scores['Charisma']
-
-        # Call create_character() again to reset Player(variables)
         create_character()
 
 def load_character(): # load an existing character from character_info.txt
-    global PlayerRace, PlayerClass, PlayerName, PlayerStrength, PlayerDexterity, PlayerConstitution, PlayerIntelligence, PlayerWisdom, PlayerCharisma
+    global PlayerStrength, PlayerDexterity, PlayerConstitution, PlayerIntelligence, PlayerWisdom, PlayerCharisma, PlayerRace, PlayerClass, PlayerBackground, PlayerName
     char_data = {}
             
     with open("character_info.txt", "r") as file:
@@ -415,18 +405,20 @@ def load_character(): # load an existing character from character_info.txt
     print("Charisma: " + PlayerCharisma)
     print("Race: " + PlayerRace)
     print("Class: " + PlayerClass)
+    print("Background: " + PlayerBackground)
     print("Character Name: " + PlayerName)
-        
-    ConfirmCharacter = input("\nLoad this character data? (y/n): ")
-    if (ConfirmCharacter.upper() == "Y"):
-        wait(1)
-        print("\nCharacter data loaded!\n")
-        # next function to start game
+
+    print("\n**** Load this character data? ")
+    Yesno = ["Yes", "No"]
+    PickedCharCreateOption = get_choice(Yesno)
+    if PickedCharCreateOption == 1:
+            wait(1)
+            print("\nCharacter data loaded!\n")
+            # next function to start game
     else:
         wait(1)
         print("Starting over...\n")
         wait(1)
-
         # Call create_character() again to reset Player(variables)
         create_character()
 
@@ -458,6 +450,7 @@ def save_character():
     "PlayerCharisma":PlayerCharisma,
     "PlayerRace":PlayerRace,
     "PlayerClass":PlayerClass,
+    "PlayerBackground":PlayerBackground,
     "PlayerName":PlayerName
     }
 
@@ -465,9 +458,6 @@ def save_character():
     with open("new_info.txt", "w") as new_file:
         for key, value in char_data.items():
             new_file.write(f"{key}: {value}\n")
-
-# save new character data (WIP)
-#save_character()
 
 # create a new character or load an existing one
 read_or_write()
@@ -532,4 +522,3 @@ match PlayerClass:
 	 BardicInspirationAbility = (PlayerCharisma - 10) // 2 # CHA mod
  case "Cleric":
 	 SpellcastingAbil = PlayerWisdom
-	 
