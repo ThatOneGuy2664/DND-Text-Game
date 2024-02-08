@@ -435,6 +435,26 @@ def save_character():
 # create new character or load existing
 read_or_write()
 
+# define ASI function
+def ASI():
+	print("Pick an ability score to increase.")
+	global PlayerStrength, PlayerDexterity, PlayerConstitution, PlayerIntelligence, PlayerWisdom, PlayerCharisma
+	AbilIncOpts = ["Strength", "Dexterity", "Constitution", "Intelligence", "Wisdom", "Charisma"]
+	PickedInc = get_choice(AbilIncOpts)
+	match AbilIncOpts:
+	 case 1:
+		 PlayerStrength += 2
+	 case 2:
+		 PlayerDexterity += 2
+	 case 3:
+		 PlayerConstitution += 2
+	 case 4:
+		 PlayerIntelligence += 2
+	 case 5:
+		 PlayerWisdom += 2
+	 case 6:
+		 PlayerCharisma += 2
+
 # PlayerClass abilities/passives
 # Barbarian
 BarbarianRage = False
@@ -453,13 +473,11 @@ BardicInspirationAbility = 0
 JackOfAllTrades = False
 CounterCharmAbility = False # passively grants new active action, a toggle
 BetterInspiration = False
-
 # Cleric
 ChannelDivinity = 0 # non-boolean for more than once per rest at higher levels
 DestroyUndead = False # passive = boolean
 DestroyUndeadCR = 0 # variable related to DestroyUndead
 DivineIntervention = False # boolean for one time, on/off use
-
 # General features (more than one class uses)
 ExtraAtk = 0
 SpellcastingAbil = None
