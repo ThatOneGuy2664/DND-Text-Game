@@ -448,8 +448,11 @@ BarbarianPrimalChamp = False
 
 # General features (more than one class uses)
 ExtraAtk = 0
+SpellcastingAbil = None
 
 match PlayerClass:
  case "Barbarian":
 	 BarbarianRage = True
 	 BarbarianUnarmoredDef = True
+ case: "Bard":
+	 SpellcastingAbil = Charisma
