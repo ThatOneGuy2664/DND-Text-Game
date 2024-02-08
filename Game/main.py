@@ -103,6 +103,7 @@ PlayerClass = None # Player class
 PlayerRace = None # Player race
 PlayerRessistances = None # any resistances the player has
 PlayerName = None # Player's soon-to-be name
+PlayerBackground = None # soon-to-be player background
 PlayerLevel = 1 # Player level
 PlayerBlindsight = 0 # in feet
 PlayerDarkvision = 0 # in feet
@@ -115,6 +116,7 @@ EnemyResistance = [ "" ] # resistance(s) of current enemy(s)
 RangeFromPlayerToEnemy = None # in feet
 Races = [ "Human", "Dragonborn", "Dwarf", "Elf", "Gnome", "Half-Elf", "Halfling", "Half-Orc", "Tiefling" ] # self-explanatory
 Classes = [ "Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard", "Artificer", "Bloodhunter" ] # self-explanatory
+Backgrounds = ["Acolyte", "Criminal / Spy", "Folk Hero", "Noble", "Sage", "Soldier"] # self-explanatory
 # http://dnd5e.wikidot.com/spells for spell list
 Spells = {
     "Cantrips": [
@@ -315,7 +317,25 @@ def create_character():
             PlayerClass = "Bloodhunter"
     wait(1)
     print("\n**** You chose " + PlayerClass + " as your class.")
-    
+    wait(1)
+    Backgroundchoice = get_choice(Backgrounds)
+    # Backgrounds = ["Acolyte", "Criminal / Spy", "Folk Hero", "Noble", "Sage", "Soldier"]
+    match Backgroundchoice
+	case 1:
+		PlayerBackground = "Acolyte"
+	case 2:
+		PlayerBackground = "Criminal"
+	case 3:
+		PlayerBackground = "Folk Hero"
+	case 4:
+		PlayerBackground = "Noble"
+        case 5:
+		PlayerBackground = "Sage"
+	case 6:
+		PlayerBackground = "Soldier"
+    wait(1)
+    print("\n**** You chose " + PlayerBackground + " as your background. ")
+	
     wait(1)
     PlayerName = input("\n**** What would you like to name your character? ")
     
@@ -336,6 +356,7 @@ def create_character():
     PlayerCharisma = player_ability_scores['Charisma']
     print("Race: " + PlayerRace)
     print("Class: " + PlayerClass)
+    print("Background: " + PlayerBackground)
     print("Character Name: " + PlayerName)
     Yesno = ["Yes", "No"]
     PickedCharCreateOption = get_choice(Yesno)
