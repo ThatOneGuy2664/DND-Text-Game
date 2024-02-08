@@ -251,6 +251,25 @@ def Create_Char():
 	wait(1)
 	PlayerRace = get_choice(Races)
 	wait(1)
+	match player_race_choice
+	 case 1:
+		 PlayerRace = "Human"
+	 case 2:
+		 PlayerRace = "Dragonborn"
+	 case 3:
+		 PlayerRace = "Dwarf"
+	 case 4:
+		 PlayerRace = "Elf"
+	 case 5:
+		 PlayerRace = "Gnome"
+	 case 6:
+		 PlayerRace = "Half-Elf"
+	 case 7:
+		 PlayerRace = "Halfling"
+	 case 8:
+		 PlayerRace = "Half-Orc"
+	 case 9:
+		 PlayerRace = "Tiefling"
 	print("You chose: " + PlayerRace)
 
 Create_Char()
