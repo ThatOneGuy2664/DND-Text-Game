@@ -81,7 +81,7 @@ def rollDice(num_dice, num_sides):
     return rolls # Example: (variable) = rollDice(2, 10) rolls 2 10 sided dice.
  
 # Variables
-inGameTime = 0 # seconds numerical value that increases by 6 as turns go by, one turn is 6 seconds.
+PlayerInGameTime = 0 # seconds numerical value that increases by 6 as turns go by, one turn is 6 seconds.
 PlayerGold = 0.0 # player's gold pieces, > 100 is the decimal of silver/copper, < 100 is platinum as per 5e rules.
 PlayerStrength = None # STR stat number
 PlayerDexterity = None # DEX stat number
@@ -98,14 +98,7 @@ PlayerHasAction = True # action
 PlayerHasBonusAction = True # bonus action
 PlayerHasReaction = True # per round reaction
 EnemyResistance = [ "" ] # resistance of current enemy(s)
-rangeToEnemy = None # in feet
-SneakAttack = False # Rogue only
-CunningAction = False
-UncannyDodge = False
-Evasion = False
-ReliableTalent = False
-Elusive = False
-StrokeOfLuck = 0 # end Rogue only. Numerical value for uses per rest
+RangeToEnemy = None # in feet
 Blindsight = 0 # in feet
 Darkvision = 0 # in feet
 Races = [ "Human", "Dragonborn", "Dwarf", "Elf", "Gnome", "Half-Elf", "Halfling", "Half-Orc", "Tiefling" ] 
@@ -440,40 +433,23 @@ def save_character():
 # create new character or load existing
 read_or_write()
 
-# class definitions
-# Rogue class features
-if PlayerClass == "Rogue": 
-    SneakAttack = True
-    SneakAttackDamage = roll_Dice(1, 6)
-if PlayerClass == "Rogue" and PlayerLevel >= 2:
-    CunningAction = True
-if PlayerClass == "Rogue" and PlayerLevel >= 3:
-    SneakAttackDamage += roll_Dice(1, 6)
-if PlayerClass == "Rogue" and PlayerLevel >= 5:
-    SneakAttackDamage += roll_Dice(1, 6)
-    UncannyDodge = True
-if PlayerClass == "Rogue" and PlayerLevel >= 7:
-    SneakAttackDamage += roll_Dice(1, 6)
-    Evasion = True
-if PlayerClass == "Rogue" and PlayerLevel >= 9:
-    SneakAttackDamage += roll_Dice(1, 6)
-if PlayerClass == "Rogue" and PlayerLevel >= 11:
-    SneakAttackDamage += roll_Dice(1, 6)
-    ReliableTalent = True
-if PlayerClass == "Rogue" and PlayerLevel >= 13:
-    SneakAttackDamage += roll_Dice(1, 6)
-if PlayerClass == "Rogue" and PlayerLevel >= 14:
-    Blindsight = 10 # feet
-if PlayerClass == "Rogue" and PlayerLevel >= 15:
-    SneakAttackDamage += roll_Dice(1, 6)
-if PlayerClass == "Rogue" and PlayerLevel >= 17:
-    SneakAttackDamage += roll_Dice(1, 6)
-if PlayerClass == "Rogue" and PlayerLevel >= 18:
-    Elusive = True
-if PlayerClass == "Rogue" and PlayerLevel >= 19:
-    SneakAttackDamage += roll_Dice(1, 6)
-if PlayerClass == "Rogue" and PlayerLevel >= 20:
-    StrokeOfLuck = 1 # Uses per rest
-# End Rogue class features
+# PlayerClass features
+BarbarianRage = False
+BarbarianUnarmoredDef = False
+BarbarianRecklessAtk = False
+BarbarianDangerSense = False
+BarbarianFastMove = False
+BarbarianFeral = False
+BarbarianBrutalCrit = 0
+BarbarianRelentlessRage = False
+BarbarianBetterRage = False
+BarbarianMight = False
+BarbarianPrimalChamp = False
 
-# start adventure
+# General features (more than one class uses)
+ExtraAtk = 0
+
+match PlayerClass:
+ case "Barbarian":
+	 BarbarianRage = True
+	 BarbarianUnarmoredDef = True
