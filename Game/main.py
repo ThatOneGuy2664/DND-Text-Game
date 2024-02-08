@@ -327,8 +327,8 @@ def create_character():
     print("Race: " + PlayerRace)
     print("Class: " + PlayerClass)
     print("Character Name: " + PlayerName)
-    yesno = ["Yes", "No"]
-    PickedCharCreateOption = get_choice(yesno)
+    Yesno = ["Yes", "No"]
+    PickedCharCreateOption = get_choice(Yesno)
     if PickedCharCreateOption == 1:
             wait(1)
             print("\nCharacter creation complete!\n")
