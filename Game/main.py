@@ -26,6 +26,7 @@
 # Imports
 import random
 import time
+import os
 
 # Functions
 
@@ -385,8 +386,21 @@ def create_character():
 def load_character(): # load an existing character from character_info.txt
     global PlayerStrength, PlayerDexterity, PlayerConstitution, PlayerIntelligence, PlayerWisdom, PlayerCharisma, PlayerRace, PlayerClass, PlayerBackground, PlayerName
     char_data = {}
-            
-    with open("character_info.txt", "r") as file:
+
+    # Get the current directory
+    current_directory = os.getcwd()
+
+    # Get list of files in the current directory with a .txt extension and sort them by name
+    txt_files = sorted([file for file in os.listdir(current_directory) if file.endswith(".txt")])
+
+    # Load the list of .txt files
+    print("\n**** Which save file would you like to load?\n")
+    wait(1)
+    selected_index = get_choice(txt_files) # show options
+    selected_file = txt_files[selected_index - 1]
+
+
+    with open(selected_file, "r") as file:
         for line in file.readlines():
             if not line.startswith('#'):
                 key, value = map(str.strip, line.split(':', 1))
@@ -398,6 +412,7 @@ def load_character(): # load an existing character from character_info.txt
         globals()[key] = value
 
     try:
+        wait(1)
         print("\n**** CHARACTER INFORMATION ****\n")
         print("Strength:", PlayerStrength)
         print("Dexterity:", PlayerDexterity)
@@ -410,9 +425,12 @@ def load_character(): # load an existing character from character_info.txt
         print("Background:", PlayerBackground)
         print("Character Name:", PlayerName)
     except ValueError:
+        wait(1)
         print("\nERROR: Unable to load character information...")
+        wait(1)
         read_or_write()
 
+    wait(1)
     print("\n**** Load this character data? ")
     Yesno = ["Yes", "No"]
     PickedCharCreateOption = get_choice(Yesno)
@@ -422,22 +440,23 @@ def load_character(): # load an existing character from character_info.txt
             # next function to start game
     else:
         wait(1)
-        print("Starting over...\n")
-        wait(1)
         # Call create_character() again to reset Player(variables)
-        create_character()
+        read_or_write()
 
 # function to create a character or load an existing one
 def read_or_write():
+    wait(1)
     print("\n**** Would you like to create a new character or load an existing character?\n")
     wait(1)
     neworload_char = [ "Create new character", "Load existing character" ]
     char_choices = get_choice(neworload_char)
     match char_choices:
         case 1:
+            wait(1)
             create_character()
             save_character()
         case 2:
+            wait(1)
             load_character()
 
 # finish character functions
