@@ -81,6 +81,7 @@ def rollDice(num_dice, num_sides):
     return rolls # Example: (variable) = rollDice(2, 10) rolls 2 10 sided dice.
  
 # Variables
+PlayerProfBonus = 0 # Proficiency bonus
 PlayerInGameTime = 0 # seconds numerical value that increases by 6 as turns go by, one turn is 6 seconds.
 PlayerGold = 0.0 # player's gold pieces, > 100 is the decimal of silver/copper, < 100 is platinum as per 5e rules.
 PlayerStrength = None # STR stat number
