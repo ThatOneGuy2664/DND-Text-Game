@@ -82,7 +82,7 @@ def rollDice(num_dice, num_sides):
  
 # player Variables
 inGameTime = 0 # seconds numerical value that increases by 6 as turns go by, one turn is 6 seconds.
-PlayerName = None
+PlayerName = None # soon-to-be player name
 PlayerGold = 0.0 # player's gold pieces, > 100 is the decimal of silver/copper, < 100 is platinum as per 5e rules.
 PlayerStrength = None # soon-to-be STR stat number
 PlayerDexterity = None # soon-to-be DEX stat number
