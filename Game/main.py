@@ -318,21 +318,23 @@ def create_character():
     wait(1)
     print("\n**** You chose " + PlayerClass + " as your class.")
     wait(1)
+    print("\n**** Choose your background...\n")
+    wait(1)
     Backgroundchoice = get_choice(Backgrounds)
     # Backgrounds = ["Acolyte", "Criminal / Spy", "Folk Hero", "Noble", "Sage", "Soldier"]
     match Backgroundchoice:
-    case 1:
-		PlayerBackground = "Acolyte"
-    case 2:
-		PlayerBackground = "Criminal"
-    case 3:
-		PlayerBackground = "Folk Hero"
-    case 4:
-		PlayerBackground = "Noble"
-    case 5:
-		PlayerBackground = "Sage"
-    case 6:
-		PlayerBackground = "Soldier"
+     case 1:
+        PlayerBackground = "Acolyte"
+     case 2:
+        PlayerBackground = "Criminal"
+     case 3:
+         PlayerBackground = "Folk Hero"
+     case 4:
+        PlayerBackground = "Noble"
+     case 5:
+        PlayerBackground = "Sage"
+     case 6:
+        PlayerBackground = "Soldier"
     wait(1)
     print("\n**** You chose " + PlayerBackground + " as your background. ")
 	
