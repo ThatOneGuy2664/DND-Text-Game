@@ -81,6 +81,7 @@ def rollDice(num_dice, num_sides):
     return rolls # Example: (variable) = rollDice(2, 10) rolls 2 10 sided dice.
  
 # Variables
+PlayerHasInspiration = False
 PlayerProfBonus = 0 # Proficiency bonus
 PlayerInGameTime = 0 # seconds numerical value that increases by 6 as turns go by, one turn is 6 seconds.
 PlayerGold = 0.0 # player's gold pieces, > 100 is the decimal of silver/copper, < 100 is platinum as per 5e rules.
@@ -434,7 +435,7 @@ def save_character():
 # create new character or load existing
 read_or_write()
 
-# PlayerClass features
+# PlayerClass abilities/passives
 # Barbarian
 BarbarianRage = False
 BarbarianUnarmoredDef = False
@@ -448,6 +449,10 @@ BarbarianBetterRage = False
 BarbarianMight = False
 BarbarianPrimalChamp = False
 # Bard
+BardicInspirationAbility = 0
+JackOfAllTrades = False
+CounterCharmAbility = False
+BetterInspiration = False
 
 # General features (more than one class uses)
 ExtraAtk = 0
@@ -457,5 +462,6 @@ match PlayerClass:
  case "Barbarian":
 	 BarbarianRage = True
 	 BarbarianUnarmoredDef = True
- case: "Bard":
+ case "Bard":
 	 SpellcastingAbil = PlayerCharisma
+	 BardicInspirationAbility = (PlayerCharisma - 10) // 2 # CHA mod
