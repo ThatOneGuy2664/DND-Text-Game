@@ -443,7 +443,7 @@ BarbarianRecklessAtk = False
 BarbarianDangerSense = False
 BarbarianFastMove = False
 BarbarianFeral = False
-BarbarianBrutalCrit = 0
+BarbarianBrutalCrit = 0 # extra di(c)e rolled
 BarbarianRelentlessRage = False
 BarbarianBetterRage = False
 BarbarianMight = False
@@ -451,8 +451,14 @@ BarbarianPrimalChamp = False
 # Bard
 BardicInspirationAbility = 0
 JackOfAllTrades = False
-CounterCharmAbility = False
+CounterCharmAbility = False # passively grants new active action, a toggle
 BetterInspiration = False
+
+# Cleric
+ChannelDivinity = 0 # non-boolean for more than once per rest at higher levels
+DestroyUndead = False # passive = boolean
+DestroyUndeadCR = 0 # variable related to DestroyUndead
+DivineIntervention = False # boolean for one time, on/off use
 
 # General features (more than one class uses)
 ExtraAtk = 0
@@ -465,3 +471,6 @@ match PlayerClass:
  case "Bard":
 	 SpellcastingAbil = PlayerCharisma
 	 BardicInspirationAbility = (PlayerCharisma - 10) // 2 # CHA mod
+ case "Cleric":
+	 SpellcastingAbil = PlayerWisdom
+	 
