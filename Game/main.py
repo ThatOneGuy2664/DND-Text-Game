@@ -105,8 +105,8 @@ PlayerStarterGear = [""] # soon-to-be player starting gear defined by background
 PlayerInv = [""] # soon-to-be player inventory
 EnemyResistance = [ "" ] # resistance(s) of current enemy(s)
 RangeFromPlayerToEnemy = None # in feet
-Races = [ "Human", "Dragonborn", "Dwarf", "Elf", "Gnome", "Half-Elf", "Halfling", "Half-Orc", "Tiefling" ] 
-Classes = [ "Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard", "Artificer", "Bloodhunter" ]
+Races = [ "Human", "Dragonborn", "Dwarf", "Elf", "Gnome", "Half-Elf", "Halfling", "Half-Orc", "Tiefling" ] # self-explanatory
+Classes = [ "Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard", "Artificer", "Bloodhunter" ] # self-explanatory
 # http://dnd5e.wikidot.com/spells for spell list
 Spells = {
     "Cantrips": [
@@ -230,7 +230,7 @@ def acid_splash(): # Acid Splash cantrip
     # if out of range
     print("Enemy out of range...")
 
-# create character function
+# create character functions
 def create_character():
     global PlayerRace, PlayerClass, PlayerName, PlayerStrength, PlayerDexterity, PlayerConstitution, PlayerIntelligence, PlayerWisdom, PlayerCharisma
   
@@ -408,7 +408,7 @@ def read_or_write():
         case 2:
             load_character()
 
-# main code
+# finish character functions
 print("**** Welcome to DND-Text-Game! ****")
 
 # save character data to new file
@@ -431,14 +431,16 @@ def save_character():
         for key, value in char_data.items():
             new_file.write(f"{key}: {value}\n")
 
-# save new character data WIP
+# save new character data (WIP)
 #save_character()
 
-# start function calls
-# create new character or load existing
+# create new character or load an existing one
 read_or_write()
 
-# define ASI function
+# end character creation
+# start applying and/or changing globals relating to chosen race and class
+
+# define ASI (ability score increase) function for ASI on level-up
 def ability_score_increase():
 	print("Pick an ability score to increase.")
 	global PlayerStrength, PlayerDexterity, PlayerConstitution, PlayerIntelligence, PlayerWisdom, PlayerCharisma
@@ -458,7 +460,7 @@ def ability_score_increase():
 	 case 6:
 		 PlayerCharisma += 2
 
-# PlayerClass abilities/passives
+# PlayerClass abilities/passives for all classes
 # Barbarian
 BarbarianRage = False
 BarbarianUnarmoredDef = False
@@ -481,7 +483,7 @@ ChannelDivinity = 0 # non-boolean for more than once per rest at higher levels
 DestroyUndead = False # passive = boolean
 DestroyUndeadCR = 0 # variable related to DestroyUndead
 DivineIntervention = False # boolean for one time, on/off use
-# General features (more than one class uses)
+# General features (more than one class uses these)
 ExtraAtk = 0
 SpellcastingAbil = None
 
