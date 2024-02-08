@@ -80,43 +80,32 @@ def rollDice(num_dice, num_sides):
         rolls.append(random.randint(1, num_sides))
     return rolls # Example: (variable) = rollDice(2, 10) rolls 2 10 sided dice.
  
-# player Variables
+# Variables
 inGameTime = 0 # seconds numerical value that increases by 6 as turns go by, one turn is 6 seconds.
-PlayerName = None # soon-to-be player name
 PlayerGold = 0.0 # player's gold pieces, > 100 is the decimal of silver/copper, < 100 is platinum as per 5e rules.
-PlayerStrength = None # soon-to-be STR stat number
-PlayerDexterity = None # soon-to-be DEX stat number
-PlayerConstitution = None # soon-to-be CON stat number
-PlayerIntelligence = None # soon-to-be INT stat number
-PlayerWisdom = None # soon-to-be WIS stat number
-PlayerCharisma = None # soon-to-be CHA stat number
-PlayerStrengthModifier = None # STR mod
-PlayerDexterityModifier = None # DEX mod
-PlayerConstitutionModifier = None # CON mod
-PlayerIntelligenceModifier = None # INT mod
-PlayerWisdomModifier = None # WIS mod
-PlayerCharismaModifier = None # CHA mod
-PlayerClass = None # soon-to-be player class
-PlayerRace = None # soon-to-be player race
+PlayerStrength = None # STR stat number
+PlayerDexterity = None # DEX stat number
+PlayerConstitution = None # CON stat number
+PlayerIntelligence = None # INT stat number
+PlayerWisdom = None # WIS stat number
+PlayerCharisma = None # CHA stat number
+PlayerClass = None # Player class
+PlayerRace = None # Player race
 PlayerRessistances = None # any resistances the player has
+PlayerName = None
 PlayerLevel = 1 # Player level
-PlayerLangs = ["Common"] # languages the player character knows
 PlayerHasAction = True # action
 PlayerHasBonusAction = True # bonus action
 PlayerHasReaction = True # per round reaction
-PlayerHasBreathWeapon = False # if PlayerRace is Dragonborn then player has a breath weapon attack
-# end player variables
-bonuslang = None # only relevant for Human race's extra language of choice
 EnemyResistance = [ "" ] # resistance of current enemy(s)
 rangeToEnemy = None # in feet
-allLangs = ["Common", "Dwarvish", "Elvish", "Giant", "Gnomish", "Goblin", "Halfling", "Orc", "Abyssal", "Celestial", "Draconic", "Deep Speech", "Infernal", "Primordial", "Sylvan", "Undercommon", "Thieves Cant", "Drudic"]
-SneakAttack = False # start Rogue only
-CunningAction = False # Rogue only
-UncannyDodge = False # Rogue only
-Evasion = False # Rogue only
-ReliableTalent = False # Rogue only
-Elusive = False # Rogue only
-StrokeOfLuck = 0 # end Rogue only. StrokeOfLuck is numerical value for uses per rest
+SneakAttack = False # Rogue only
+CunningAction = False
+UncannyDodge = False
+Evasion = False
+ReliableTalent = False
+Elusive = False
+StrokeOfLuck = 0 # end Rogue only. Numerical value for uses per rest
 Blindsight = 0 # in feet
 Darkvision = 0 # in feet
 Races = [ "Human", "Dragonborn", "Dwarf", "Elf", "Gnome", "Half-Elf", "Halfling", "Half-Orc", "Tiefling" ] 
@@ -244,10 +233,10 @@ def acid_splash(): # Acid Splash cantrip
     # if out of range
     print("Enemy out of range...")
 
-# create character functions
-
+# create character function
 def create_character():
     global PlayerRace, PlayerClass, PlayerName, PlayerStrength, PlayerDexterity, PlayerConstitution, PlayerIntelligence, PlayerWisdom, PlayerCharisma
+  
     # Generate ability scores
     player_ability_scores = generate_ability_scores()
     print("\n**** Rolled stats...\n")
@@ -333,29 +322,21 @@ def create_character():
     print("\n**** CHARACTER INFORMATION ****\n")
     for stat, score in player_ability_scores.items():
         print(f"{stat}: {score}")
+    # Assign ability scores to variables
+    PlayerStrength = player_ability_scores['Strength']
+    PlayerDexterity = player_ability_scores['Dexterity']
+    PlayerConstitution = player_ability_scores['Constitution']
+    PlayerIntelligence = player_ability_scores['Intelligence']
+    PlayerWisdom = player_ability_scores['Wisdom']
+    PlayerCharisma = player_ability_scores['Charisma']
     print("Race: " + PlayerRace)
     print("Class: " + PlayerClass)
     print("Character Name: " + PlayerName)
     ConfirmCharacter = input("\nConfirm this character? (y/n): ")
     if (ConfirmCharacter.upper() == "Y"):
-        wait(1)
-        print("\nCharacter creation complete!\n")
-        # Assign ability scores to variables
-        PlayerStrength = player_ability_scores['Strength']
-        PlayerDexterity = player_ability_scores['Dexterity']
-        PlayerConstitution = player_ability_scores['Constitution']
-        PlayerIntelligence = player_ability_scores['Intelligence']
-        PlayerWisdom = player_ability_scores['Wisdom']
-        PlayerCharisma = player_ability_scores['Charisma']
-	# Calculate ability score modifiers
-        PlayerStrengthModifier = (PlayerStrength - 10) // 2
-        PlayerDexterityModifier = (PlayerDexterity - 10) // 2 
-        PlayerConstitutionModifier = (PlayerConstitution - 10) // 2 
-        PlayerIntelligenceModifier = (PlayerIntelligence - 10) // 2
-        PlayerWisdomModifier = (PlayerWisdom - 10) // 2 
-        PlayerCharismaModifier = (PlayerCharisma - 10) // 2
-        wait(1)
-
+            wait(1)
+            print("\nCharacter creation complete!\n")
+            # next function to start game
     else:
         wait(1)
         print("Starting over...\n")
@@ -374,18 +355,12 @@ def create_character():
         PlayerIntelligence = player_ability_scores['Intelligence']
         PlayerWisdom = player_ability_scores['Wisdom']
         PlayerCharisma = player_ability_scores['Charisma']
-	# Calculate ability score modifiers 
-        PlayerStrengthModifier = (PlayerStrength - 10) // 2
-        PlayerDexterityModifier = (PlayerDexterity - 10) // 2 
-        PlayerConstitutionModifier = (PlayerConstitution - 10) // 2 
-        PlayerIntelligenceModifier = (PlayerIntelligence - 10) // 2
-        PlayerWisdomModifier = (PlayerWisdom - 10) // 2 
-        PlayerCharismaModifier = (PlayerCharisma - 10) // 2
 
         # Call create_character() again to reset Player(variables)
         create_character()
 
 def load_character(): # load an existing character from character_info.txt
+    global PlayerRace, PlayerClass, PlayerName, PlayerStrength, PlayerDexterity, PlayerConstitution, PlayerIntelligence, PlayerWisdom, PlayerCharisma
     char_data = {}
             
     with open("character_info.txt", "r") as file:
@@ -431,14 +406,74 @@ def read_or_write():
     match char_choices:
         case 1:
             create_character()
+            save_character()
         case 2:
             load_character()
 
-# actual game code
+# main code
 print("**** Welcome to DND-Text-Game! ****")
+
+# save character data to new file
+def save_character():
+    global PlayerRace, PlayerClass, PlayerName, PlayerStrength, PlayerDexterity, PlayerConstitution, PlayerIntelligence, PlayerWisdom, PlayerCharisma
+    char_data = {
+    "PlayerStrength":PlayerStrength,
+    "PlayerDexterity":PlayerDexterity,
+    "PlayerConstitution":PlayerConstitution,
+    "PlayerIntelligence":PlayerIntelligence,
+    "PlayerWisdom":PlayerWisdom,
+    "PlayerCharisma":PlayerCharisma,
+    "PlayerRace":PlayerRace,
+    "PlayerClass":PlayerClass,
+    "PlayerName":PlayerName
+    }
+
+    # Write data to a new file
+    with open("new_info.txt", "w") as new_file:
+        for key, value in char_data.items():
+            new_file.write(f"{key}: {value}\n")
+
+# save new character data WIP
+#save_character()
 
 # start function calls
 # create new character or load existing
 read_or_write()
 
-# randomized adventure code
+# class definitions
+# Rogue class features
+if PlayerClass == "Rogue": 
+    SneakAttack = True
+    SneakAttackDamage = roll_Dice(1, 6)
+if PlayerClass == "Rogue" and PlayerLevel >= 2:
+    CunningAction = True
+if PlayerClass == "Rogue" and PlayerLevel >= 3:
+    SneakAttackDamage += roll_Dice(1, 6)
+if PlayerClass == "Rogue" and PlayerLevel >= 5:
+    SneakAttackDamage += roll_Dice(1, 6)
+    UncannyDodge = True
+if PlayerClass == "Rogue" and PlayerLevel >= 7:
+    SneakAttackDamage += roll_Dice(1, 6)
+    Evasion = True
+if PlayerClass == "Rogue" and PlayerLevel >= 9:
+    SneakAttackDamage += roll_Dice(1, 6)
+if PlayerClass == "Rogue" and PlayerLevel >= 11:
+    SneakAttackDamage += roll_Dice(1, 6)
+    ReliableTalent = True
+if PlayerClass == "Rogue" and PlayerLevel >= 13:
+    SneakAttackDamage += roll_Dice(1, 6)
+if PlayerClass == "Rogue" and PlayerLevel >= 14:
+    Blindsight = 10 # feet
+if PlayerClass == "Rogue" and PlayerLevel >= 15:
+    SneakAttackDamage += roll_Dice(1, 6)
+if PlayerClass == "Rogue" and PlayerLevel >= 17:
+    SneakAttackDamage += roll_Dice(1, 6)
+if PlayerClass == "Rogue" and PlayerLevel >= 18:
+    Elusive = True
+if PlayerClass == "Rogue" and PlayerLevel >= 19:
+    SneakAttackDamage += roll_Dice(1, 6)
+if PlayerClass == "Rogue" and PlayerLevel >= 20:
+    StrokeOfLuck = 1 # Uses per rest
+# End Rogue class features
+
+# start adventure
