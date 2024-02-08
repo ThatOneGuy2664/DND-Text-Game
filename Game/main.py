@@ -395,7 +395,7 @@ def load_character(): # load an existing character from character_info.txt
         # Call create_character() again to reset Player(variables)
         create_character()
 
-# create character or load existing
+# function to create a character or load an existing one
 def read_or_write():
     print("\n**** Would you like to create a new character or load an existing character?\n")
     wait(1)
@@ -426,7 +426,7 @@ def save_character():
     "PlayerName":PlayerName
     }
 
-    # Write data to a new file
+    # write data to a new file
     with open("new_info.txt", "w") as new_file:
         for key, value in char_data.items():
             new_file.write(f"{key}: {value}\n")
@@ -434,13 +434,13 @@ def save_character():
 # save new character data (WIP)
 #save_character()
 
-# create new character or load an existing one
+# create a new character or load an existing one
 read_or_write()
 
 # end character creation
 # start applying and/or changing globals relating to chosen race and class
 
-# define ASI (ability score increase) function for ASI on level-up
+# define ASI (ability score increase) function for ASI on level-up, all classes use ASIs
 def ability_score_increase():
 	print("Pick an ability score to increase.")
 	global PlayerStrength, PlayerDexterity, PlayerConstitution, PlayerIntelligence, PlayerWisdom, PlayerCharisma
@@ -487,6 +487,7 @@ DivineIntervention = False # boolean for one time, on/off use
 ExtraAtk = 0
 SpellcastingAbil = None
 
+# matching the null variables to the chosen class and make them not = null for that class's variables
 match PlayerClass:
  case "Barbarian":
 	 BarbarianRage = True
