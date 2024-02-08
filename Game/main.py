@@ -116,7 +116,7 @@ EnemyResistance = [ "" ] # resistance(s) of current enemy(s)
 RangeFromPlayerToEnemy = None # in feet
 Races = [ "Human", "Dragonborn", "Dwarf", "Elf", "Gnome", "Half-Elf", "Halfling", "Half-Orc", "Tiefling" ] # self-explanatory
 Classes = [ "Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard", "Artificer", "Bloodhunter" ] # self-explanatory
-Backgrounds = ["Acolyte", "Criminal / Spy", "Folk Hero", "Noble", "Sage", "Soldier"] # self-explanatory
+Backgrounds = ["Acolyte", "Criminal / Spy", "Folk Hero", "Noble", "Sage", "Soldier", "Charlatan", "Haunted One"] # self-explanatory
 # http://dnd5e.wikidot.com/spells for spell list
 Spells = {
     "Cantrips": [
@@ -321,7 +321,7 @@ def create_character():
     print("\n**** Choose your background...\n")
     wait(1)
     Backgroundchoice = get_choice(Backgrounds)
-    # Backgrounds = ["Acolyte", "Criminal / Spy", "Folk Hero", "Noble", "Sage", "Soldier"]
+    # Backgrounds = ["Acolyte", "Criminal / Spy", "Folk Hero", "Noble", "Sage", "Soldier", "Charlatan", "Haunted One"]
     match Backgroundchoice:
      case 1:
         PlayerBackground = "Acolyte"
@@ -335,6 +335,10 @@ def create_character():
         PlayerBackground = "Sage"
      case 6:
         PlayerBackground = "Soldier"
+     case 7:
+        PlayerBackground = "Charlatan"
+     case 8:
+        PlayerBackground = "Haunted One"
     wait(1)
     print("\n**** You chose " + PlayerBackground + " as your background. ")
 	
