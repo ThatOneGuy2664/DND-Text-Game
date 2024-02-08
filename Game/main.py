@@ -61,7 +61,7 @@ def roll_ability_score():
     rolls.remove(min(rolls))
     return sum(rolls)
  
-# pause for (seconds)
+# pause program for (seconds)
 def wait(seconds):
     # Wait for (seconds) and resume
     time.sleep(seconds)
