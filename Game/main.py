@@ -434,6 +434,7 @@ def save_character():
 read_or_write()
 
 # PlayerClass features
+# Barbarian
 BarbarianRage = False
 BarbarianUnarmoredDef = False
 BarbarianRecklessAtk = False
@@ -445,6 +446,7 @@ BarbarianRelentlessRage = False
 BarbarianBetterRage = False
 BarbarianMight = False
 BarbarianPrimalChamp = False
+# Bard
 
 # General features (more than one class uses)
 ExtraAtk = 0
@@ -455,4 +457,4 @@ match PlayerClass:
 	 BarbarianRage = True
 	 BarbarianUnarmoredDef = True
  case: "Bard":
-	 SpellcastingAbil = Charisma
+	 SpellcastingAbil = PlayerCharisma
