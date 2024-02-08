@@ -327,8 +327,9 @@ def create_character():
     print("Race: " + PlayerRace)
     print("Class: " + PlayerClass)
     print("Character Name: " + PlayerName)
-    ConfirmCharacter = input("\nConfirm this character? (y/n): ")
-    if (ConfirmCharacter.upper() == "Y"):
+    yesno = ["Yes", "No"]
+    PickedCharCreateOption = get_choice(yesno)
+    if PickedCharCreateOption == 1:
             wait(1)
             print("\nCharacter creation complete!\n")
             # next function to start game
