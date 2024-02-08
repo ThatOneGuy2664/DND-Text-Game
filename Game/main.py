@@ -247,11 +247,12 @@ def acid_splash(): # Acid Splash cantrip
 # create character functions
 
 def Create_Char():
-	global PlayerRace, PlayerClass
+	global PlayerRace, PlayerClass, PlayerName
+	print("Pick Your Race:/n")
 	wait(1)
 	PlayerRace = get_choice(Races)
 	wait(1)
-	match player_race_choice
+	match PlayerRace:
 	 case 1:
 		 PlayerRace = "Human"
 	 case 2:
@@ -270,6 +271,48 @@ def Create_Char():
 		 PlayerRace = "Half-Orc"
 	 case 9:
 		 PlayerRace = "Tiefling"
-	print("You chose: " + PlayerRace)
+	print("\nYou chose: " + PlayerRace)
+	wait(1)
+	print("\nPick Your Class:\n")
+	wait(1)
+	PlayerClass = get_choice(Classes)
+	wait(1)
+	match PlayerClass:
+	 case 1:
+		 PlayerClass = "Barbarian"
+	 case 2:
+		 PlayerClass = "Bard"
+	 case 3:
+		 PlayerClass = "Cleric"
+	 case 4:
+		 PlayerClass = "Druid"
+	 case 5:
+		 PlayerClass = "Fighter"
+	 case 6:
+		 PlayerClass = "Monk"
+	 case 7:
+		 PlayerClass = "Paladin"
+	 case 8:
+		 PlayerClass = "Ranger"
+	 case 9:
+		 PlayerClass = "Rogue"
+	 case 10:
+		 PlayerClass = "Sorcerer"
+	 case 11:
+		 PlayerClass = "Warlock"
+	 case 12:
+		 PlayerClass = "Wizard"
+	 case 13:
+		 PlayerClass = "Artificer"
+	 case 14:
+		 PlayerClass = "Bloodhunter"
+	print("You chose: " + PlayerClass)
+	wait(1)
+	PlayerName = input("Name Your Character: ")
+	wait(1)
+	print("Your name is " + PlayerName + " you are a " + PlayerRace + PlayerClass)
+	wait(1)
+	print("Your Stats Are:\n")
+	
 
 Create_Char()
