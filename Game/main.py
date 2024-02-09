@@ -99,6 +99,8 @@ PlayerBackground = None # soon-to-be player background
 PlayerLevel = 1 # Player level
 PlayerBlindsight = 0 # in feet
 PlayerDarkvision = 0 # in feet
+PlayerHasBreathWeapon = False
+DragonbornSubRaceType = None
 PlayerHasAction = True # action
 PlayerHasBonusAction = True # bonus action
 PlayerHasReaction = True # per round reaction
@@ -269,9 +271,76 @@ def create_character():
     # race option picked to playerrace variable
     match race_choice:
         case 1:
-            PlayerRace = "Human" # these assign the playerrace variable
+             PlayerRace = "Human" # these assign the playerrace variable
+             print("\nChoose your extra language:\n")
+             wait(1)
+             ExtraLang = get_choice(AllLangs)
+             wait(1)
+             match ExtraLang:
+         	case 1:
+                        print("You already know Common.")
+         	case 2:
+         		ExtraLang = "Dwarvish"
+         	case 3:
+         		ExtraLang = "Elvish"
+         	case 4:
+         		ExtraLang = "Giant"
+         	case 5:
+         		ExtraLang = "Gnomish"
+         	case 6:
+         		ExtraLang = "Goblin"
+         	case 7:
+         		ExtraLang = "Halfling"
+         	case 8:
+         		ExtraLang = "Orc"
+         	case 9:
+         		ExtraLang = "Abyssal"
+         	case 10:
+         		ExtraLang = "Celestial"
+         	case 11:
+         		ExtraLang = "Draconic"
+         	case 12:
+         		ExtraLang = "Deep Speech"
+         	case 13:
+         		ExtraLang = "Infernal"
+         	case 14:
+         		ExtraLang = "Primordial"
+         	case 15:
+         		ExtraLang = "Sylvan"
+         	case 16:
+         		ExtraLang = "Undercommon"
+             PlayerLangs.append(ExtraLang)
+             wait(1)
+             print("\nYou now know the languages...")
+             print(PlayerLangs)
         case 2:
             PlayerRace = "Dragonborn"
+            wait(1)
+            print("\nPick your Draconic Ancestry:\n")
+            wait(1)
+            DragonbornSubCategory = ["Black", "Blue", "Brass", "Bronze", "Copper", "Gold", "Green", "Red", "Silver", "White"] # Dragonborn Ancestry types
+            DragonbornSubRaceType = get_choice(DragonbornSubCategory)
+            match DragonbornSubRaceType:
+                case 1:
+                        DragonbornSubRaceType = "Acid"
+                case 2:
+                        DragonbornSubRaceType = "Lightning"
+                case 3:
+                        DragonbornSubRaceType = "Fire"
+                case 4:
+                        DragonbornSubRaceType = "Lightning"
+                case 5:
+                        DragonbornSubRaceType = "Acid"
+                case 6:
+                        DragonbornSubRaceType = "Fire"
+                case 7:
+                        DragonbornSubRaceType = "Poison"
+                case 8:
+                        DragonbornSubRaceType = "Fire"
+                case 9:
+                        DragonbornSubRaceType = "Cold"
+                case 10:
+                        DragonbornSubRaceType = "Cold"
         case 3:
             PlayerRace = "Dwarf"
         case 4:
@@ -567,61 +636,19 @@ match PlayerClass:
 	 Drudic = True
 
 # Player race variables
-PlayerHasBreathWeapon = False
 PlayerHasFeyAncestry = False
-PlayerBreathWeaponType = None
+PlayerBreathWeaponDamageType = DragonbornSubRaceType
 
 wait(1)
 
 match PlayerRace:
  case "Human":
-         print("Choose your bonus language:")
-         wait(2)
          PlayerStrength += 1
          PlayerDexterity += 1
          PlayerConstitution += 1
          PlayerIntelligence += 1
          PlayerWisdom += 1
          PlayerCharisma += 1
-         ExtraLang = get_choice(AllLangs)
-         match ExtraLang:
-         	case 1:
-         		print("You already know Common.")
-         		ExtraLang = get_choice(AllLangs)
-         	case 2:
-         		ExtraLang = "Dwarvish"
-         	case 3:
-         		ExtraLang = "Elvish"
-         	case 4:
-         		ExtraLang = "Giant"
-         	case 5:
-         		ExtraLang = "Gnomish"
-         	case 6:
-         		ExtraLang = "Goblin"
-         	case 7:
-         		ExtraLang = "Halfling"
-         	case 8:
-         		ExtraLang = "Orc"
-         	case 9:
-         		ExtraLang = "Abyssal"
-         	case 10:
-         		ExtraLang = "Celestial"
-         	case 11:
-         		ExtraLang = "Draconic"
-         	case 12:
-         		ExtraLang = "Deep Speech"
-         	case 13:
-         		ExtraLang = "Infernal"
-         	case 14:
-         		ExtraLang = "Primordial"
-         	case 15:
-         		ExtraLang = "Sylvan"
-         	case 16:
-         		ExtraLang = "Undercommon"
-         PlayerLangs.append(ExtraLang)
-         wait(1)
-         print("\nYou now know the languages...")
-         print(PlayerLangs)
 
 # Refresh player stats after bonuses are applied
 refresh_stat_mods()
