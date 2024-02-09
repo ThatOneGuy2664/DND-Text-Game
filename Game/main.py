@@ -257,7 +257,7 @@ def acid_splash(): # Acid Splash cantrip
 
 # create character functions
 def create_character():
-    global PlayerRace, PlayerClass, PlayerBackground, PlayerName, PlayerStrength, PlayerDexterity, PlayerConstitution, PlayerIntelligence, PlayerWisdom, PlayerCharisma, PlayerLangs
+    global PlayerRace, PlayerClass, PlayerBackground, PlayerName, PlayerStrength, PlayerDexterity, PlayerConstitution, PlayerIntelligence, PlayerWisdom, PlayerCharisma, PlayerLangs, DragonbornSubRaceType, PlayerHasBreathWeapon
   
     print("\n**** Rolled stats...\n")
     # Generate and print player ability scores
@@ -315,6 +315,7 @@ def create_character():
              print(PlayerLangs)
         case 2:
             PlayerRace = "Dragonborn"
+            PlayerHasBreathWeapon = True
             wait(1)
             print("\nPick your Draconic Ancestry:\n")
             wait(1)
