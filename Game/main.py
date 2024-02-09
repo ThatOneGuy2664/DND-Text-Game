@@ -533,6 +533,8 @@ ChannelDivinity = 0 # non-boolean for more than once per rest at higher levels
 DestroyUndead = False # passive = boolean
 DestroyUndeadCR = 0 # variable related to DestroyUndead
 DivineIntervention = False # boolean for one time, on/off use
+# Druid
+Druidic = False
 # General features (more than one class uses these)
 ExtraAtk = 0
 SpellcastingAbil = None
@@ -547,3 +549,6 @@ match PlayerClass:
 	 BardicInspirationAbility = (PlayerCharisma - 10) // 2 # CHA mod
  case "Cleric":
 	 SpellcastingAbil = PlayerWisdom
+ case "Druid":
+	 SpellcastingAbil = PlayerWisdom
+	 Drudic = True
