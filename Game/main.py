@@ -248,6 +248,7 @@ def acid_splash(): # Acid Splash cantrip
         # end turn
         return damage
     # if out of range
+    else:
     print("Enemy out of range...")
 
 # create character functions
