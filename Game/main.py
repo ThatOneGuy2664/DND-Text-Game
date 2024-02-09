@@ -104,6 +104,8 @@ PlayerHasBonusAction = True # bonus action
 PlayerHasReaction = True # per round reaction
 PlayerStarterGear = [""] # soon-to-be player starting gear defined by background and class to add to inventory (see below)
 PlayerInv = [""] # soon-to-be player inventory
+PlayerLangs = ["Common"] # soon-to-be languages the player knows
+AllLangs = ["Common", "Dwarvish", "Elvish", "Giant", "Gnomish", "Goblin", "Halfling", "Orc", "Abyssal", "Celestial", "Draconic", "Deep Speech", "Infernal", "Primordial", "Sylvan", "Undercommon"] # all languages
 EnemyResistance = [ "" ] # resistance(s) of current enemy(s)
 RangeFromPlayerToEnemy = None # in feet
 Races = [ "Human", "Dragonborn", "Dwarf", "Elf", "Gnome", "Half-Elf", "Halfling", "Half-Orc", "Tiefling" ] # self-explanatory
@@ -571,12 +573,16 @@ PlayerBreathWeaponType = None
 
 match PlayerRace
  case "Human":
+         print("Choose your bonus language:""
+         wait(1)
          PlayerStrength += 1
          PlayerDexterity += 1
          PlayerConstitution += 1
          PlayerIntelligence += 1
          PlayerWisdom += 1
          PlayerCharisma += 1
+         get_choice(allLangs)
+         PlayerLangs = # WIP
 
 
 # Refresh player stats after bonuses are applied
