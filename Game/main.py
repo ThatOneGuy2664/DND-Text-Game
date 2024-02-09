@@ -78,7 +78,7 @@ def rollDice(num_dice, num_sides):
 PlayerHasInspiration = False # whether or not Player has inspiration, boolean to limit to one use.
 PlayerProfBonus = 0 # Proficiency bonus
 PlayerInGameTime = 0 # seconds numerical value that increases by 6 as turns go by, one turn is 6 seconds.
-PlayerGold = 0.0 # player's gold pieces, > 100 is the decimal of silver/copper, < 100 is platinum as per 5e rules.
+PlayerGold = 0.0 # player's gold pieces, < 1 is the decimal of silver/copper (tenths or hundredths respectively), >/= 100 is 1 (+1 per hundred) platinum as per 5e rules.
 PlayerStrength = None # STR stat number
 PlayerDexterity = None # DEX stat number
 PlayerConstitution = None # CON stat number
