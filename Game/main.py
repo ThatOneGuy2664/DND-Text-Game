@@ -581,9 +581,11 @@ match PlayerRace
          PlayerIntelligence += 1
          PlayerWisdom += 1
          PlayerCharisma += 1
-         get_choice(allLangs)
-         PlayerLangs = # WIP
-
+         ExtraLang = get_choice(AllLangs)
+         PlayerLangs.append(ExtraLang)
+         wait(1)
+         print("You now know...\n")
+         print(PlayerLangs)
 
 # Refresh player stats after bonuses are applied
 refresh_stat_mods()
