@@ -257,7 +257,7 @@ def acid_splash(): # Acid Splash cantrip
 
 # create character functions
 def create_character():
-    global PlayerRace, PlayerClass, PlayerBackground, PlayerName, PlayerStrength, PlayerDexterity, PlayerConstitution, PlayerIntelligence, PlayerWisdom, PlayerCharisma
+    global PlayerRace, PlayerClass, PlayerBackground, PlayerName, PlayerStrength, PlayerDexterity, PlayerConstitution, PlayerIntelligence, PlayerWisdom, PlayerCharisma, PlayerLangs
   
     print("\n**** Rolled stats...\n")
     # Generate and print player ability scores
@@ -277,41 +277,41 @@ def create_character():
              ExtraLang = get_choice(AllLangs)
              wait(1)
              match ExtraLang:
-         	case 1:
+              case 1:
                         print("You already know Common.")
-         	case 2:
-         		ExtraLang = "Dwarvish"
-         	case 3:
-         		ExtraLang = "Elvish"
-         	case 4:
-         		ExtraLang = "Giant"
-         	case 5:
-         		ExtraLang = "Gnomish"
-         	case 6:
-         		ExtraLang = "Goblin"
-         	case 7:
-         		ExtraLang = "Halfling"
-         	case 8:
-         		ExtraLang = "Orc"
-         	case 9:
-         		ExtraLang = "Abyssal"
-         	case 10:
-         		ExtraLang = "Celestial"
-         	case 11:
-         		ExtraLang = "Draconic"
-         	case 12:
-         		ExtraLang = "Deep Speech"
-         	case 13:
-         		ExtraLang = "Infernal"
-         	case 14:
-         		ExtraLang = "Primordial"
-         	case 15:
-         		ExtraLang = "Sylvan"
-         	case 16:
-         		ExtraLang = "Undercommon"
+              case 2:
+                 ExtraLang = "Dwarvish"
+              case 3:
+                 ExtraLang = "Elvish"
+              case 4:
+                 ExtraLang = "Giant"
+              case 5:
+                 ExtraLang = "Gnomish"
+              case 6:
+                 ExtraLang = "Goblin"
+              case 7:
+                 ExtraLang = "Halfling"
+              case 8:
+                 ExtraLang = "Orc"
+              case 9:
+                 ExtraLang = "Abyssal"
+              case 10:
+                 ExtraLang = "Celestial"
+              case 11:
+                 ExtraLang = "Draconic"
+              case 12:
+                 ExtraLang = "Deep Speech"
+              case 13:
+                 ExtraLang = "Infernal"
+              case 14:
+                 ExtraLang = "Primordial"
+              case 15:
+                 ExtraLang = "Sylvan"
+              case 16:
+                 ExtraLang = "Undercommon"
              PlayerLangs.append(ExtraLang)
              wait(1)
-             print("\nYou now know the languages...")
+             print("\nYou know the languages...")
              print(PlayerLangs)
         case 2:
             PlayerRace = "Dragonborn"
@@ -320,6 +320,10 @@ def create_character():
             wait(1)
             DragonbornSubCategory = ["Black", "Blue", "Brass", "Bronze", "Copper", "Gold", "Green", "Red", "Silver", "White"] # Dragonborn Ancestry types
             DragonbornSubRaceType = get_choice(DragonbornSubCategory)
+            wait(1)
+            print("\nYou know the languages...")
+            PlayerLangs = ["Common", "Draconic"]
+            print(PlayerLangs)
             match DragonbornSubRaceType:
                 case 1:
                         DragonbornSubRaceType = "Acid"
