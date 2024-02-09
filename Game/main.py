@@ -251,7 +251,7 @@ def acid_splash(): # Acid Splash cantrip
         return damage
     # if out of range
     else:
-    print("Enemy out of range...")
+     print("Enemy out of range...")
 
 # create character functions
 def create_character():
@@ -493,7 +493,7 @@ read_or_write()
 # end character creation
 # start applying and/or changing globals relating to chosen race and class
 
-def refresh_stat_mods()
+def refresh_stat_mods():
         global PlayerSTRMod, PlayerDEXMod, PlayerCONMod, PlayerINTMod, PlayerWISMod, PlayerCHAMod, PlayerStrength, PlayerDexterity, PlayerConstitution, PlayerIntelligence, PlayerWisdom, PlayerCharisma
         PlayerSTRMod = (PlayerStrength - 10) // 2
         PlayerDEXMod = (PlayerDexterity - 10) // 2
@@ -504,24 +504,24 @@ def refresh_stat_mods()
 
 # define ASI (ability score increase) function for ASI on level-up, all classes use ASIs
 def ability_score_increase():
-	print("Pick an ability score to increase.")
-	global PlayerStrength, PlayerDexterity, PlayerConstitution, PlayerIntelligence, PlayerWisdom, PlayerCharisma
-	AbilIncOpts = ["Strength", "Dexterity", "Constitution", "Intelligence", "Wisdom", "Charisma"]
-	PickedInc = get_choice(AbilIncOpts)
-	match AbilIncOpts:
-	 case 1:
-		 PlayerStrength += 2
-	 case 2:
-		 PlayerDexterity += 2
-	 case 3:
-		 PlayerConstitution += 2
-	 case 4:
-		 PlayerIntelligence += 2
-	 case 5:
-		 PlayerWisdom += 2
-	 case 6:
-		 PlayerCharisma += 2
-        refresh_stat_mods()
+    print("Pick an ability score to increase.")
+    global PlayerStrength, PlayerDexterity, PlayerConstitution, PlayerIntelligence, PlayerWisdom, PlayerCharisma
+    AbilIncOpts = ["Strength", "Dexterity", "Constitution", "Intelligence", "Wisdom", "Charisma"]
+    PickedInc = get_choice(AbilIncOpts)
+    match AbilIncOpts:
+     case 1:
+         PlayerStrength += 2
+     case 2:
+         PlayerDexterity += 2
+     case 3:
+         PlayerConstitution += 2
+     case 4:
+         PlayerIntelligence += 2
+     case 5:
+         PlayerWisdom += 2
+     case 6:
+         PlayerCharisma += 2
+         refresh_stat_mods()
 
 # PlayerClass abilities/passives for all classes
 # Barbarian
@@ -571,9 +571,9 @@ PlayerHasBreathWeapon = False
 PlayerHasFeyAncestry = False
 PlayerBreathWeaponType = None
 
-match PlayerRace
+match PlayerRace:
  case "Human":
-         print("Choose your bonus language:""
+         print("Choose your bonus language:")
          wait(1)
          PlayerStrength += 1
          PlayerDexterity += 1
@@ -582,9 +582,43 @@ match PlayerRace
          PlayerWisdom += 1
          PlayerCharisma += 1
          ExtraLang = get_choice(AllLangs)
+         match ExtraLang:
+         	case 1:
+         		print("You already know common.")
+         		ExtraLang = get_choice(AllLangs)
+         	case 2:
+         		ExtraLang = "Dwarvish"
+         	case 3:
+         		ExtraLang = "Elvish"
+         	case 4:
+         		ExtraLang = "Giant"
+         	case 5:
+         		ExtraLang = "Gnomish"
+         	case 6:
+         		ExtraLang = "Goblin"
+         	case 7:
+         		ExtraLang = "Halfling"
+         	case 8:
+         		ExtraLang = "Orc"
+         	case 9:
+         		ExtraLang = "Abyssal"
+         	case 10:
+         		ExtraLang = "Celestial"
+         	case 11:
+         		ExtraLang = "Draconic"
+         	case 12:
+         		ExtraLang = "Deep Speech"
+         	case 13:
+         		ExtraLang = "Infernal"
+         	case 14:
+         		ExtraLang = "Primordial"
+         	case 15:
+         		ExtraLang = "Sylvan"
+         	case 16:
+         		ExtraLang = "Undercommon"
          PlayerLangs.append(ExtraLang)
          wait(1)
-         print("You now know...\n")
+         print("\nYou now know the languages...")
          print(PlayerLangs)
 
 # Refresh player stats after bonuses are applied
