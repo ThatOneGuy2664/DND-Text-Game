@@ -491,6 +491,15 @@ read_or_write()
 # end character creation
 # start applying and/or changing globals relating to chosen race and class
 
+def refresh_stat_mods()
+        global PlayerSTRMod, PlayerDEXMod, PlayerCONMod, PlayerINTMod, PlayerWISMod, PlayerCHAMod, PlayerStrength, PlayerDexterity, PlayerConstitution, PlayerIntelligence, PlayerWisdom, PlayerCharisma
+        PlayerSTRMod = (PlayerStrength - 10) // 2
+        PlayerDEXMod = (PlayerDexterity - 10) // 2
+        PlayerCONMod = (PlayerConstitution - 10) // 2
+        PlayerINTMod = (PlayerIntelligence - 10) // 2
+        PlayerWISMod = (PlayerWisdom - 10) // 2
+        PlayerCHAMod = (PlayerCharisma - 10) // 2
+
 # define ASI (ability score increase) function for ASI on level-up, all classes use ASIs
 def ability_score_increase():
 	print("Pick an ability score to increase.")
@@ -510,6 +519,7 @@ def ability_score_increase():
 		 PlayerWisdom += 2
 	 case 6:
 		 PlayerCharisma += 2
+        refresh_stat_mods()
 
 # PlayerClass abilities/passives for all classes
 # Barbarian
@@ -553,3 +563,21 @@ match PlayerClass:
  case "Druid":
 	 SpellcastingAbil = PlayerWisdom
 	 Drudic = True
+
+# Player race variables
+PlayerHasBreathWeapon = False
+PlayerHasFeyAncestry = False
+PlayerBreathWeaponType = None
+
+match PlayerRace
+ case "Human":
+         PlayerStrength += 1
+         PlayerDexterity += 1
+         PlayerConstitution += 1
+         PlayerIntelligence += 1
+         PlayerWisdom += 1
+         PlayerCharisma += 1
+
+
+# Refresh player stats after bonuses are applied
+refresh_stat_mods()
