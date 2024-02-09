@@ -571,10 +571,12 @@ PlayerHasBreathWeapon = False
 PlayerHasFeyAncestry = False
 PlayerBreathWeaponType = None
 
+wait(1)
+
 match PlayerRace:
  case "Human":
          print("Choose your bonus language:")
-         wait(1)
+         wait(2)
          PlayerStrength += 1
          PlayerDexterity += 1
          PlayerConstitution += 1
@@ -584,7 +586,7 @@ match PlayerRace:
          ExtraLang = get_choice(AllLangs)
          match ExtraLang:
          	case 1:
-         		print("You already know common.")
+         		print("You already know Common.")
          		ExtraLang = get_choice(AllLangs)
          	case 2:
          		ExtraLang = "Dwarvish"
