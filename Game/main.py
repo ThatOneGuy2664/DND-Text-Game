@@ -94,6 +94,8 @@ PlayerCONMod = None # CON mod to be assigned
 PlayerINTMod = None # INT mod to be assigned 
 PlayerWISMod = None # WIS mod to be assigned
 PlayerCHAMod = None # CHA mod to be assigned
+PlayerHP = 0 # to be assigned
+PlayerHPMax = 0 # to be assigned
 PlayerClass = None # Player class
 PlayerRace = None # Player race
 PlayerRessistances = [""] # any resistances the player has
@@ -106,6 +108,7 @@ PlayerDarkvision = 0 # in feet
 PlayerSpeed = 0 # in feet
 PlayerHasBreathWeapon = False
 DragonbornSubRaceType = None
+PlayerSpells = [""]
 PlayerHasAction = True # action
 PlayerHasBonusAction = True # bonus action
 PlayerHasReaction = True # per round reaction
@@ -340,7 +343,7 @@ def create_character():
             DragonbornSubRaceType = get_choice(DragonbornSubCategory)
             wait(1)
             print("\nYou know the languages...")
-            PlayerLangs = ["Common", "Draconic"]
+            PlayerLangs.append("Draconic")
             print(PlayerLangs)
             match DragonbornSubRaceType:
                 case 1:
@@ -375,8 +378,50 @@ def create_character():
                         PlayerRessistances.append(DragonbornSubRaceType)
         case 3:
             PlayerRace = "Dwarf"
+            PlayerSpeed = 30 # feet
+            PlayerSize = "Medium"
+            PlayerDarkvision = 60 # feet
+            PlayerRessistances.append("Poison")
+            PlayerLangs.append("Dwarvish")
+            wait(1)
+            print("What type of Dwarf are you?")
+            DwarfSubRaces = ["Hill Dwarf", "Mountain Dwarf"]
+            DwarfSubRacePicked = get_choice(DwarfSubRaces)
+            wait(1)
+            print("\nYou know the languages...")
+            print(PlayerLangs)
+            match DwarfSubRacePicked:
+                case 1:
+                        PlayerWisdom += 1
+                        PlayerHPMax += PlayerLevel
+                case 2:
+                        PlayerStrength += 2
         case 4:
             PlayerRace = "Elf"
+            PlayerDarkvision = 60 # feet
+            PlayerDexterity += 2 # +2 Dex
+            PlayerSize = "Medium"
+            PlayerSpeed = 30 # feet
+            PlayerLangs.append(Elvish)
+            wait(1)
+            print("What type of Elf are you?")
+            ElfSubRaces = ["Wood Elf", "High Elf", "Eladrin"]
+            ElfSubRacePicked = get_choice(ElfSubRaces)
+            match ElfSubRacePicked
+                case 1:
+                        PlayerWisdom += 1
+                        PlayerSpeed += 5 # 35 feet
+                case 2:
+                        PlayerIntelligence += 1
+                        wait(1)
+                        print("\nPick your extra language:\n")
+                        bonusLang = get_choice(AllLangs)
+                        PlayerLangs.append(bonusLang)
+                        print("\nPick your Wizard Cantrip:\n")
+                        PlayerSpells.append(get_choice(WizardCantrips["WizardCantrips"]))
+                case 3:
+                        PlayerIntelligence += 1
+                        # free Misty Step spell per rest
         case 5:
             PlayerRace = "Gnome"
         case 6:
