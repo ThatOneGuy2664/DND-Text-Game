@@ -93,12 +93,14 @@ PlayerWISMod = None # WIS mod to be assigned
 PlayerCHAMod = None # CHA mod to be assigned
 PlayerClass = None # Player class
 PlayerRace = None # Player race
-PlayerRessistances = None # any resistances the player has
+PlayerRessistances = [""] # any resistances the player has
 PlayerName = None # Player's soon-to-be name
 PlayerBackground = None # soon-to-be player background
+PlayerSize = None # soon-to-be player character size
 PlayerLevel = 1 # Player level
 PlayerBlindsight = 0 # in feet
 PlayerDarkvision = 0 # in feet
+PlayerSpeed = 0 # in feet
 PlayerHasBreathWeapon = False
 DragonbornSubRaceType = None
 PlayerHasAction = True # action
@@ -257,7 +259,7 @@ def acid_splash(): # Acid Splash cantrip
 
 # create character functions
 def create_character():
-    global PlayerRace, PlayerClass, PlayerBackground, PlayerName, PlayerStrength, PlayerDexterity, PlayerConstitution, PlayerIntelligence, PlayerWisdom, PlayerCharisma, PlayerLangs, DragonbornSubRaceType, PlayerHasBreathWeapon
+    global PlayerRace, PlayerClass, PlayerBackground, PlayerName, PlayerStrength, PlayerDexterity, PlayerConstitution, PlayerIntelligence, PlayerWisdom, PlayerCharisma, PlayerLangs, DragonbornSubRaceType, PlayerHasBreathWeapon, PlayerRessistances, PlayerSpeed
   
     print("\n**** Rolled stats...\n")
     # Generate and print player ability scores
@@ -272,6 +274,14 @@ def create_character():
     match race_choice:
         case 1:
              PlayerRace = "Human" # these assign the playerrace variable
+             PlayerStrength += 1 # + 1 all stats
+             PlayerDexterity += 1 # + 1 all stats
+             PlayerConstitution += 1 # + 1 all stats
+             PlayerIntelligence += 1 # + 1 all stats
+             PlayerWisdom += 1 # + 1 all stats
+             PlayerCharisma += 1 # + 1 all stats
+             PlayerSpeed = 30 # feet
+             PlayerSize = "Medium" # size
              print("\nChoose your extra language:\n")
              wait(1)
              ExtraLang = get_choice(AllLangs)
@@ -314,6 +324,10 @@ def create_character():
              print("\nYou know the languages...")
              print(PlayerLangs)
         case 2:
+            PlayerStrength += 2
+            PlayerCharisma += 1
+            PlayerSpeed = 30 # feet
+            PlayerSize = "Medium"
             PlayerRace = "Dragonborn"
             PlayerHasBreathWeapon = True
             wait(1)
@@ -328,24 +342,34 @@ def create_character():
             match DragonbornSubRaceType:
                 case 1:
                         DragonbornSubRaceType = "Acid"
+                        PlayerRessistances.append(DragonbornSubRaceType)
                 case 2:
                         DragonbornSubRaceType = "Lightning"
+                        PlayerRessistances.append(DragonbornSubRaceType)
                 case 3:
                         DragonbornSubRaceType = "Fire"
+                        PlayerRessistances.append(DragonbornSubRaceType)
                 case 4:
                         DragonbornSubRaceType = "Lightning"
+                        PlayerRessistances.append(DragonbornSubRaceType)
                 case 5:
                         DragonbornSubRaceType = "Acid"
+                        PlayerRessistances.append(DragonbornSubRaceType)
                 case 6:
                         DragonbornSubRaceType = "Fire"
+                        PlayerRessistances.append(DragonbornSubRaceType)
                 case 7:
                         DragonbornSubRaceType = "Poison"
+                        PlayerRessistances.append(DragonbornSubRaceType)
                 case 8:
                         DragonbornSubRaceType = "Fire"
+                        PlayerRessistances.append(DragonbornSubRaceType)
                 case 9:
                         DragonbornSubRaceType = "Cold"
+                        PlayerRessistances.append(DragonbornSubRaceType)
                 case 10:
                         DragonbornSubRaceType = "Cold"
+                        PlayerRessistances.append(DragonbornSubRaceType)
         case 3:
             PlayerRace = "Dwarf"
         case 4:
@@ -639,21 +663,6 @@ match PlayerClass:
  case "Druid":
 	 SpellcastingAbil = PlayerWisdom
 	 Drudic = True
-
-# Player race variables
-PlayerHasFeyAncestry = False
-PlayerBreathWeaponDamageType = DragonbornSubRaceType
-
-wait(1)
-
-match PlayerRace:
- case "Human":
-         PlayerStrength += 1
-         PlayerDexterity += 1
-         PlayerConstitution += 1
-         PlayerIntelligence += 1
-         PlayerWisdom += 1
-         PlayerCharisma += 1
 
 # Refresh player stats after bonuses are applied
 refresh_stat_mods()
