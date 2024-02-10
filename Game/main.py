@@ -407,7 +407,7 @@ def create_character():
             print("What type of Elf are you?")
             ElfSubRaces = ["Wood Elf", "High Elf", "Eladrin"]
             ElfSubRacePicked = get_choice(ElfSubRaces)
-            match ElfSubRacePicked
+            match ElfSubRacePicked:
                 case 1:
                         PlayerWisdom += 1
                         PlayerSpeed += 5 # 35 feet
