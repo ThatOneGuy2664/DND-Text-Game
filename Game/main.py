@@ -602,6 +602,19 @@ def refresh_stat_mods():
         PlayerWISMod = (PlayerWisdom - 10) // 2
         PlayerCHAMod = (PlayerCharisma - 10) // 2
 
+def print_player_stats()
+        print("\n**** CHARACTER INFORMATION ****\n")
+        print("Strength:", PlayerStrength, " +", PlayerSTRMod)
+        print("Dexterity:", PlayerDexterity, " +", PlayerDEXMod)
+        print("Constitution:", PlayerConstitution, " +", PlayerCONMod)
+        print("Intelligence: ", PlayerIntelligence, " +", PlayerINTMod)
+        print("Wisdom: ", PlayerWisdom, " +", PlayerWISMod)
+        print("Charisma: ", PlayerCharisma, " +", PlayerCHAMod)
+        print("Race:", PlayerRace)
+        print("Class:", PlayerClass)
+        print("Background:", PlayerBackground)
+        print("Character Name:", PlayerName)
+
 # define ASI (ability score increase) function for ASI on level-up, all classes use ASIs
 def ability_score_increase():
     print("Pick an ability score to increase.")
@@ -666,5 +679,13 @@ match PlayerClass:
 	 SpellcastingAbil = PlayerWisdom
 	 Drudic = True
 
-# Refresh player stats after bonuses are applied
+# Refresh player stats after bonuses are applied and before game start
 refresh_stat_mods()
+
+wait(1)
+
+def Game()
+    GameOpts = ["View Stats"]
+    match GameOpts:
+        case 1:
+                print_player_stats()
