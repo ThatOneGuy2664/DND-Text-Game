@@ -1,7 +1,7 @@
 # MIT License 
 #   
-# Copyright (c) 2024 ThatOneGuy2664 for most original code
-# Copyright (c) 2024 Twaddler01 for updates, patches, and most charcter creation logic
+# Copyright (c) 2024 ThatOneGuy2664
+# Copyright (c) 2024 Twaddler01
 #  
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
