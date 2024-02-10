@@ -30,6 +30,11 @@ import os
 
 # Functions
 
+# pause for (seconds)
+def wait(seconds):
+    # Wait for (seconds) and resume
+    time.sleep(seconds)
+
 # Function to get player choice
 def get_choice(options):
     while True:
@@ -41,8 +46,10 @@ def get_choice(options):
             if 1 <= choice <= len(options):  # Check if choice is within the range of valid indices
                 return choice # returns numerical value of chosen option, starting at 1 for first option
             else:
+                wait(1)
                 print("\nInvalid choice. Please enter a number within the range of options.\n")
         except ValueError:
+            wait(1)
             print("\nInvalid input. Please enter a valid number.\n")
 # Example usage:
 # options = ["Option 1", "Option 2", "Option 3"]
@@ -61,11 +68,6 @@ def roll_ability_score():
     rolls = [random.randint(1, 6) for _ in range(4)]
     rolls.remove(min(rolls))
     return sum(rolls)
- 
-# pause for (seconds)
-def wait(seconds):
-    # Wait for (seconds) and resume
-    time.sleep(seconds)
  
 # rolls (number of dice, number of sides of dice)
 def rollDice(num_dice, num_sides):
