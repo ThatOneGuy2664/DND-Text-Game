@@ -468,12 +468,12 @@ def create_character():
             PlayerSpeed = 25 # feet
             PlayerDarkvision = 60 # feet
             PlayerLangs = ["Common", "Gnomish"]
-            DwarfSubRaces = ["Forest Gnome", "Rock Gnome"]
+            GnomeSubRaces = ["Forest Gnome", "Rock Gnome"]
             wait(1)
             print("What kind of Gnome are you?") # subrace select prompt
             wait(1)
-            DwarfSubRacePicked = get_choice(DwarfSubRaces) # select subrace
-            match DwarfSubRacePicked
+            GnomeSubRacePicked = get_choice(GnomeSubRaces) # select subrace
+            match GnomeSubRacePicked:
                 case 1:
                         PlayerDexterity += 1
                         # minor illusion at will
