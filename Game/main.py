@@ -473,9 +473,11 @@ def create_character():
             DwarfSubRacePicked = get_choice(DwarfSubRaces)
             match DwarfSubRacePicked
                 case 1:
-                        # Forest Dwarf
+                        PlayerDexterity += 1
+                        # minor illusion at will
                 case 2:
-                        # Rock Dwarf
+                        PlayerConstitution += 1
+                        # tinker
         case 6:
             PlayerRace = "Half-Elf"
         case 7:
