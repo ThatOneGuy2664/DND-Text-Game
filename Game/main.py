@@ -21,7 +21,8 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 # END LICENSE DESCRIPTION
-# Python will have less updates but more eventual functionality. 
+
+# Eventually, I am planning to use Kivy/KivyMD for play outside console, for now however it's console only.
 
 # Imports
 import random
