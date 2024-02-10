@@ -265,7 +265,7 @@ def acid_splash(): # Acid Splash cantrip
 
 # create character functions
 def create_character():
-    global PlayerRace, PlayerClass, PlayerBackground, PlayerName, PlayerStrength, PlayerDexterity, PlayerConstitution, PlayerIntelligence, PlayerWisdom, PlayerCharisma, PlayerLangs, DragonbornSubRaceType, PlayerHasBreathWeapon, PlayerRessistances, PlayerSpeed
+    global PlayerRace, PlayerClass, PlayerBackground, PlayerName, PlayerStrength, PlayerDexterity, PlayerConstitution, PlayerIntelligence, PlayerWisdom, PlayerCharisma, PlayerLangs, DragonbornSubRaceType, PlayerHasBreathWeapon, PlayerRessistances, PlayerSpeed, PlayerDarkvision
   
     print("\n**** Rolled stats...\n")
     # Generate and print player ability scores
@@ -573,6 +573,8 @@ def create_character():
     print("Class:", PlayerClass)
     print("Background:", PlayerBackground)
     print("Character Name:", PlayerName)
+    if PlayerDarkvision > 0:
+            print("Darkvision: " + PlayerDarkvision + "ft")
 
     print("\n**** Choose this character or start over? ")
     choice = ["Choose this character.", "Start over."]
@@ -716,6 +718,8 @@ def print_player_stats():
         print("Class:", PlayerClass)
         print("Background:", PlayerBackground)
         print("Character Name:", PlayerName)
+        if PlayerDarkvision > 0:
+            print("Darkvision: " + PlayerDarkvision + "ft")
 
 # define ASI (ability score increase) function for ASI on level-up, all classes use ASIs
 def ability_score_increase():
