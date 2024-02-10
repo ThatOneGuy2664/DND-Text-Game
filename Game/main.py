@@ -347,7 +347,7 @@ def create_character():
             print(PlayerLangs)
             match DragonbornSubRaceType:
                 case 1:
-                        DragonbornSubRaceType = "Acid"
+                        DragonbornSubRaceType = "Acid" # breath weapon type
                         PlayerRessistances.append(DragonbornSubRaceType) # add corresponding player ressistance
                 case 2:
                         DragonbornSubRaceType = "Lightning"
@@ -388,7 +388,7 @@ def create_character():
             DwarfSubRaces = ["Hill Dwarf", "Mountain Dwarf"] # sub-race choices
             DwarfSubRacePicked = get_choice(DwarfSubRaces) # read player choice with numerical value chosen (1-2)
             wait(1)
-            print("\nYou know the languages...")
+            print("\nYou know the languages...") # print PlayerLangs array
             print(PlayerLangs)
             match DwarfSubRacePicked:
                 case 1:
