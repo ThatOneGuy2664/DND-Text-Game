@@ -415,10 +415,46 @@ def create_character():
                         PlayerIntelligence += 1
                         wait(1)
                         print("\nPick your extra language:\n")
-                        bonusLang = get_choice(AllLangs)
-                        PlayerLangs.append(bonusLang)
-                        print("\nPick your Wizard Cantrip:\n")
-                        PlayerSpells.append(get_choice(WizardCantrips["WizardCantrips"]))
+                        ExtraLang = get_choice(AllLangs)
+                        match ExtraLang:
+                           case 1:
+                                  print("You already know Common.")
+                           case 2:
+                                  ExtraLang = "Dwarvish"
+                           case 3:
+                                  ExtraLang = "Elvish"
+                           case 4:
+                                  ExtraLang = "Giant"
+                           case 5:
+                                  ExtraLang = "Gnomish"
+                           case 6:
+                                  ExtraLang = "Goblin"
+                           case 7:
+                                  ExtraLang = "Halfling"
+                           case 8:
+                                  ExtraLang = "Orc"
+                           case 9:
+                                  ExtraLang = "Abyssal"
+                           case 10:
+                                   ExtraLang = "Celestial"
+                           case 11:
+                                   ExtraLang = "Draconic"
+                           case 12:
+                                   ExtraLang = "Deep Speech"
+                           case 13:
+                                   ExtraLang = "Infernal"
+                           case 14:
+                                   ExtraLang = "Primordial"
+                           case 15:
+                                   ExtraLang = "Sylvan"
+                           case 16:
+                                   ExtraLang = "Undercommon"
+                           PlayerLangs.append(ExtraLang)
+                           wait(1)
+                           print("\nYou know the languages...")
+                           print(PlayerLangs)
+                           print("\nPick your Wizard Cantrip:\n")
+                           PlayerSpells.append(get_choice(WizardCantrips["WizardCantrips"]))
                 case 3:
                         PlayerIntelligence += 1
                         # free Misty Step spell per rest
