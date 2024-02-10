@@ -463,6 +463,12 @@ def create_character():
                         # free Misty Step spell per rest
         case 5:
             PlayerRace = "Gnome"
+            PlayerIntelligence += 2 # +2 INT
+            PlayerSize = "Small" # Size
+            PlayerSpeed = 25 # feet
+            PlayerDarkvision = 60 # feet
+            PlayerLangs = ["Common", "Gnomish"]
+            # subraces
         case 6:
             PlayerRace = "Half-Elf"
         case 7:
