@@ -602,7 +602,7 @@ def refresh_stat_mods():
         PlayerWISMod = (PlayerWisdom - 10) // 2
         PlayerCHAMod = (PlayerCharisma - 10) // 2
 
-def print_player_stats()
+def print_player_stats():
         print("\n**** CHARACTER INFORMATION ****\n")
         print("Strength:", PlayerStrength, " +", PlayerSTRMod)
         print("Dexterity:", PlayerDexterity, " +", PlayerDEXMod)
@@ -684,8 +684,18 @@ refresh_stat_mods()
 
 wait(1)
 
-def Game()
+def Game():
+    wait(1)
+    print("What would you like to do?")
     GameOpts = ["View Stats"]
-    match GameOpts:
+    GameOptPicked = get_choice(GameOpts)
+    match GameOptPicked:
         case 1:
+                print("\n")
+                wait(1)
                 print_player_stats()
+                print("\n")
+    # repeat function after other calls are completed
+    Game()
+                
+Game()
