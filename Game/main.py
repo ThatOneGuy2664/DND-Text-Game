@@ -468,7 +468,14 @@ def create_character():
             PlayerSpeed = 25 # feet
             PlayerDarkvision = 60 # feet
             PlayerLangs = ["Common", "Gnomish"]
-            # subraces
+            DwarfSubRaces = ["Forest", "Rock"]
+            wait(1)
+            DwarfSubRacePicked = get_choice(DwarfSubRaces)
+            match DwarfSubRacePicked
+                case 1:
+                        # Forest Dwarf
+                case 2:
+                        # Rock Dwarf
         case 6:
             PlayerRace = "Half-Elf"
         case 7:
