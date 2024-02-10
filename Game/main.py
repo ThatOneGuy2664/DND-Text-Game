@@ -25,8 +25,8 @@
 # Eventually, I am planning to use Kivy/KivyMD for play outside console, for now however it's console only.
 
 # Imports
-import random
-import time
+import random # random numerical values
+import time # to prevent walls of text with wait()
 import os
 
 # Functions
@@ -106,8 +106,8 @@ PlayerLevel = 1 # Player level
 PlayerBlindsight = 0 # in feet
 PlayerDarkvision = 0 # in feet
 PlayerSpeed = 0 # in feet
-PlayerHasBreathWeapon = False
-DragonbornSubRaceType = None
+PlayerHasBreathWeapon = False # Dragonborn only
+DragonbornSubRaceType = None # Dragonborn only
 PlayerSpells = [""] # Spells player knows
 PlayerHasAction = True # action
 PlayerHasBonusAction = True # bonus action
@@ -289,12 +289,12 @@ def create_character():
              PlayerSpeed = 30 # feet
              PlayerSize = "Medium" # size
              print("\nChoose your extra language:\n")
-             wait(1)
-             ExtraLang = get_choice(AllLangs)
-             wait(1)
+             wait(1) # wait a second
+             ExtraLang = get_choice(AllLangs) # Humans get an extra language
+             wait(1) # wait a second
              match ExtraLang:
               case 1:
-                        print("You already know Common.")
+                 print("You already know Common.")
               case 2:
                  ExtraLang = "Dwarvish"
               case 3:
@@ -337,10 +337,10 @@ def create_character():
             PlayerRace = "Dragonborn"
             PlayerHasBreathWeapon = True
             wait(1)
-            print("\nPick your Draconic Ancestry:\n")
+            print("\nPick your Draconic Ancestry:\n") # determines added resistance and breath weapon damage type
             wait(1)
             DragonbornSubCategory = ["Black", "Blue", "Brass", "Bronze", "Copper", "Gold", "Green", "Red", "Silver", "White"] # Dragonborn Ancestry types
-            DragonbornSubRaceType = get_choice(DragonbornSubCategory)
+            DragonbornSubRaceType = get_choice(DragonbornSubCategory) # get player choice of DragonbornSubCategory(s)
             wait(1)
             print("\nYou know the languages...")
             PlayerLangs = ["Common", "Draconic"]
@@ -348,7 +348,7 @@ def create_character():
             match DragonbornSubRaceType:
                 case 1:
                         DragonbornSubRaceType = "Acid"
-                        PlayerRessistances.append(DragonbornSubRaceType)
+                        PlayerRessistances.append(DragonbornSubRaceType) # add corresponding player ressistance
                 case 2:
                         DragonbornSubRaceType = "Lightning"
                         PlayerRessistances.append(DragonbornSubRaceType)
@@ -382,27 +382,27 @@ def create_character():
             PlayerSize = "Medium"
             PlayerDarkvision = 60 # feet
             PlayerRessistances.append("Poison")
-            PlayerLangs = ["Common", "Dwarvish"]
+            PlayerLangs = ["Common", "Dwarvish"] # Dwarf's languages
             wait(1)
-            print("What type of Dwarf are you?")
-            DwarfSubRaces = ["Hill Dwarf", "Mountain Dwarf"]
-            DwarfSubRacePicked = get_choice(DwarfSubRaces)
+            print("What type of Dwarf are you?") # sub-race selection
+            DwarfSubRaces = ["Hill Dwarf", "Mountain Dwarf"] # sub-race choices
+            DwarfSubRacePicked = get_choice(DwarfSubRaces) # read player choice with numerical value chosen (1-2)
             wait(1)
             print("\nYou know the languages...")
             print(PlayerLangs)
             match DwarfSubRacePicked:
                 case 1:
-                        PlayerWisdom += 1
-                        PlayerHPMax += PlayerLevel
+                        PlayerWisdom += 1 # +1 WIS
+                        PlayerHPMax += PlayerLevel # +1 HPMax per level
                 case 2:
                         PlayerStrength += 2
         case 4:
             PlayerRace = "Elf"
             PlayerDarkvision = 60 # feet
             PlayerDexterity += 2 # +2 Dex
-            PlayerSize = "Medium"
+            PlayerSize = "Medium" # player size
             PlayerSpeed = 30 # feet
-            PlayerLangs = ["Common", "Elvish"]
+            PlayerLangs = ["Common", "Elvish"] # Elf's languages
             wait(1)
             print("What type of Elf are you?")
             ElfSubRaces = ["Wood Elf", "High Elf", "Eladrin"]
@@ -513,7 +513,7 @@ def create_character():
     wait(1)
     print("\n**** You chose " + PlayerClass + " as your class.")
     wait(1)
-    print("\n**** Choose your background...\n")
+    print("\n**** Choose your background...\n") # assign a background
     wait(1)
     Backgroundchoice = get_choice(Backgrounds)
     # Backgrounds = ["Acolyte", "Criminal / Spy", "Folk Hero", "Noble", "Sage", "Soldier", "Charlatan", "Haunted One"]
@@ -538,14 +538,14 @@ def create_character():
     print("\n**** You chose " + PlayerBackground + " as your background.")
 	
     wait(1)
-    PlayerName = input("\n**** What would you like to name your character? ")
+    PlayerName = input("\n**** What would you like to name your character? ") # naming the player character
     
     wait(1)
     print("\nYour character name is " + PlayerName + ".")
     
     wait(1)
     
-    print("\n**** CHARACTER INFORMATION ****\n")
+    print("\n**** CHARACTER INFORMATION ****\n") # charcter overview
     print("Strength:", PlayerStrength)
     print("Dexterity:", PlayerDexterity)
     print("Constitution:", PlayerConstitution)
