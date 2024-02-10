@@ -108,11 +108,11 @@ PlayerDarkvision = 0 # in feet
 PlayerSpeed = 0 # in feet
 PlayerHasBreathWeapon = False # Dragonborn only
 DragonbornSubRaceType = None # Dragonborn only
-PlayerSpells = [""] # Spells player knows
+PlayerSpells = None # Spells player knows
 PlayerHasAction = True # action
 PlayerHasBonusAction = True # bonus action
 PlayerHasReaction = True # per round reaction
-PlayerStarterGear = [""] # soon-to-be player starting gear defined by background and class to add to inventory (see below)
+PlayerStarterGear = None # soon-to-be player starting gear defined by background and class to add to inventory (see below)
 PlayerInv = [""] # soon-to-be player inventory
 PlayerLangs = ["Common"] # soon-to-be languages the player knows
 AllLangs = ["Common", "Dwarvish", "Elvish", "Giant", "Gnomish", "Goblin", "Halfling", "Orc", "Abyssal", "Celestial", "Draconic", "Deep Speech", "Infernal", "Primordial", "Sylvan", "Undercommon"] # all languages
@@ -294,7 +294,9 @@ def create_character():
              wait(1) # wait a second
              match ExtraLang:
               case 1:
+                 wait(1)
                  print("You already know Common.")
+                 ExtraLang = ""
               case 2:
                  ExtraLang = "Dwarvish"
               case 3:
@@ -418,11 +420,15 @@ def create_character():
                         ExtraLang = get_choice(AllLangs)
                         match ExtraLang:
                            case 1:
+                                  wait(1)
                                   print("You already know Common.")
+                                  ExtraLang = ""
                            case 2:
                                   ExtraLang = "Dwarvish"
                            case 3:
-                                  ExtraLang = "Elvish"
+                                  wait(1)
+                                  print("You already know Elvish")
+                                  ExtraLang = ""
                            case 4:
                                   ExtraLang = "Giant"
                            case 5:
@@ -482,6 +488,27 @@ def create_character():
                         # tinker
         case 6:
             PlayerRace = "Half-Elf"
+            PlayerCharisma += 1
+            AbilIncOptsForHalfElf = ["Strength", "Dexterity", "Constitution", "Intelligence", "Wisdom"]
+            PlayerDarkvision = 60 # feet
+            PlayerSize = "Medium" # Size
+            PlayerSpeed = 30 # feet
+            PlayerLangs = ["Common", "Elvish"]
+            wait(1)
+            print("Choose a stat to increase by one:")
+            wait(1)
+            AbilIncOptPicked = get_choice(AbilIncOptsForHalfElf)
+            match AbilIncOptPicked:
+                case 1:
+                        PlayerStrength += 1
+                case 2:
+                        PlayerDexterity += 1
+                case 3:
+                        PlayerConstitution += 1
+                case 4:
+                        PlayerIntelligence += 1
+                case 5:
+                        PlayerWisdom += 1
         case 7:
             PlayerRace = "Halfling"
         case 8:
