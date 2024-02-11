@@ -52,7 +52,7 @@ Spells = {
     ],
     "LevelFour": [
        "Arcane Eye", "Aura Of Life", "Aura Of Purity", "Banishment", "Blight", "Charm Monster", "Compulsion", "Confusion", "Conjure Barlgura", "Conjure Minor Elementals", "Conjure Shadow Demon", "Conjure Woodland Beings",
-        "Control Water"
+       "Control Water"
     ],
     "LevelFive": [],
     "LevelSix": [],
