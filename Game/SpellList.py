@@ -51,7 +51,7 @@ Spells = {
        "Vampiric Touch", "Wall Of Sand", "Wall Of Water", "Water Breathing", "Water Walk", "Wind Wall"
     ],
     "LevelFour": [
-       "Arcane Eye", "Aura Of Life", "Aura Of Purity", "Banishment", "Blight", "Charm Monster", "Compulsion", "Confusion"
+       "Arcane Eye", "Aura Of Life", "Aura Of Purity", "Banishment", "Blight", "Charm Monster", "Compulsion", "Confusion", "Conjure Barlgura", "Conjure Minor Elementals"
     ],
     "LevelFive": [],
     "LevelSix": [],
