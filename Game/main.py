@@ -29,6 +29,7 @@ import random # random numerical values
 import time # to prevent walls of text with wait()
 import os
 from SpellList import Spells
+from FeatsList import Feats
 
 # Functions
 
