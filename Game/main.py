@@ -839,6 +839,8 @@ refresh_stat_mods()
 wait(1)
 
 def Game():
+    if HP > HPMax:
+            HP = HPMax
     wait(1)
     print("What would you like to do?")
     GameOpts = ["View Stats"]
