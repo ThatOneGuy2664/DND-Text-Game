@@ -98,7 +98,7 @@ PlayerHP = 0 # to be assigned
 PlayerHPMax = 0 # to be assigned
 PlayerClass = None # Player class
 PlayerRace = None # Player race
-PlayerRessistances = [""] # any resistances the player has
+PlayerRessistances = [] # any resistances the player has
 PlayerName = None # Player's soon-to-be name
 PlayerBackground = None # soon-to-be player background
 PlayerSize = None # soon-to-be player character size
@@ -113,10 +113,10 @@ PlayerHasAction = True # action
 PlayerHasBonusAction = True # bonus action
 PlayerHasReaction = True # per round reaction
 PlayerStarterGear = None # soon-to-be player starting gear defined by background and class to add to inventory (see below)
-PlayerInv = [""] # soon-to-be player inventory
+PlayerInv = [] # soon-to-be player inventory
 PlayerLangs = ["Common"] # soon-to-be languages the player knows
 AllLangs = ["Common", "Dwarvish", "Elvish", "Giant", "Gnomish", "Goblin", "Halfling", "Orc", "Abyssal", "Celestial", "Draconic", "Deep Speech", "Infernal", "Primordial", "Sylvan", "Undercommon"] # all languages
-EnemyResistance = [ "" ] # resistance(s) of current enemy(s)
+EnemyResistance = [] # resistance(s) of current enemy(s)
 RangeFromPlayerToEnemy = None # in feet
 Races = [ "Human", "Dragonborn", "Dwarf", "Elf", "Gnome", "Half-Elf", "Halfling", "Half-Orc", "Tiefling" ] # self-explanatory
 Classes = [ "Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard", "Artificer", "Bloodhunter" ] # self-explanatory
@@ -511,6 +511,11 @@ def create_character():
                         PlayerWisdom += 1
         case 7:
             PlayerRace = "Halfling"
+            PlayerDexterity += 2
+            PlayerSpeed = 25 # feet
+            PlayerSize = "Small" # Size
+            PlayerLangs = ["Common", "Halfling"]
+            # subraces
         case 8:
             PlayerRace = "Half-Orc"
         case 9:
