@@ -28,8 +28,8 @@
 import random # random numerical values
 import time # to prevent walls of text with wait()
 import os
-from SpellList import Spells
-from FeatsList import Feats
+from SpellList import Spells # import Spells dictionary from SpellList.py
+from FeatsList import Feats # import Feats array from FeatsList.py
 
 # Functions
 
