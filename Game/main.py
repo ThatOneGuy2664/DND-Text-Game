@@ -515,9 +515,25 @@ def create_character():
             PlayerSpeed = 25 # feet
             PlayerSize = "Small" # Size
             PlayerLangs = ["Common", "Halfling"]
-            # subraces
+            HalflingSubRaces = ["Lightfoot", "Stout"]
+            wait(1)
+            print("What kind of Halfling ard you?")
+            wait(1)
+            HalflingSubRacePicked = get_choice(HalflingSubRaces)
+	    match HalflingSubRacePicked:
+                case 1:
+                        PlayerCharisma += 1
+                case 2:
+                        PlayerConstitution += 1
         case 8:
             PlayerRace = "Half-Orc"
+            PlayerStrength += 2
+            PlayerConstitution += 1
+            PlayerSize = "Medium"
+            PlayerSpeed = 30 # feet
+            PlayerDarkvision = 60 # feet
+            PlayerLangs = ["Common", "Orc"]
+            # no base sub-races
         case 9:
             PlayerRace = "Tiefling"
     wait(1)
