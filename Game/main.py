@@ -520,7 +520,7 @@ def create_character():
             print("What kind of Halfling ard you?")
             wait(1)
             HalflingSubRacePicked = get_choice(HalflingSubRaces)
-	    match HalflingSubRacePicked:
+            match HalflingSubRacePicked:
                 case 1:
                         PlayerCharisma += 1
                 case 2:
