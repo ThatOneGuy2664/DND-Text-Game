@@ -44,7 +44,7 @@ from SpellLists import DivinationSpells
 from SpellLists import EnchantmentSpells
 
 # Functions
-
+ 
 # pause for (seconds)
 def wait(seconds):
     # Wait for (seconds) and resume
