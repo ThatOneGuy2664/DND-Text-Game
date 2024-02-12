@@ -33,7 +33,8 @@ BardSpells = {
    "Command", "Comprehend Languages", "Cure Wounds", "Detect Magic",
    "Disguise Self", "Dissonant Whispers", "Distort Value", "Earth Tremor",
    "Faerie Fire", "Feather Fall", "Guiding Hand", "Healing Word", "Heroism",
-   "Identify", "Illusory Script", "Longstrider", "Puppet" ],
+   "Identify", "Illusory Script", "Longstrider", "Puppet", "Sense Emotion",
+   "Silent Image", "Silvery Barbs", "Sleep", "Speak with Animals", "Sudden Awakening" ],
   "LevelTwo": [],
   "LevelThree": []
 }
