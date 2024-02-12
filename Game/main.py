@@ -45,13 +45,6 @@ from SpellLists import EnchantmentSpells
 
 # Functions
 
-import subprocess
-# Run the shell script to generate NPC name
-Npc_Name = subprocess.check_output(["bash", "NpcName.sh"]).decode("utf-8").strip()
-# Output the generated NPC name
-print("Generated NPC name from shell script:", Npc_Name)
-
-
 # pause for (seconds)
 def wait(seconds):
     # Wait for (seconds) and resume
