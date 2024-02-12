@@ -42,6 +42,8 @@ from SpellLists import AbjurationSpells
 from SpellLists import ConjurationSpells
 from SpellLists import DivinationSpells
 from SpellLists import EnchantmentSpells
+# Feats
+from FeatsList import Feats
 
 # Functions
  
