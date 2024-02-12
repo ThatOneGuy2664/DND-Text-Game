@@ -95,7 +95,7 @@ SorcererSpells = {
 PaladinSpells = {
   # Paladins don't havs Cantrips
   "LevelOne": ["Bless", "Ceremony", "Command"],
-  "LevelTwo": [],
+  "LevelTwo": ["Aid", "Branding Smite"],
   "LevelThree": [],
   "LevelFour": [],
   "LevelFive": []
