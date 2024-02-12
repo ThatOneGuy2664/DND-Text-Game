@@ -29,15 +29,6 @@ import random # random numerical values
 import time # to prevent walls of text with wait()
 import os
 
-# Python code to read the Lua array from the file(s)
-with open("cantrips.txt", "r") as file:
-    lua_array = file.readlines()
-# Now you have the Lua array elements in a Python list
-# Strip newline characters from each element
-python_array_cantrips = [item.strip() for item in lua_array]
-print(python_array_cantrips)
-
-
 # Functions
 
 # pause for (seconds)
