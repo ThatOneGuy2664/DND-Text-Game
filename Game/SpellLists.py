@@ -1,16 +1,16 @@
 # classes spell list
 BardSpells = {
-  "Cantrips":
+  "Cantrips" = [
    "Blade Ward", "Dancing Lights", "Friends", "Light",
    "Mage Hand", "Mending", "Message", "Minor Illusion",
-   "Prestidigitation", "Thunderclap", "True Strike", "Vicious Mockery"
-  "LevelOne":
+   "Prestidigitation", "Thunderclap", "True Strike", "Vicious Mockery" ]
+  "LevelOne" = [
    "Animal Friendship", "Bane", "Charm Person", "Color Spray",
    "Command", "Comprehend Languages", "Cure Wounds", "Detect Magic",
    "Disguise Self", "Dissonant Whispers", "Distort Value", "Earth Tremor",
-   "Faerie Fire", "Feather Fall"
-  "LevelTwo":
-  "LevelThree":
+   "Faerie Fire", "Feather Fall" ]
+  "LevelTwo" = []
+  "LevelThree" = []
 }
 RangerSpells = {}
 WizardSpells = {}
