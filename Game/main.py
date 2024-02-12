@@ -152,6 +152,36 @@ def generate_ability_scores():
     PlayerWisdom = player_vars[4]
     PlayerCharisma = player_vars[5]
 
+def refresh_stat_mods():
+        global PlayerSTRMod, PlayerDEXMod, PlayerCONMod, PlayerINTMod, PlayerWISMod, PlayerCHAMod, PlayerStrength, PlayerDexterity, PlayerConstitution, PlayerIntelligence, PlayerWisdom, PlayerCharisma
+        PlayerSTRMod = (PlayerStrength - 10) // 2
+        PlayerDEXMod = (PlayerDexterity - 10) // 2
+        PlayerCONMod = (PlayerConstitution - 10) // 2
+        PlayerINTMod = (PlayerIntelligence - 10) // 2
+        PlayerWISMod = (PlayerWisdom - 10) // 2
+        PlayerCHAMod = (PlayerCharisma - 10) // 2
+
+def print_player_stats():
+        refresh_stat_mods()
+        print("\n**** CHARACTER INFORMATION ****\n")
+        print("Strength:", PlayerStrength, " +", PlayerSTRMod)
+        print("Dexterity:", PlayerDexterity, " +", PlayerDEXMod)
+        print("Constitution:", PlayerConstitution, " +", PlayerCONMod)
+        print("Intelligence: ", PlayerIntelligence, " +", PlayerINTMod)
+        print("Wisdom: ", PlayerWisdom, " +", PlayerWISMod)
+        print("Charisma: ", PlayerCharisma, " +", PlayerCHAMod)
+        print("Race:", PlayerRace)
+        print("Class:", PlayerClass)
+        print("Background:", PlayerBackground)
+        print("Character Name:", PlayerName)
+        print("Languages:", PlayerLangs)
+        if PlayerDarkvision > 0:
+            print("Darkvision: ", (PlayerDarkvision), "feet")
+        if PlayerBlindsight > 0:
+            print("Blindsight: ", (PlayerBlindsight), "feet")
+        if PlayerRessistances not []:
+            print("Resistances: ", (PlayerRessistances))
+
 # create character functions
 def create_character():
     global PlayerRace, PlayerClass, PlayerBackground, PlayerName, PlayerStrength, PlayerDexterity, PlayerConstitution, PlayerIntelligence, PlayerWisdom, PlayerCharisma, PlayerLangs, DragonbornSubRaceType, PlayerHasBreathWeapon, PlayerRessistances, PlayerSpeed, PlayerDarkvision
@@ -426,6 +456,14 @@ def create_character():
             # no base sub-races
         case 9:
             PlayerRace = "Tiefling"
+            PlayerIntelligence += 1
+            PlayerCharisma += 2
+            PlayerSize = "Medium"
+            PlayerSpeed = 30 # feet
+            PlayerDarkvision = 60 # feet
+            PlayerRessistances.append("Fire")
+            PlayerLangs = ["Common", "Infernal"]
+            # no base sub-races
     wait(1)
     print("\n**** You chose " + PlayerRace + " as your race.")
     
@@ -500,19 +538,7 @@ def create_character():
     
     wait(1)
     
-    print("\n**** CHARACTER INFORMATION ****\n") # charcter overview
-    print("Strength:", PlayerStrength)
-    print("Dexterity:", PlayerDexterity)
-    print("Constitution:", PlayerConstitution)
-    print("Intelligence: ", PlayerIntelligence)
-    print("Wisdom: ", PlayerWisdom)
-    print("Charisma: ", PlayerCharisma)
-    print("Race:", PlayerRace)
-    print("Class:", PlayerClass)
-    print("Background:", PlayerBackground)
-    print("Character Name:", PlayerName)
-    if PlayerDarkvision > 0:
-            print("Darkvision:", (PlayerDarkvision), "feet")
+    print_player_stats()
 
     print("\n**** Choose this character or start over? ")
     choice = ["Choose this character.", "Start over."]
@@ -558,17 +584,7 @@ def load_character(): # load an existing character from character_info.txt
 
     try:
         wait(1)
-        print("\n**** CHARACTER INFORMATION ****\n")
-        print("Strength:", PlayerStrength)
-        print("Dexterity:", PlayerDexterity)
-        print("Constitution:", PlayerConstitution)
-        print("Intelligence: ", PlayerIntelligence)
-        print("Wisdom: ", PlayerWisdom)
-        print("Charisma: ", PlayerCharisma)
-        print("Race:", PlayerRace)
-        print("Class:", PlayerClass)
-        print("Background:", PlayerBackground)
-        print("Character Name:", PlayerName)
+        print_player_stats()
     except ValueError:
         wait(1)
         print("\nERROR: Unable to load character information...")
@@ -582,7 +598,7 @@ def load_character(): # load an existing character from character_info.txt
     if PickedCharCreateOption == 1:
             wait(1)
             print("\nCharacter data loaded!\n")
-            # next function to start game
+            # start game (Game() is called later)
     else:
         wait(1)
         # Call create_character() again to reset Player(variables)
@@ -633,31 +649,6 @@ def save_character():
 read_or_write()
 
 # end character creation
-# start applying and/or changing globals relating to chosen race and class
-
-def refresh_stat_mods():
-        global PlayerSTRMod, PlayerDEXMod, PlayerCONMod, PlayerINTMod, PlayerWISMod, PlayerCHAMod, PlayerStrength, PlayerDexterity, PlayerConstitution, PlayerIntelligence, PlayerWisdom, PlayerCharisma
-        PlayerSTRMod = (PlayerStrength - 10) // 2
-        PlayerDEXMod = (PlayerDexterity - 10) // 2
-        PlayerCONMod = (PlayerConstitution - 10) // 2
-        PlayerINTMod = (PlayerIntelligence - 10) // 2
-        PlayerWISMod = (PlayerWisdom - 10) // 2
-        PlayerCHAMod = (PlayerCharisma - 10) // 2
-
-def print_player_stats():
-        print("\n**** CHARACTER INFORMATION ****\n")
-        print("Strength:", PlayerStrength, " +", PlayerSTRMod)
-        print("Dexterity:", PlayerDexterity, " +", PlayerDEXMod)
-        print("Constitution:", PlayerConstitution, " +", PlayerCONMod)
-        print("Intelligence: ", PlayerIntelligence, " +", PlayerINTMod)
-        print("Wisdom: ", PlayerWisdom, " +", PlayerWISMod)
-        print("Charisma: ", PlayerCharisma, " +", PlayerCHAMod)
-        print("Race:", PlayerRace)
-        print("Class:", PlayerClass)
-        print("Background:", PlayerBackground)
-        print("Character Name:", PlayerName)
-        if PlayerDarkvision > 0:
-            print("Darkvision: ", (PlayerDarkvision), "feet")
 
 # define ASI (ability score increase) function for ASI on level-up, all classes use ASIs
 def ability_score_increase():
