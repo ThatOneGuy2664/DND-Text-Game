@@ -34,6 +34,7 @@ from SpellLists import BardSpells # import spell dictionaries for classes
 from SpellLists import WizardSpells
 from SpellLists import WarlockSpells
 from SpellLists import RangerSpells
+from SpellLists import SorcererSpells
 from SpellLists import EvocationSpells # schools of magic and their spells
 from SpellLists import NecromancySpells
 from SpellLists import AbjurationSpells
