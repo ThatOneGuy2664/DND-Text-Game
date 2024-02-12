@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Arrays of possible name components
-first_names=("Grim" "Thorn" "Sable" "Vex" "Fenrir" "Raven" "Silas" "Luna" "Astrid" "Rowan")
+first_names=("Thorn" "Sable" "Vex" "Fenrir" "Raven" "Silas" "Luna" "Astrid" "Rowan")
 last_names=("Darkblade" "Shadowhunter" "Blackthorn" "Nightshade" "Bloodfang" "Duskwalker" "Ravensong" "Moonshadow" "Deathwhisper" "Gloomreaper")
 
 # Generate a random index for each array
