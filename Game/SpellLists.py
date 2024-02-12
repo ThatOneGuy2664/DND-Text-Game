@@ -53,7 +53,7 @@ RangerSpells = {
   "LevelTwo": [],
   "LevelThree": [],
   "LevelFour": [],
-  "LevelFive": [],
+  "LevelFive": []
   # Ranger spells stop at level 5
 }
 WizardSpells = {
@@ -93,16 +93,13 @@ SorcererSpells = {
   "LevelNine": []
 }
 PaladinSpells = {
-  "Cantrips": [],
-  "LevelOne": [],
+  # Paladins don't havs Cantrips
+  "LevelOne": ["Bless", "Ceremony", "Command"],
   "LevelTwo": [],
   "LevelThree": [],
   "LevelFour": [],
-  "LevelFive": [],
-  "LevelSix": [],
-  "LevelSeven": [],
-  "LevelEight": [],
-  "LevelNine": []
+  "LevelFive": []
+  # Paladin spells stop at level 5
 }
 
 # Bloodhunters use Warlock spells, Arcane Trickster Rogues use Wizard spells
