@@ -339,7 +339,7 @@ def create_character():
                         wait(1)
                         print("\nPick your Wizard Cantrip:\n")
                         wait(1)
-                        PlayerSpellPicked = get_choice(SpellList["Cantrips"])
+                        #PlayerSpellPicked = get_choice(SpellList["Cantrips"])
                         # Make Wizard Cantrip only (eventually)
                         # Add to PlayerSpells array (eventually)
                 case 3:
