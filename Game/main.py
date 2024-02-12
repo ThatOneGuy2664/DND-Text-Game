@@ -168,19 +168,19 @@ def print_player_stats():
         print("Dexterity:", PlayerDexterity, " +", PlayerDEXMod)
         print("Constitution:", PlayerConstitution, " +", PlayerCONMod)
         print("Intelligence: ", PlayerIntelligence, " +", PlayerINTMod)
-        print("Wisdom: ", PlayerWisdom, " +", PlayerWISMod)
-        print("Charisma: ", PlayerCharisma, " +", PlayerCHAMod)
+        print("Wisdom:", PlayerWisdom, " +", PlayerWISMod)
+        print("Charisma:", PlayerCharisma, " +", PlayerCHAMod)
         print("Race:", PlayerRace)
         print("Class:", PlayerClass)
         print("Background:", PlayerBackground)
         print("Character Name:", PlayerName)
         print("Languages:", PlayerLangs)
         if PlayerDarkvision > 0:
-            print("Darkvision: ", (PlayerDarkvision), "feet")
+            print("Darkvision:", (PlayerDarkvision), "feet")
         if PlayerBlindsight > 0:
-            print("Blindsight: ", (PlayerBlindsight), "feet")
+            print("Blindsight:", (PlayerBlindsight), "feet")
         if PlayerRessistances:
-            print("Resistances: ", (PlayerRessistances))
+            print("Resistances:", (PlayerRessistances))
 
 # create character functions
 def create_character():
