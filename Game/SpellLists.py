@@ -37,7 +37,8 @@ BardSpells = {
     "Silent Image", "Silvery Barbs", "Sleep", "Speak with Animals", "Sudden Awakening",
     "Tasha's Hideous Laughter", "Thunderwave", "Unearthly Chorus", "Unseen Servant" ],
   "LevelTwo": [
-    "Aid", "Animal Messenger", "Blindness/Deafness", "Borrowed Knowledge" ],
+    "Aid", "Animal Messenger", "Blindness/Deafness", "Borrowed Knowledge", "Calm Emotions",
+    "Cloud Of Daggers", "Crown Of Madness", "Detect Thoughts", "Enhance Ability" ],
   "LevelThree": []
 }
 RangerSpells = {}
