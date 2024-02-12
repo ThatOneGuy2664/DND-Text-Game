@@ -40,10 +40,10 @@ BardSpells = {
     "Aid", "Animal Messenger", "Blindness/Deafness", "Borrowed Knowledge" ],
   "LevelThree": []
 }
-
 RangerSpells = {}
 WizardSpells = {}
 WarlockSpells = {}
+SorcererSpells = {}
 
 # schools
 EnchantmentSpells = {}
