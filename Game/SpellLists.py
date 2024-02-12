@@ -37,7 +37,7 @@ BardSpells = {
     "Silent Image", "Silvery Barbs", "Sleep", "Speak with Animals", "Sudden Awakening",
     "Tasha's Hideous Laughter", "Thunderwave", "Unearthly Chorus", "Unseen Servant" ],
   "LevelTwo": [
-    "Aid" ],
+    "Aid", "Animal Messenger", "Blindness/Deafness", "Borrowed Knowledge" ],
   "LevelThree": []
 }
 
