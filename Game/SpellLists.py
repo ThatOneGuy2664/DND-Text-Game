@@ -95,6 +95,18 @@ SorcererSpells = {
   "LevelEight": [],
   "LevelNine": []
 }
+PaladinSpells = {
+  "Cantrips": [],
+  "LevelOne": [],
+  "LevelTwo": [],
+  "LevelThree": [],
+  "LevelFour": [],
+  "LevelFive": [],
+  "LevelSix": [],
+  "LevelSeven": [],
+  "LevelEight": [],
+  "LevelNine": []
+}
 
 # schools
 EnchantmentSpells = {}
