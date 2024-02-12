@@ -52,7 +52,8 @@ Spells = {
     ],
     "LevelFour": [
        "Arcane Eye", "Aura Of Life", "Aura Of Purity", "Banishment", "Blight", "Charm Monster", "Compulsion", "Confusion", "Conjure Barlgura", "Conjure Minor Elementals", "Conjure Shadow Demon", "Conjure Woodland Beings",
-       "Control Water"
+       "Control Water", "Death Ward", "Dimension Door", "Divination", "Dominate Beast", "Ego Whip", "Elemental Bane", "Evard's Black Tentacles", "Fabricate", "Find Greater Steed", "Fire Shield", "Freedom Of Movement",
+       "Galder's Speedy Courier", "Gate Seal", "Giant Insect", "Grasping Vine"
     ],
     "LevelFive": [],
     "LevelSix": [],
@@ -60,3 +61,7 @@ Spells = {
     "LevelEight": [],
     "LevelNine": []
 }
+
+# Homebrew, de-note to enable
+
+#Spells[LevelOne].append("")
