@@ -28,6 +28,8 @@
 import random # random numerical values
 import time # to prevent walls of text with wait()
 import os
+from SpellList.py import BardSpells
+from SpellList.py import WizardSpells
 
 # Functions
 
