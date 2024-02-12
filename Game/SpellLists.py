@@ -23,3 +23,4 @@ AbjurationSpells = {}
 ConjurationSpells = {}
 NecromancySpells = {}
 EvocationSpells = {}
+DivinationSpells = {}
