@@ -1,1 +1,3 @@
-Feats = ["Actor", "Alert", "Artificer Initiate", "Athlete"]
+Feats = ["Alert", "Artificer Initiate",
+         "Athlete", "Bountiful Luck",
+         "Charger", "Chef", "Crossbow Expert"]
