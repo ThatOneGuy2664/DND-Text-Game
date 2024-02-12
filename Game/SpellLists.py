@@ -7,7 +7,8 @@ BardSpells = {
    "Animal Friendship", "Bane", "Charm Person", "Color Spray",
    "Command", "Comprehend Languages", "Cure Wounds", "Detect Magic",
    "Disguise Self", "Dissonant Whispers", "Distort Value", "Earth Tremor",
-   "Faerie Fire", "Feather Fall" ],
+   "Faerie Fire", "Feather Fall", "Guiding Hand", "Healing Word", "Heroism",
+   "Identify" ],
   "LevelTwo": [],
   "LevelThree": []
 }
