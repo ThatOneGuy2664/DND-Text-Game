@@ -34,8 +34,10 @@ BardSpells = {
    "Disguise Self", "Dissonant Whispers", "Distort Value", "Earth Tremor",
    "Faerie Fire", "Feather Fall", "Guiding Hand", "Healing Word", "Heroism",
    "Identify", "Illusory Script", "Longstrider", "Puppet", "Sense Emotion",
-   "Silent Image", "Silvery Barbs", "Sleep", "Speak with Animals", "Sudden Awakening" ],
-  "LevelTwo": [],
+   "Silent Image", "Silvery Barbs", "Sleep", "Speak with Animals", "Sudden Awakening",
+   "Tasha's Hideous Laughter", "Thunderwave", "Unearthly Chorus", "Unseen Servant" ],
+  "LevelTwo": [
+    "Aid" ],
   "LevelThree": []
 }
 
