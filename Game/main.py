@@ -28,7 +28,7 @@
 import random # random numerical values
 import time # to prevent walls of text with wait()
 import os
-from SpellList import Spells # import Spells dictionary from SpellList.py, call as follows: Spells["Cantrips"][0] would call the first spell from the Cantrips array
+from Spells import SpellList # import Spells dictionary from SpellList.py, call as follows: Spells["Cantrips"][0] would call the first spell from the Cantrips array
 from FeatsList import Feats # import Feats array from FeatsList.py, call as follows: Feats[0] would be the first feat from the Feats array
 
 # Functions
@@ -365,7 +365,7 @@ def create_character():
                         wait(1)
                         print("\nPick your Wizard Cantrip:\n")
                         wait(1)
-                        PlayerSpellPicked = get_choice(Spells["Cantrips"])
+                        PlayerSpellPicked = get_choice(SpellList["Cantrips"])
                         # Make Wizard Cantrip only (eventually)
                         # Add to PlayerSpells array (eventually)
                 case 3:
