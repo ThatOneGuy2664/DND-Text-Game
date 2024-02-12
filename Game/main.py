@@ -179,7 +179,7 @@ def print_player_stats():
             print("Darkvision: ", (PlayerDarkvision), "feet")
         if PlayerBlindsight > 0:
             print("Blindsight: ", (PlayerBlindsight), "feet")
-        if PlayerRessistances not []:
+        if PlayerRessistances:
             print("Resistances: ", (PlayerRessistances))
 
 # create character functions
