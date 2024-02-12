@@ -61,7 +61,3 @@ SpellList = {
     "LevelEight": [],
     "LevelNine": []
 }
-
-# Homebrew, de-note to enable
-
-#Spells[LevelOne].append("")
