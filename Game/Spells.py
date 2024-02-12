@@ -1,4 +1,4 @@
-Spells = {
+SpellList = {
     "Cantrips": [
        "Acid Splash", "Blade Ward", "Booming Blade",
        "Chill Touch", "Control Flames", "Create Bonfire",
