@@ -81,7 +81,7 @@ WarlockSpells = {
   "LevelNine": []
 }
 SorcererSpells = {
-  "Cantrips": [],
+  "Cantrips": ["Acid Splash", "Blade Ward", "Booming Blade"],
   "LevelOne": [],
   "LevelTwo": [],
   "LevelThree": [],
