@@ -38,6 +38,8 @@ from SpellLists import PaladinSpells
 from SpellLists import EvocationSpells # schools of magic and their spells
 from SpellLists import NecromancySpells
 from SpellLists import AbjurationSpells
+from SpellLists import TransmutationSpells
+from SpellLists import IllusionSpells
 from SpellLists import ConjurationSpells
 from SpellLists import DivinationSpells
 from SpellLists import EnchantmentSpells
