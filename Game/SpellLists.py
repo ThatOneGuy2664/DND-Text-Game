@@ -108,7 +108,7 @@ PaladinSpells = {
   "LevelNine": []
 }
 
-# Bloodhunters use Warlock spells, Arvane Trickster Rogues use Wizard spells
+# Bloodhunters use Warlock spells, Arcane Trickster Rogues use Wizard spells
 
 # schools
 EnchantmentSpells = {}
