@@ -21,6 +21,8 @@
 # SOFTWARE.
 # END LICENSE DESCRIPTION
 
+# this includes UA, Tasha's Cauldron of Everything, and other optional spells
+
 BardSpells = {
   "Cantrips": [
    "Blade Ward", "Dancing Lights", "Friends", "Light",
@@ -31,7 +33,7 @@ BardSpells = {
    "Command", "Comprehend Languages", "Cure Wounds", "Detect Magic",
    "Disguise Self", "Dissonant Whispers", "Distort Value", "Earth Tremor",
    "Faerie Fire", "Feather Fall", "Guiding Hand", "Healing Word", "Heroism",
-   "Identify" ],
+   "Identify", "Illusory Script", "Longstrider", "Puppet" ],
   "LevelTwo": [],
   "LevelThree": []
 }
