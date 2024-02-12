@@ -61,3 +61,18 @@ SpellList = {
     "LevelEight": [],
     "LevelNine": []
 }
+
+# spell functions for all spells
+
+def acid_splash()
+    if RangeFromPlayerToEnemy <= 60:
+        damage = rollDice(1, 6)
+        PlayerHasAction = False
+        if PlayerLevel >= 5:
+            damage += rollDice(1, 6)
+        if PlayerLevel >= 11:
+            damage += rollDice(1, 6)
+        if PlayerLevel >= 17:
+            damage += rollDice(1, 6)
+    else:
+        print("Enemy out of range")
