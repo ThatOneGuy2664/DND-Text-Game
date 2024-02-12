@@ -39,12 +39,62 @@ BardSpells = {
   "LevelTwo": [
     "Aid", "Animal Messenger", "Blindness/Deafness", "Borrowed Knowledge", "Calm Emotions",
     "Cloud Of Daggers", "Crown Of Madness", "Detect Thoughts", "Enhance Ability" ],
-  "LevelThree": []
+  "LevelThree": [],
+  "LevelFour": [],
+  "LevelFive": [],
+  "LevelSix": [],
+  "LevelSeven": [],
+  "LevelEight": [],
+  "LevelNine": []
 }
-RangerSpells = {}
-WizardSpells = {}
-WarlockSpells = {}
-SorcererSpells = {}
+RangerSpells = {
+  "Cantrips": [],
+  "LevelOne": [],
+  "LevelTwo": [],
+  "LevelThree": [],
+  "LevelFour": [],
+  "LevelFive": [],
+  "LevelSix": [],
+  "LevelSeven": [],
+  "LevelEight": [],
+  "LevelNine": []
+}
+WizardSpells = {
+  "Cantrips": [],
+  "LevelOne": [],
+  "LevelTwo": [],
+  "LevelThree": [],
+  "LevelFour": [],
+  "LevelFive": [],
+  "LevelSix": [],
+  "LevelSeven": [],
+  "LevelEight": [],
+  "LevelNine": []
+}
+WarlockSpells = {
+  "Cantrips": [],
+  "LevelOne": [],
+  "LevelTwo": [],
+  "LevelThree": [],
+  "LevelFour": [],
+  "LevelFive": [],
+  "LevelSix": [],
+  "LevelSeven": [],
+  "LevelEight": [],
+  "LevelNine": []
+}
+SorcererSpells = {
+  "Cantrips": [],
+  "LevelOne": [],
+  "LevelTwo": [],
+  "LevelThree": [],
+  "LevelFour": [],
+  "LevelFive": [],
+  "LevelSix": [],
+  "LevelSeven": [],
+  "LevelEight": [],
+  "LevelNine": []
+}
 
 # schools
 EnchantmentSpells = {}
