@@ -48,16 +48,13 @@ BardSpells = {
   "LevelNine": []
 }
 RangerSpells = {
-  "Cantrips": [],
-  "LevelOne": [],
+  # Rangers don't have Cantrips
+  "LevelOne": ["Absorb Elements", "Alarm", "Animal Friendship", "Beast Bond", "Cure Wounds"],
   "LevelTwo": [],
   "LevelThree": [],
   "LevelFour": [],
   "LevelFive": [],
-  "LevelSix": [],
-  "LevelSeven": [],
-  "LevelEight": [],
-  "LevelNine": []
+  # Ranger spells stop at level 5
 }
 WizardSpells = {
   "Cantrips": [],
