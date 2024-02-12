@@ -25,17 +25,17 @@
 
 BardSpells = {
   "Cantrips": [
-   "Blade Ward", "Dancing Lights", "Friends", "Light",
-   "Mage Hand", "Mending", "Message", "Minor Illusion",
-   "Prestidigitation", "Thunderclap", "True Strike", "Vicious Mockery" ],
+    "Blade Ward", "Dancing Lights", "Friends", "Light",
+    "Mage Hand", "Mending", "Message", "Minor Illusion",
+    "Prestidigitation", "Thunderclap", "True Strike", "Vicious Mockery" ],
   "LevelOne": [
-   "Animal Friendship", "Bane", "Charm Person", "Color Spray",
-   "Command", "Comprehend Languages", "Cure Wounds", "Detect Magic",
-   "Disguise Self", "Dissonant Whispers", "Distort Value", "Earth Tremor",
-   "Faerie Fire", "Feather Fall", "Guiding Hand", "Healing Word", "Heroism",
-   "Identify", "Illusory Script", "Longstrider", "Puppet", "Sense Emotion",
-   "Silent Image", "Silvery Barbs", "Sleep", "Speak with Animals", "Sudden Awakening",
-   "Tasha's Hideous Laughter", "Thunderwave", "Unearthly Chorus", "Unseen Servant" ],
+    "Animal Friendship", "Bane", "Charm Person", "Color Spray",
+    "Command", "Comprehend Languages", "Cure Wounds", "Detect Magic",
+    "Disguise Self", "Dissonant Whispers", "Distort Value", "Earth Tremor",
+    "Faerie Fire", "Feather Fall", "Guiding Hand", "Healing Word", "Heroism",
+    "Identify", "Illusory Script", "Longstrider", "Puppet", "Sense Emotion",
+    "Silent Image", "Silvery Barbs", "Sleep", "Speak with Animals", "Sudden Awakening",
+    "Tasha's Hideous Laughter", "Thunderwave", "Unearthly Chorus", "Unseen Servant" ],
   "LevelTwo": [
     "Aid" ],
   "LevelThree": []
