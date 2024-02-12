@@ -96,7 +96,7 @@ PaladinSpells = {
   # Paladins don't havs Cantrips
   "LevelOne": ["Bless", "Ceremony", "Command"],
   "LevelTwo": ["Aid", "Branding Smite"],
-  "LevelThree": [],
+  "LevelThree": ["Aura of Vitality", "Blinding Smite"],
   "LevelFour": [],
   "LevelFive": []
   # Paladin spells stop at level 5
