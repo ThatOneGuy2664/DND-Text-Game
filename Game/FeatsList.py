@@ -1,1 +1,1 @@
-Feats = ["Actor", "Alert"] # more to be added
+Feats = ["Actor", "Alert", "Artificer Initiate", "Athlete"] # more to be added
