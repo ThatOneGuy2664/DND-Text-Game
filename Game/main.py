@@ -32,6 +32,11 @@ from SpellLists import BardSpells # import spell dictionaries for classes
 from SpellLists import WizardSpells
 from SpellLists import WarlockSpells
 from SpellLists import RangerSpells
+from SpellLists import EvocationSpells # schools
+from SpellLists import NecromancySpells
+from SpellLists import AbjurationSpells
+from SpellLists import ConjurationSpells
+from SpellLists import DivinationSpells
 
 # Functions
 
