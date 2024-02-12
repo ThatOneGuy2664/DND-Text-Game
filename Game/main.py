@@ -29,7 +29,6 @@ import random # random numerical values
 import time # to prevent walls of text with wait()
 import os
 from Spells import SpellList # import Spells dictionary from SpellList.py, call as follows: Spells["Cantrips"][0] would call the first spell from the Cantrips array
-from Spells import acid_splash
 from FeatsList import Feats # import Feats array from FeatsList.py, call as follows: Feats[0] would be the first feat from the Feats array
 
 # Functions
