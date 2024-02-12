@@ -28,8 +28,15 @@
 import random # random numerical values
 import time # to prevent walls of text with wait()
 import os
-from Spells import SpellList # import Spells dictionary from SpellList.py, call as follows: Spells["Cantrips"][0] would call the first spell from the Cantrips array
-from FeatsList import Feats # import Feats array from FeatsList.py, call as follows: Feats[0] would be the first feat from the Feats array
+
+# Python code to read the Lua array from the file(s)
+with open("cantrips.txt", "r") as file:
+    lua_array = file.readlines()
+# Now you have the Lua array elements in a Python list
+# Strip newline characters from each element
+python_array_cantrips = [item.strip() for item in lua_array]
+print(python_array_cantrips)
+
 
 # Functions
 
