@@ -143,30 +143,6 @@ def generate_ability_scores():
     PlayerWisdom = player_vars[4]
     PlayerCharisma = player_vars[5]
 
-# spell functions
-def acid_splash(): # Acid Splash cantrip
-    if (rangeToEnemy <= 60): # in feet
-        description = "You hurl a bubble of acid. Choose one creature you can see within range, or choose two creatures you can see within range that are within 5 feet of each other. A target must succeed on a Dexterity saving throw or take 1d6 acid damage."
-        duration = 0 # instant
-        
-        # action
-        damage = rollDice(1, 6)
-        if (PlayerLevel >= 5):
-            damage += rollDice(1, 6)
-        if (PlayerLevel >= 11):
-            damage += rollDice(1, 6)
-        if (PlayerLevel >=17):
-            damage += rollDice(1, 6)
-        # determine resistance
-        if (EnemyResistance == "acid"):
-            damage = damage / 2
-    
-        # end turn
-        return damage
-    # if out of range
-    else:
-     print("Enemy out of range...")
-
 # create character functions
 def create_character():
     global PlayerRace, PlayerClass, PlayerBackground, PlayerName, PlayerStrength, PlayerDexterity, PlayerConstitution, PlayerIntelligence, PlayerWisdom, PlayerCharisma, PlayerLangs, DragonbornSubRaceType, PlayerHasBreathWeapon, PlayerRessistances, PlayerSpeed, PlayerDarkvision
