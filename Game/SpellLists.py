@@ -111,3 +111,5 @@ ConjurationSpells = {}
 NecromancySpells = {}
 EvocationSpells = {}
 DivinationSpells = {}
+IllusionSpells = {}
+TransmutationSpells = {}
