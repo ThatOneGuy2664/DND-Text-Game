@@ -28,7 +28,6 @@
 import random # random numerical values
 import time # to prevent walls of text with wait()
 import os
-
 # Spells
 from SpellLists import BardSpells # import spell dictionaries for classes
 from SpellLists import WizardSpells
