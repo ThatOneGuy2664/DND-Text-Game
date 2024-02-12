@@ -28,15 +28,18 @@
 import random # random numerical values
 import time # to prevent walls of text with wait()
 import os
+
+# Spells
 from SpellLists import BardSpells # import spell dictionaries for classes
 from SpellLists import WizardSpells
 from SpellLists import WarlockSpells
 from SpellLists import RangerSpells
-from SpellLists import EvocationSpells # schools
+from SpellLists import EvocationSpells # schools of magic and their spells
 from SpellLists import NecromancySpells
 from SpellLists import AbjurationSpells
 from SpellLists import ConjurationSpells
 from SpellLists import DivinationSpells
+from SpellLists import EnchantmentSpells
 
 # Functions
 
