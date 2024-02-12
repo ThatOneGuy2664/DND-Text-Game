@@ -672,50 +672,6 @@ def ability_score_increase():
          PlayerCharisma += 2
          refresh_stat_mods()
 
-# PlayerClass abilities/passives for all classes
-# Barbarian
-BarbarianRage = False
-BarbarianUnarmoredDef = False
-BarbarianRecklessAtk = False
-BarbarianDangerSense = False
-BarbarianFastMove = False
-BarbarianFeral = False
-BarbarianBrutalCrit = 0 # extra di(c)e rolled
-BarbarianRelentlessRage = False
-BarbarianBetterRage = False
-BarbarianMight = False
-BarbarianPrimalChamp = False
-# Bard
-BardicInspirationAbility = 0 # uses
-JackOfAllTrades = False
-CounterCharmAbility = False # passively grants new active action, basically a toggle
-BetterInspiration = False
-# Cleric
-ChannelDivinity = 0 # non-boolean for more than once per rest at higher levels
-DestroyUndead = False # passive = boolean
-DestroyUndeadCR = 0 # variable related to DestroyUndead
-DivineIntervention = False # boolean for one time, on/off use
-# Druid
-Druidic = False
-# General features (more than one class uses these)
-ExtraAtk = 0
-SpellcastingAbil = None
-
-# matching the null variables to the chosen class and make them not = null for that class's variables
-match PlayerClass:
- case "Barbarian":
-	 BarbarianRage = True
-	 BarbarianUnarmoredDef = True
- case "Bard":
-	 SpellcastingAbil = PlayerCharisma
-	 BardicInspirationAbility = (PlayerCharisma - 10) // 2 # CHA mod
- case "Cleric":
-	 SpellcastingAbil = PlayerWisdom
- case "Druid":
-	 SpellcastingAbil = PlayerWisdom
-	 Drudic = True
-
-# Refresh player stats after bonuses are applied and before game start
 refresh_stat_mods()
 
 wait(1)
@@ -731,7 +687,7 @@ def Game():
                 wait(1)
                 print_player_stats()
                 print("\n")
-    # repeat function after other calls are completed
+    # repeat function after other calls are completed for a game loop
     Game()
                 
 Game()
