@@ -183,7 +183,7 @@ DivinationSpells = {
   "DivinationCantrips": ["Guidance", "True Strike"],
   "DivinationLevelOne": [],
   "DivinationLevelTwo": [],
-  "DivinationLevelThree": [],
+  "DivinationLevelThree": ["Clairvoyance", "Tongues"],
   "DivinationLevelFour": ["Arcane Eye", "Divination", "Locate Creature"],
   "DivinationLevelFive": ["Commune", "Commune with City", "Commune with Nature", "Contact Other Plane", "Legend Lore", "Rary's Telepathic Bond", "Scrying"],
   "DivinationLevelSix": ["Find the Path", "True Seeing"],
