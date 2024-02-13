@@ -98,7 +98,7 @@ PaladinSpells = {
                "Detect Magic"],
   "LevelTwo": ["Aid", "Branding Smite"],
   "LevelThree": ["Aura of Vitality", "Blinding Smite"],
-  "LevelFour": ["Aura of Life"],
+  "LevelFour": ["Aura of Life", "Aura of Purity", "Banishment"],
   "LevelFive": ["Banishing Smite", "Circle Of Power"]
   # Paladin spells stop at level 5
 }
