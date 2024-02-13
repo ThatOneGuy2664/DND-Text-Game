@@ -150,7 +150,7 @@ NecromancySpells = {
                            "Spirit Shroud", "Summon Undead", "Vampric Touch"],
   "NecromancyLevelFour": ["Blight", "Shadow Of Moil", "Spirit Of Death"],
   "NecromancyLevelFive": ["Contagion", "Danse Macabre", "Enervation", "Negative Energy Flood", "Raise Dead"],
-  "NecromancyLevelSix": [],
+  "NecromancyLevelSix": ["Circle of Death", "Create Undead", "Eyebite", "Harm", "Magic Jar", "Soul Cage"],
   "NecromancyLevelSeven": [],
   "NecromancyLevelEight": [],
   "NecromancyLevelNine": []
