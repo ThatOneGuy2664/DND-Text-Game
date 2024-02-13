@@ -184,8 +184,8 @@ DivinationSpells = {
   "DivinationLevelOne": [],
   "DivinationLevelTwo": [],
   "DivinationLevelThree": [],
-  "DivinationLevelFour": [],
-  "DivinationLevelFive": [],
+  "DivinationLevelFour": ["Arcane Eye", "Divination", "Locate Creature"],
+  "DivinationLevelFive": ["Commune", "Commune with City", "Commune with Nature", "Contact Other Plane", "Legend Lore", "Rary's Telepathic Bond", "Scrying"],
   "DivinationLevelSix": ["Find the Path", "True Seeing"],
   "DivinationLevelSeven": [], # none
   "DivinationLevelEight": [], # none
