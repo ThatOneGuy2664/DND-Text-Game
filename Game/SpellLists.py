@@ -144,7 +144,18 @@ ConjurationSpells = {
   "ConjurationLevelEight": [],
   "ConjurationLevelNine": []
 }
-NecromancySpells = {}
+NecromancySpells = {
+  "NecromancyCantrips": ["Chill Touch", "Decompose", "Sapping Sting", "Spare The Dying", "Toll The Dead"],
+  "NecromancyLevelOne": [],
+  "NecromancyLevelTwo": [],
+  "NecromancyLevelThree": [],
+  "NecromancyLevelFour": [],
+  "NecromancyLevelFive": [],
+  "NecromancyLevelSix": [],
+  "NecromancyLevelSeven": [],
+  "NecromancyLevelEight": [],
+  "NecromancyLevelNine": []
+}
 EvocationSpells = {}
 DivinationSpells = {}
 IllusionSpells = {}
