@@ -111,6 +111,7 @@ PlayerCONMod = None # CON mod to be assigned
 PlayerINTMod = None # INT mod to be assigned 
 PlayerWISMod = None # WIS mod to be assigned
 PlayerCHAMod = None # CHA mod to be assigned
+PlayerRelations = [] # Player clan, guild, etc. relations
 PlayerHP = 0 # to be assigned
 PlayerHPMax = 0 # to be assigned
 PlayerClass = None # Player class
