@@ -23,4 +23,4 @@
 
 Feats = ["Alert", "Artificer Initiate", "Athlete", "Bountiful Luck", "Charger",
          "Chef", "Crossbow Expert", "Defensive Duelist", "Dragon Fear", "Dragon Hide",
-         "Drow High Magic", "Duel Wielder", "Dungeon Delver", "Durable"]
+         "Drow High Magic", "Duel Wielder", "Dungeon Delver", "Durable", "Dwarf Fortitude"]
