@@ -154,7 +154,18 @@ NecromancySpells = {
   "NecromancyLevelEight": [],
   "NecromancyLevelNine": []
 }
-EvocationSpells = {}
+EvocationSpells = {
+  "EvocationCantrips": [],
+  "EvocationLevelOne": [],
+  "EvocationLevelTwo": [],
+  "EvocationLevelThree": [],
+  "EvocationLevelFour": [],
+  "EvocationLevelFive": [],
+  "EvocationLevelSix": [],
+  "EvocationLevelSeven": [],
+  "EvocationLevelEight": [],
+  "EvocationLevelNine": []
+}
 DivinationSpells = {}
 IllusionSpells = {}
 TransmutationSpells = {}
