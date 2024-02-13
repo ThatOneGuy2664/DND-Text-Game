@@ -99,7 +99,7 @@ PaladinSpells = {
   "LevelTwo": ["Aid", "Branding Smite"],
   "LevelThree": ["Aura of Vitality", "Blinding Smite"],
   "LevelFour": ["Aura of Life"],
-  "LevelFive": []
+  "LevelFive": ["Banishing Smite", "Circle Of Power"]
   # Paladin spells stop at level 5
 }
 
