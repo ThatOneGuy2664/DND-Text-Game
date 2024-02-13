@@ -654,7 +654,10 @@ def save_character():
     }
 
     # write data to a new file
-    with open("new_info.txt", "w") as new_file:
+    import datetime
+    Current_date = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    file_name = f"{PlayerName}_{Current_date}.txt"
+    with open(file_name, "w") as new_file:
         new_file.write("# character sheet\n")
         for key, value in char_data.items():
             new_file.write(f"{key}: {value}\n")
