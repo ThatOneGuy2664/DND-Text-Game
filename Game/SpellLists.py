@@ -152,7 +152,7 @@ NecromancySpells = {
   "NecromancyLevelFive": ["Contagion", "Danse Macabre", "Enervation", "Negative Energy Flood", "Raise Dead"],
   "NecromancyLevelSix": ["Circle of Death", "Create Undead", "Eyebite", "Harm", "Magic Jar", "Soul Cage"],
   "NecromancyLevelSeven": ["Finger of Death", "Resurrection", "Tether Essence"],
-  "NecromancyLevelEight": [],
+  "NecromancyLevelEight": ["Abi-Dalzim's Horrid Wilting", "Clone"],
   "NecromancyLevelNine": []
 }
 EvocationSpells = {
