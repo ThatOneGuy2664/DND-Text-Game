@@ -129,7 +129,6 @@ PlayerSpells = None # Spells player knows
 PlayerHasAction = True # action
 PlayerHasBonusAction = True # bonus action
 PlayerHasReaction = True # per round reaction
-PlayerStarterGear = None # soon-to-be player starting gear defined by background and class to add to inventory (see below)
 PlayerInv = [] # soon-to-be player inventory
 PlayerLangs = ["Common"] # soon-to-be languages the player knows
 AllLangs = ["Common", "Dwarvish", "Elvish", "Giant", "Gnomish", "Goblin", "Halfling", "Orc", "Abyssal", "Celestial", "Draconic", "Deep Speech", "Infernal", "Primordial", "Sylvan", "Undercommon"] # all languages
@@ -189,7 +188,7 @@ def print_player_stats():
 
 # create character functions
 def create_character():
-    global PlayerRace, PlayerClass, PlayerBackground, PlayerName, PlayerStrength, PlayerDexterity, PlayerConstitution, PlayerIntelligence, PlayerWisdom, PlayerCharisma, PlayerLangs, DragonbornSubRaceType, PlayerHasBreathWeapon, PlayerRessistances, PlayerSpeed, PlayerDarkvision
+    global PlayerRace, PlayerClass, PlayerBackground, PlayerName, PlayerStrength, PlayerDexterity, PlayerConstitution, PlayerIntelligence, PlayerWisdom, PlayerCharisma, PlayerLangs, DragonbornSubRaceType, PlayerHasBreathWeapon, PlayerRessistances, PlayerSpeed, PlayerDarkvision, PlayerInv, PlayerGold
   
     print("\n**** Rolled stats...\n")
     # Generate and print player ability scores
@@ -517,7 +516,12 @@ def create_character():
     # Backgrounds = ["Acolyte", "Criminal / Spy", "Folk Hero", "Noble", "Sage", "Soldier", "Charlatan", "Haunted One"]
     match Backgroundchoice:
      case 1:
-        PlayerBackground = "Acolyte"
+        PlayerBackground = "Acolyte" # PlayerBackground variable assignment
+        PlayerInv.append("Common Clothes")
+        PlayerInv.append("Incense Sticks") # x5, quantity feature needed for PlayerInv
+        PlayerInv.append("Holy Symbol")
+        PlayerInv.append("Prayer Book")
+        PlayerGold += 15
      case 2:
         PlayerBackground = "Criminal"
      case 3:
@@ -681,12 +685,18 @@ refresh_stat_mods()
 wait(1)
 
 def Game():
+    global PlayerInv
     wait(1)
     print("What would you like to do?")
-    GameOpts = ["View Stats"]
+    GameOpts = ["Manage Inventory", "View Stats"]
     GameOptPicked = get_choice(GameOpts)
     match GameOptPicked:
         case 1:
+                print("\n")
+                wait(1)
+                print(PlayerInv)
+                print("\n")
+        case 2:
                 print("\n")
                 wait(1)
                 print_player_stats()
