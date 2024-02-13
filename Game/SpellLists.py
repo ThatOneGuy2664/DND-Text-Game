@@ -109,9 +109,29 @@ PaladinSpells = {
 EnchantmentSpells = {
   "EnchantmentCantrips": ["Encode Thoughts", "Friends", "Mind Sliver", "Vicious Mockery"],
   "EnchantmentLevelOne": ["Animal Friendship", "Bane", "Bless", "Charm Person", "Command", "Compelled Duel",
-                          "Dissonant Whispers", "Heroism", "Hex"]
+                          "Dissonant Whispers", "Heroism", "Hex", "Id Insinuation", "Puppet", "Silvery Barbs",
+                          "Sleep", "Sudden Awakening", "Tasha's Hideous Laughter"],
+  "EnchantmentLevelTwo": [],
+  "EnchantmentLevelThree": [],
+  "EnchantmentLevelFour": [],
+  "EnchantmentLevelFive": [],
+  "EnchantmentLevelSix": [],
+  "EnchantmentLevelSeven": [],
+  "EnchantmentLevelEight": [],
+  "EnchantmentLevelNine": []
 }
-AbjurationSpells = {}
+AbjurationSpells = {
+  "AbjurationCantrips": [],
+  "AbjurationLevelOne": [],
+  "AbjurationLevelTwo": [],
+  "AbjurationLevelThree": [],
+  "AbjurationLevelFour": [],
+  "AbjurationLevelFive": [],
+  "AbjurationLevelSix": [],
+  "AbjurationLevelSeven": [],
+  "AbjurationLevelEight": [],
+  "AbjurationLevelNine": []
+}
 ConjurationSpells = {}
 NecromancySpells = {}
 EvocationSpells = {}
