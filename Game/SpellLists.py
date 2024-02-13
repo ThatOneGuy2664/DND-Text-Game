@@ -186,10 +186,10 @@ DivinationSpells = {
   "DivinationLevelThree": [],
   "DivinationLevelFour": [],
   "DivinationLevelFive": [],
-  "DivinationLevelSix": [],
-  "DivinationLevelSeven": [],
-  "DivinationLevelEight": [],
-  "DivinationLevelNine": []
+  "DivinationLevelSix": ["Find the Path", "True Seeing"],
+  "DivinationLevelSeven": [], # none
+  "DivinationLevelEight": [], # none
+  "DivinationLevelNine": ["Foresight"]
 }
 IllusionSpells = {}
 TransmutationSpells = {}
