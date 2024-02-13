@@ -108,7 +108,7 @@ PaladinSpells = {
 # schools
 EnchantmentSpells = {
   "EnchantmentCantrips": ["Encode Thoughts", "Friends", "Mind Sliver", "Vicious Mockery"],
-  "EnchantmentLevelOne": ["Animal Friendship", "Bane", "Bless", "Charm Person", "Command"]
+  "EnchantmentLevelOne": ["Animal Friendship", "Bane", "Bless", "Charm Person", "Command", "Compelled Duel", "Dissonant Whispers", "Heroism", "Hex"]
 }
 AbjurationSpells = {}
 ConjurationSpells = {}
