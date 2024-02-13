@@ -133,8 +133,16 @@ AbjurationSpells = {
   "AbjurationLevelNine": []
 }
 ConjurationSpells = {
-  "ConjurationCantrips": [],
-  "ConjurationLevelOne": []
+  "ConjurationCantrips": ["Acid Splash", "Create Bonfire", "Infestation", "Mage Hand", "Poison Spray", "Produce Flame", "Sword Burst"],
+  "ConjurationLevelOne": [],
+  "ConjurationLevelTwo": [],
+  "ConjurationLevelThree": [],
+  "ConjurationLevelFour": [],
+  "ConjurationLevelFive": [],
+  "ConjurationLevelSix": [],
+  "ConjurationLevelSeven": [],
+  "ConjurationLevelEight": [],
+  "ConjurationLevelNine": []
 }
 NecromancySpells = {}
 EvocationSpells = {}
