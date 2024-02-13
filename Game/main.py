@@ -159,12 +159,12 @@ def generate_ability_scores():
 
 def refresh_stat_mods():
         global PlayerSTRMod, PlayerDEXMod, PlayerCONMod, PlayerINTMod, PlayerWISMod, PlayerCHAMod, PlayerStrength, PlayerDexterity, PlayerConstitution, PlayerIntelligence, PlayerWisdom, PlayerCharisma
-        PlayerSTRMod = (PlayerStrength - 10) // 2
-        PlayerDEXMod = (PlayerDexterity - 10) // 2
-        PlayerCONMod = (PlayerConstitution - 10) // 2
-        PlayerINTMod = (PlayerIntelligence - 10) // 2
-        PlayerWISMod = (PlayerWisdom - 10) // 2
-        PlayerCHAMod = (PlayerCharisma - 10) // 2
+        PlayerSTRMod = (int(PlayerStrength) - 10) // 2
+        PlayerDEXMod = (int(PlayerDexterity) - 10) // 2
+        PlayerCONMod = (int(PlayerConstitution) - 10) // 2
+        PlayerINTMod = (int(PlayerIntelligence) - 10) // 2
+        PlayerWISMod = (int(PlayerWisdom) - 10) // 2
+        PlayerCHAMod = (int(PlayerCharisma) - 10) // 2
 
 def print_player_stats():
         refresh_stat_mods()
@@ -548,8 +548,9 @@ def create_character():
     
     wait(1)
     
+    refresh_stat_mods()
     print_player_stats()
-
+    
     print("\n**** Choose this character or start over? ")
     choice = ["Choose this character.", "Start over."]
     PickedCharCreateOption = get_choice(choice)
@@ -587,10 +588,14 @@ def load_character(): # load an existing character from character_info.txt
                 key, value = map(str.strip, line.split(':', 1))
                 char_data[key] = value
 
-    print(char_data) # test
     # Assign each key to a separate variable
     for key, value in char_data.items():
-        globals()[key] = value
+        if isinstance(value, int):
+            globals()[key] = int(value)
+        else:
+            globals()[key] = str(value)
+    print(char_data) # test
+    #refresh_stat_mods() # outsids function to get original (ability score) modifier
 
     try:
         wait(1)
@@ -637,19 +642,19 @@ print("**** Welcome to DND-Text-Game! ****")
 def save_character():
     global PlayerRace, PlayerClass, PlayerName, PlayerStrength, PlayerDexterity, PlayerConstitution, PlayerIntelligence, PlayerWisdom, PlayerCharisma, PlayerDarkvision, PlayerBlindsight, PlayerGold, PlayerInv
     char_data = {
-    "PlayerStrength":PlayerStrength,
-    "PlayerDexterity":PlayerDexterity,
-    "PlayerConstitution":PlayerConstitution,
-    "PlayerIntelligence":PlayerIntelligence,
-    "PlayerWisdom":PlayerWisdom,
-    "PlayerCharisma":PlayerCharisma,
-    "PlayerRace":PlayerRace,
-    "PlayerClass":PlayerClass,
-    "PlayerBackground":PlayerBackground,
-    "PlayerName":PlayerName,
-    "PlayerDarkvision":PlayerDarkvision,
-    "PlayerBlindsight":PlayerBlindsight,
-    "PlayerGold":PlayerGold,
+    "PlayerStrength":int(PlayerStrength),
+    "PlayerDexterity":int(PlayerDexterity),
+    "PlayerConstitution":int(PlayerConstitution),
+    "PlayerIntelligence":int(PlayerIntelligence),
+    "PlayerWisdom":int(PlayerWisdom),
+    "PlayerCharisma":int(PlayerCharisma),
+    "PlayerRace":str(PlayerRace),
+    "PlayerClass":str(PlayerClass),
+    "PlayerBackground":str(PlayerBackground),
+    "PlayerName":str(PlayerName),
+    "PlayerDarkvision":int(PlayerDarkvision),
+    "PlayerBlindsight":int(PlayerBlindsight),
+    "PlayerGold":float(PlayerGold),
     "PlayerInv":PlayerInv
     }
 
