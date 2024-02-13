@@ -121,7 +121,7 @@ EnchantmentSpells = {
   "EnchantmentLevelNine": []
 }
 AbjurationSpells = {
-  "AbjurationCantrips": [],
+  "AbjurationCantrips": ["Blade Ward", "Resistance", "Virtue"],
   "AbjurationLevelOne": [],
   "AbjurationLevelTwo": [],
   "AbjurationLevelThree": [],
@@ -132,7 +132,10 @@ AbjurationSpells = {
   "AbjurationLevelEight": [],
   "AbjurationLevelNine": []
 }
-ConjurationSpells = {}
+ConjurationSpells = {
+  "ConjurationCantrips": [],
+  "ConjurationLevelOne": []
+}
 NecromancySpells = {}
 EvocationSpells = {}
 DivinationSpells = {}
