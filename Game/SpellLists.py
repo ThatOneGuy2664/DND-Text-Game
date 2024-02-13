@@ -94,7 +94,8 @@ SorcererSpells = {
 }
 PaladinSpells = {
   # Paladins don't havs Cantrips
-  "LevelOne": ["Bless", "Ceremony", "Command"],
+  "LevelOne": ["Bless", "Ceremony", "Command", "Compelled Duel", "Cure Wounds", "Detect Evil And Good",
+               "Detect Magic"],
   "LevelTwo": ["Aid", "Branding Smite"],
   "LevelThree": ["Aura of Vitality", "Blinding Smite"],
   "LevelFour": [],
