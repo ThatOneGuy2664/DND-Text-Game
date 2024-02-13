@@ -21,8 +21,6 @@
 # SOFTWARE.
 # END LICENSE DESCRIPTION
 
-# this includes UA, Tasha's Cauldron of Everything, and other optional spells
-
 BardSpells = {
   "Cantrips": [
     "Blade Ward", "Dancing Lights", "Friends", "Light",
