@@ -634,7 +634,7 @@ print("**** Welcome to DND-Text-Game! ****")
 
 # save character data to new file
 def save_character():
-    global PlayerRace, PlayerClass, PlayerName, PlayerStrength, PlayerDexterity, PlayerConstitution, PlayerIntelligence, PlayerWisdom, PlayerCharisma
+    global PlayerRace, PlayerClass, PlayerName, PlayerStrength, PlayerDexterity, PlayerConstitution, PlayerIntelligence, PlayerWisdom, PlayerCharisma, PlayerDarkvision, PlayerBlindsight, PlayerGold, PlayerInv
     char_data = {
     "PlayerStrength":PlayerStrength,
     "PlayerDexterity":PlayerDexterity,
@@ -645,7 +645,11 @@ def save_character():
     "PlayerRace":PlayerRace,
     "PlayerClass":PlayerClass,
     "PlayerBackground":PlayerBackground,
-    "PlayerName":PlayerName
+    "PlayerName":PlayerName,
+    "PlayerDarkvision":PlayerDarkvision,
+    "PlayerBlindsight":PlayerBlindsight,
+    "PlayerGold":PlayerGold,
+    "PlayerInv":PlayerInv
     }
 
     # write data to a new file
@@ -678,9 +682,9 @@ def ability_score_increase():
          PlayerWisdom += 2
      case 6:
          PlayerCharisma += 2
-         refresh_stat_mods()
+    refresh_stat_mods()
 
-refresh_stat_mods()
+refresh_stat_mods() # outsids function to get original (ability score) modifier
 
 wait(1)
 
