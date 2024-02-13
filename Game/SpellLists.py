@@ -179,6 +179,17 @@ EvocationSpells = {
   "EvocationLevelEight": [],
   "EvocationLevelNine": []
 }
-DivinationSpells = {}
+DivinationSpells = {
+  "DivinationCantrips": ["Guidance", "True Strike"],
+  "DivinationLevelOne": [],
+  "DivinationLevelTwo": [],
+  "DivinationLevelThree": [],
+  "DivinationLevelFour": [],
+  "DivinationLevelFive": [],
+  "DivinationLevelSix": [],
+  "DivinationLevelSeven": [],
+  "DivinationLevelEight": [],
+  "DivinationLevelNine": []
+}
 IllusionSpells = {}
 TransmutationSpells = {}
