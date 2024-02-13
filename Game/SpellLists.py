@@ -144,7 +144,7 @@ ConjurationSpells = {
 }
 NecromancySpells = {
   "NecromancyCantrips": ["Chill Touch", "Decompose", "Sapping Sting", "Spare The Dying", "Toll The Dead"],
-  "NecromancyLevelOne": [],
+  "NecromancyLevelOne": ["Cause Fear", "False Life", "Inflict Wounds", "Ray Of Sickness"],
   "NecromancyLevelTwo": [],
   "NecromancyLevelThree": [],
   "NecromancyLevelFour": [],
