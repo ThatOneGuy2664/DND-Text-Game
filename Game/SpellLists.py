@@ -106,7 +106,10 @@ PaladinSpells = {
 # Bloodhunters use Warlock spells, Arcane Trickster Rogues use Wizard spells
 
 # schools
-EnchantmentSpells = {}
+EnchantmentSpells = {
+  "EnchantmentCantrips": ["Encode Thoughts", "Friends", "Mind Sliver", "Vicious Mockery"]
+  "EnchantmentLevelOne": ["Animal Friendship", "Bane", "Bless"]
+}
 AbjurationSpells = {}
 ConjurationSpells = {}
 NecromancySpells = {}
