@@ -21,6 +21,6 @@
 # SOFTWARE.
 # END LICENSE DESCRIPTION
 
-Feats = ["Alert", "Artificer Initiate",
-         "Athlete", "Bountiful Luck",
-         "Charger", "Chef", "Crossbow Expert"]
+Feats = ["Alert", "Artificer Initiate", "Athlete", "Bountiful Luck", "Charger",
+         "Chef", "Crossbow Expert", "Defensive Duelist", "Dragon Fear", "Dragon Hide",
+         "Drow High Magic", "Duel Wielder", "Dungeon Delver", "Durable"]
