@@ -100,6 +100,18 @@ PaladinSpells = {
   "LevelFive": ["Banishing Smite", "Circle Of Power"]
   # Paladin spells stop at level 5
 }
+ClericSpells = {
+  "Cantrips": [],
+  "LevelOne": [],
+  "LevelTwo": [],
+  "LevelThree": [],
+  "LevelFour": [],
+  "LevelFive": [],
+  "LevelSix": [],
+  "LevelSeven": [],
+  "LevelEight": [],
+  "LevelNine": []
+}
 
 # Bloodhunters use Warlock spells, Arcane Trickster Rogues use Wizard spells
 
@@ -153,7 +165,7 @@ NecromancySpells = {
   "NecromancyLevelSix": ["Circle of Death", "Create Undead", "Eyebite", "Harm", "Magic Jar", "Soul Cage"],
   "NecromancyLevelSeven": ["Finger of Death", "Resurrection", "Tether Essence"],
   "NecromancyLevelEight": ["Abi-Dalzim's Horrid Wilting", "Clone"],
-  "NecromancyLevelNine": []
+  "NecromancyLevelNine": ["Astral Projection", "Time Ravage", "True Resurrection"]
 }
 EvocationSpells = {
   "EvocationCantrips": [],
