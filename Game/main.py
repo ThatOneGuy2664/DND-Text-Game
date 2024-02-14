@@ -162,6 +162,7 @@ def generate_ability_scores():
     PlayerCharisma = player_vars[5]
 
 def rest(): # function for player to rest
+	global PlayerHP, PlayerHPMax
         PlayerHP = PlayerHPMax
         # spell slots to full
         # per rest abilities refresh
