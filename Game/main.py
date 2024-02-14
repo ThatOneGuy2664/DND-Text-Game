@@ -679,7 +679,7 @@ def ability_score_increase():
     global PlayerStrength, PlayerDexterity, PlayerConstitution, PlayerIntelligence, PlayerWisdom, PlayerCharisma
     AbilIncOpts = ["Strength", "Dexterity", "Constitution", "Intelligence", "Wisdom", "Charisma"]
     PickedInc = get_choice(AbilIncOpts)
-    match AbilIncOpts:
+    match PickedInc:
      case 1:
          PlayerStrength += 2
      case 2:
