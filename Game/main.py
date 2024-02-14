@@ -112,6 +112,8 @@ PlayerCONMod = None # CON mod to be assigned
 PlayerINTMod = None # INT mod to be assigned 
 PlayerWISMod = None # WIS mod to be assigned
 PlayerCHAMod = None # CHA mod to be assigned
+PlayerXP = 0 # Player current XP
+PlayerXPToNextLevel = 0 # Player XP to next level
 PlayerRelations = [] # Player clan, guild, etc. relations
 PlayerHP = 0 # to be assigned
 PlayerHPMax = 0 # to be assigned
@@ -159,8 +161,13 @@ def generate_ability_scores():
     PlayerCharisma = player_vars[5]
 
 def refresh_stat_mods():
-        global PlayerSTRMod, PlayerDEXMod, PlayerCONMod, PlayerINTMod, PlayerWISMod, PlayerCHAMod, PlayerStrength, PlayerDexterity, PlayerConstitution, PlayerIntelligence, PlayerWisdom, PlayerCharisma
-        PlayerSTRMod = (int(PlayerStrength) - 10) // 2
+        global PlayerSTRMod, PlayerDEXMod, PlayerCONMod, PlayerINTMod, PlayerWISMod, PlayerCHAMod, PlayerStrength, PlayerDexterity, PlayerConstitution, PlayerIntelligence, PlayerWisdom, PlayerCharisma, PlayerHP, PlayerHPMax
+        if PlayerHP > PlayerHPMax:
+                PlayerHP = PlayerHPMax
+        if PlayerXP >= PlayerXPToNextLevel:
+                PlayerXP -= PlayerXPToNextLevel
+                PlayerLevel += 1
+	PlayerSTRMod = (int(PlayerStrength) - 10) // 2
         PlayerDEXMod = (int(PlayerDexterity) - 10) // 2
         PlayerCONMod = (int(PlayerConstitution) - 10) // 2
         PlayerINTMod = (int(PlayerIntelligence) - 10) // 2
