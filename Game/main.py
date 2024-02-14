@@ -160,6 +160,7 @@ def generate_ability_scores():
     PlayerWisdom = player_vars[4]
     PlayerCharisma = player_vars[5]
 
+# function to update Player(var)s
 def refresh_stat_mods():
         global PlayerSTRMod, PlayerDEXMod, PlayerCONMod, PlayerINTMod, PlayerWISMod, PlayerCHAMod, PlayerStrength, PlayerDexterity, PlayerConstitution, PlayerIntelligence, PlayerWisdom, PlayerCharisma, PlayerHP, PlayerHPMax
         if PlayerHP > PlayerHPMax:
@@ -174,6 +175,7 @@ def refresh_stat_mods():
         PlayerWISMod = (int(PlayerWisdom) - 10) // 2
         PlayerCHAMod = (int(PlayerCharisma) - 10) // 2
 
+# function to print Player(var)s
 def print_player_stats():
         refresh_stat_mods()
         print("\n**** CHARACTER INFORMATION ****\n")
@@ -225,39 +227,39 @@ def create_character():
              ExtraLang = get_choice(AllLangs) # Humans get an extra language
              wait(1) # wait a second
              match ExtraLang:
-              case 1:
+              case 1: # Common
                  wait(1)
                  print("You already know Common.")
                  ExtraLang = ""
-              case 2:
+              case 2: # Dwarvish
                  ExtraLang = "Dwarvish"
-              case 3:
+              case 3: # Elvish
                  ExtraLang = "Elvish"
-              case 4:
+              case 4: # Giant
                  ExtraLang = "Giant"
-              case 5:
+              case 5: # Gnomish
                  ExtraLang = "Gnomish"
-              case 6:
+              case 6: # Goblin
                  ExtraLang = "Goblin"
-              case 7:
+              case 7: # Halfling
                  ExtraLang = "Halfling"
-              case 8:
+              case 8: # Orc
                  ExtraLang = "Orc"
-              case 9:
+              case 9: # Abyssal
                  ExtraLang = "Abyssal"
-              case 10:
+              case 10: # Celestial
                  ExtraLang = "Celestial"
-              case 11:
+              case 11: # Draconic
                  ExtraLang = "Draconic"
-              case 12:
+              case 12: # Deep Speech
                  ExtraLang = "Deep Speech"
-              case 13:
+              case 13: # Infernal
                  ExtraLang = "Infernal"
-              case 14:
+              case 14: # Primordial
                  ExtraLang = "Primordial"
-              case 15:
+              case 15: # Sylvan
                  ExtraLang = "Sylvan"
-              case 16:
+              case 16: # Undercommon
                  ExtraLang = "Undercommon"
              PlayerLangs.append(ExtraLang)
              wait(1)
@@ -280,34 +282,34 @@ def create_character():
             PlayerLangs = ["Common", "Draconic"]
             print(PlayerLangs)
             match DragonbornSubRaceType:
-                case 1:
+                case 1: # Black
                         DragonbornSubRaceType = "Acid" # breath weapon type
                         PlayerRessistances.append(DragonbornSubRaceType) # add corresponding player ressistance
-                case 2:
+                case 2: # Blue
                         DragonbornSubRaceType = "Lightning"
                         PlayerRessistances.append(DragonbornSubRaceType)
-                case 3:
+                case 3: # Brass
                         DragonbornSubRaceType = "Fire"
                         PlayerRessistances.append(DragonbornSubRaceType)
-                case 4:
+                case 4: # Bronze
                         DragonbornSubRaceType = "Lightning"
                         PlayerRessistances.append(DragonbornSubRaceType)
-                case 5:
+                case 5: # Copper
                         DragonbornSubRaceType = "Acid"
                         PlayerRessistances.append(DragonbornSubRaceType)
-                case 6:
+                case 6: # Gold
                         DragonbornSubRaceType = "Fire"
                         PlayerRessistances.append(DragonbornSubRaceType)
-                case 7:
+                case 7: # Green
                         DragonbornSubRaceType = "Poison"
                         PlayerRessistances.append(DragonbornSubRaceType)
-                case 8:
+                case 8: # Red
                         DragonbornSubRaceType = "Fire"
                         PlayerRessistances.append(DragonbornSubRaceType)
-                case 9:
+                case 9: # Silver
                         DragonbornSubRaceType = "Cold"
                         PlayerRessistances.append(DragonbornSubRaceType)
-                case 10:
+                case 10: # White
                         DragonbornSubRaceType = "Cold"
                         PlayerRessistances.append(DragonbornSubRaceType)
         case 3:
@@ -407,7 +409,7 @@ def create_character():
             PlayerSpeed = 25 # feet
             PlayerDarkvision = 60 # feet
             PlayerLangs = ["Common", "Gnomish"]
-            GnomeSubRaces = ["Forest Gnome", "Rock Gnome"]
+            GnomeSubRaces = ["Forest Gnome", "Rock Gnome"] # Gnome subraces
             wait(1)
             print("What kind of Gnome are you?") # subrace select prompt
             wait(1)
@@ -488,33 +490,33 @@ def create_character():
     class_choice = get_choice(Classes) # show options
     # Classes are: [ "Barbarian", "Bard", "Cleric", "Druid", "Fighter", "Monk", "Paladin", "Ranger", "Rogue", "Sorcerer", "Warlock", "Wizard", "Artificer", "Bloodhunter" ]
     match class_choice:
-        case 1:
+        case 1: # Barbarian
             PlayerClass = "Barbarian" # these assign the playerclass variable
-        case 2:
+        case 2: # Bard
             PlayerClass = "Bard"
-        case 3:
+        case 3: # Cleric
             PlayerClass = "Cleric"
-        case 4:
+        case 4: # Druid
             PlayerClass = "Druid"
-        case 5:
+        case 5: # Fighter
             PlayerClass = "Fighter"
-        case 6:
+        case 6: # Monk
             PlayerClass = "Monk"
-        case 7:
+        case 7: # Paladin
             PlayerClass = "Paladin"
-        case 8:
+        case 8: # Ranger
             PlayerClass = "Ranger"
-        case 9:
+        case 9: # Rogue
             PlayerClass = "Rogue"
-        case 10:
+        case 10: # Sorcerer
             PlayerClass = "Sorcerer"
-        case 11:
+        case 11: # Warlock
             PlayerClass = "Warlock"
-        case 12:
+        case 12: # Wizard
             PlayerClass = "Wizard"
-        case 13:
+        case 13: # Artificer
             PlayerClass = "Artificer"
-        case 14:
+        case 14: # Bloodhunter
             PlayerClass = "Bloodhunter"
     wait(1)
     print("\n**** You chose " + PlayerClass + " as your class.")
@@ -549,6 +551,7 @@ def create_character():
     print("\n**** You chose " + PlayerBackground + " as your background.")
 	
     wait(1)
+    # get PlayerName variable set
     PlayerName = input("\n**** What would you like to name your character? ") # naming the player character
     
     wait(1)
@@ -558,7 +561,8 @@ def create_character():
     
     refresh_stat_mods()
     print_player_stats()
-    
+
+    # confirm character and start game
     print("\n**** Choose this character or start over? ")
     choice = ["Choose this character.", "Start over."]
     PickedCharCreateOption = get_choice(choice)
@@ -573,7 +577,8 @@ def create_character():
 
         create_character()
 
-def load_character(): # load an existing character from character_info.txt
+# load character function
+def load_character(): # load an existing character from (filename).txt
     global PlayerStrength, PlayerDexterity, PlayerConstitution, PlayerIntelligence, PlayerWisdom, PlayerCharisma, PlayerRace, PlayerClass, PlayerBackground, PlayerName
     char_data = {}
 
@@ -627,7 +632,7 @@ def load_character(): # load an existing character from character_info.txt
         # Call create_character() again to reset Player(variables)
         read_or_write()
 
-# function to create a character or load an existing one
+# function to create a character or to make function calls for loading an existing one
 def read_or_write():
     wait(1)
     print("\n**** Would you like to create a new character or load an existing character?\n")
@@ -643,7 +648,7 @@ def read_or_write():
             wait(1)
             load_character()
 
-# finish character functions
+# charcter creation code end
 print("**** Welcome to DND-Text-Game! ****")
 
 # save character data to new file
@@ -675,12 +680,12 @@ def save_character():
         for key, value in char_data.items():
             new_file.write(f"{key}: {value}\n")
 
-# create a new character or load an existing one
+# function to create a new character or load an existing one
 read_or_write()
 
 # end character creation
 
-# define ASI (ability score increase) function for ASI on level-up, all classes use ASIs
+# define ASI (ability score increase) function for ASI on level-up, all classes use ASIs (or sacrifice it for a feat from FeatsList)
 def ability_score_increase():
     print("Pick an ability score to increase.")
     global PlayerStrength, PlayerDexterity, PlayerConstitution, PlayerIntelligence, PlayerWisdom, PlayerCharisma
@@ -701,10 +706,11 @@ def ability_score_increase():
          PlayerCharisma += 2
     refresh_stat_mods()
 
-refresh_stat_mods() # outsids function to get original (ability score) modifier
+refresh_stat_mods() # outside function to get original (ability score) modifiers
 
 wait(1)
 
+# actual game code for the game loop
 def Game():
     global PlayerInv
     wait(1)
@@ -712,12 +718,16 @@ def Game():
     GameOpts = ["Manage Inventory", "View Stats"]
     GameOptPicked = get_choice(GameOpts)
     match GameOptPicked:
-        case 1:
+        case 1: # Manage Inventory
                 print("\n")
-                wait(1)
-                print(PlayerInv)
-                print("\n")
-        case 2:
+                if PlayerInv:
+                        wait(1)
+                        print(PlayerInv)
+                        print("\n")
+                else:
+                        wait(1)
+                        print("\nYou don't have any items!")
+        case 2: # View Stats
                 print("\n")
                 wait(1)
                 print_player_stats()
