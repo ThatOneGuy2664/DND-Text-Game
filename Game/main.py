@@ -727,7 +727,7 @@ def Game():
                         print("\n")
                 else:
                         wait(1)
-                        print("\nYou don't have any items!")
+                        print("You don't have any items!\n")
         case 2: # View Stats
                 print("\n")
                 wait(1)
