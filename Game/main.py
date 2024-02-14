@@ -161,6 +161,11 @@ def generate_ability_scores():
     PlayerWisdom = player_vars[4]
     PlayerCharisma = player_vars[5]
 
+def rest(): # function for player to rest
+        PlayerHP = PlayerHPMax
+        # spell slots to full
+        # per rest abilities refresh
+
 # function to update Player(var)s
 def refresh_stat_mods():
         global PlayerSTRMod, PlayerDEXMod, PlayerCONMod, PlayerINTMod, PlayerWISMod, PlayerCHAMod, PlayerStrength, PlayerDexterity, PlayerConstitution, PlayerIntelligence, PlayerWisdom, PlayerCharisma, PlayerHP, PlayerHPMax
@@ -482,7 +487,6 @@ def create_character():
             # no base sub-races
     wait(1)
     print("\n**** You chose " + PlayerRace + " as your race.")
-    
     # select class
     wait(1)
     print("\n**** Choose your class...\n")
@@ -493,32 +497,47 @@ def create_character():
     match class_choice:
         case 1: # Barbarian
             PlayerClass = "Barbarian" # these assign the playerclass variable
+            PlayerHPMax = 12 # PlayerHPMax at first level
         case 2: # Bard
             PlayerClass = "Bard"
+            PlayerHPMax = 8
         case 3: # Cleric
             PlayerClass = "Cleric"
+            PlayerHPMax = 8
         case 4: # Druid
             PlayerClass = "Druid"
+            PlayerHPMax = 8
         case 5: # Fighter
             PlayerClass = "Fighter"
+            PlayerHPMax = 10
         case 6: # Monk
             PlayerClass = "Monk"
+            PlayerHPMax = 8
         case 7: # Paladin
             PlayerClass = "Paladin"
+            PlayerHPMax = 10
         case 8: # Ranger
             PlayerClass = "Ranger"
+            PlayerHPMax = 10
         case 9: # Rogue
             PlayerClass = "Rogue"
+            PlayerHPMax = 8
         case 10: # Sorcerer
             PlayerClass = "Sorcerer"
+            PlayerHPMax = 6
         case 11: # Warlock
             PlayerClass = "Warlock"
+            PlayerHPMax = 8
         case 12: # Wizard
             PlayerClass = "Wizard"
+            PlayerHPMax = 6
         case 13: # Artificer
             PlayerClass = "Artificer"
+            PlayerHPMax = 8
         case 14: # Bloodhunter
             PlayerClass = "Bloodhunter"
+            PlayerHPMax = 10
+    rest() # update starting HP to max based off class HPMax for first level, also ensure all abilities are available.
     wait(1)
     print("\n**** You chose " + PlayerClass + " as your class.")
     wait(1)
