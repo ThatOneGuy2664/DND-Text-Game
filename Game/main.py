@@ -46,6 +46,7 @@ from SpellLists import DivinationSpells
 from SpellLists import EnchantmentSpells
 # Feats
 from FeatsList import Feats
+PlayerFeats = []
 
 # Functions
  
