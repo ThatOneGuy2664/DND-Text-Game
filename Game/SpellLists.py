@@ -94,7 +94,7 @@ PaladinSpells = {
   # Paladins don't havs Cantrips
   "LevelOne": ["Bless", "Ceremony", "Command", "Compelled Duel", "Cure Wounds", "Detect Evil And Good",
                "Detect Magic"],
-  "LevelTwo": ["Aid", "Branding Smite"],
+  "LevelTwo": ["Aid", "Branding Smite", "Find Steed"],
   "LevelThree": ["Aura of Vitality", "Blinding Smite"],
   "LevelFour": ["Aura of Life", "Aura of Purity", "Banishment"],
   "LevelFive": ["Banishing Smite", "Circle Of Power"]
