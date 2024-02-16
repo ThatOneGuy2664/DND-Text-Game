@@ -47,7 +47,10 @@ BardSpells = {
 }
 RangerSpells = {
   # Rangers don't have Cantrips
-  "LevelOne": ["Absorb Elements", "Alarm", "Animal Friendship", "Beast Bond", "Cure Wounds"],
+  "LevelOne": ["Absorb Elements", "Alarm", "Animal Friendship", "Beast Bond", "Cure Wounds", "Detect Magic",
+               "Detect Poison And Disease", "Ensnaring Strike", "Entangle", "Fog Cloud", "Goodberry",
+               "Hail Of Thorns", "Hunter's Mark", "Jump", "Longstrider", "Searing Smite", "Snare",
+               "Speak With Animals", "Sudden Awakening", "Wild Cunning", "Zephyr Strike"],
   "LevelTwo": [],
   "LevelThree": [],
   "LevelFour": [],
