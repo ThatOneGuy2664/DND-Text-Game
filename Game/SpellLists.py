@@ -185,7 +185,7 @@ EvocationSpells = {
 DivinationSpells = {
   "DivinationCantrips": ["Guidance", "True Strike"],
   "DivinationLevelOne": [],
-  "DivinationLevelTwo": [],
+  "DivinationLevelTwo": ["Augury", "Beast Sense", "Borrowed Knowledge", "Detect Thoughts", "Find Traps", "Fortune's Favor", "Locate Animals or Plants", "Locate Object", "Mind Spike", "See Invisibility", "Warp Sense"],
   "DivinationLevelThree": ["Clairvoyance", "Tongues"],
   "DivinationLevelFour": ["Arcane Eye", "Divination", "Locate Creature"],
   "DivinationLevelFive": ["Commune", "Commune with City", "Commune with Nature", "Contact Other Plane", "Legend Lore", "Rary's Telepathic Bond", "Scrying"],
